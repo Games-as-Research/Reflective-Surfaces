@@ -1,0 +1,10 @@
+.window-2-icon {
+  position: absolute;
+  top: 0;
+  left: 710px;
+  width: 500px;
+  height: 410px;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 2;
+}

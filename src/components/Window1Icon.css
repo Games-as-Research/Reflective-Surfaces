@@ -1,0 +1,10 @@
+.window-1-icon {
+  position: absolute;
+  top: 686px;
+  left: 610px;
+  width: 464px;
+  height: 356px;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 2;
+}
