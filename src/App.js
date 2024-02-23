@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Page10FK from "./pages/Page10FK";
+import Screen10 from "./pages/Screen10";
 
 function App() {
   const action = useNavigationType();
@@ -47,7 +47,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Page10FK />} />
+      <Route path="/" element={<Screen10 />} />
     </Routes>
   );
 }
