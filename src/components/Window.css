@@ -16,7 +16,6 @@
   height: 356px;
   object-fit: cover;
   cursor: pointer;
-  z-index: 2;
 }
 
 .screen-10-window-2 {
@@ -37,7 +36,6 @@
   height: 410px;
   object-fit: cover;
   cursor: pointer;
-  z-index: 2;
 }
 
 .screen-10-window-4 {
@@ -48,5 +46,4 @@
   height: 1042px;
   object-fit: cover;
   cursor: pointer;
-  z-index: 1;
 }

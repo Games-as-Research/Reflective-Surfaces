@@ -1,24 +1,16 @@
-import { useCallback } from "react";
 import "./Window.css";
 import Draggable from "react-draggable";
 
-
 const Window = (props) => {
-  const onWindowClick = useCallback(() => {
-    const anchor = document.querySelector("[data-scroll-to='backgroundImage']");
-    if (anchor) {
-      anchor.scrollIntoView({ block: "start" });
-    }
-  }, []);
 
   return (
-    <Draggable>
+    <Draggable onStart={() => props.onClick(props.index)}>
       <img
         className={props.className ?? "default"}
         draggable={props.draggable ?? "false"}
+        style={{ zIndex: props.index }}
         alt={props.alt ?? ""}
         src={props.src}
-        onClick={onWindowClick}
       />
     </Draggable>
   );
