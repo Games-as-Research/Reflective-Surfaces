@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import "./Window4Icon.css";
+import Draggable from "react-draggable";
 
 const Window4Icon = () => {
   const onWindow4ImageClick = useCallback(() => {
@@ -10,13 +11,16 @@ const Window4Icon = () => {
   }, []);
 
   return (
-    <img
-      className="window-4-icon"
-      loading="eager"
-      alt=""
-      src="/window-4@2x.png"
-      onClick={onWindow4ImageClick}
-    />
+    <Draggable>
+      <img
+        className="window-4-icon"
+        draggable="false"
+        loading="eager"
+        alt=""
+        src="/window-4@2x.png"
+        onClick={onWindow4ImageClick}
+      />
+    </Draggable>
   );
 };
 

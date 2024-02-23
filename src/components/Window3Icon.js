@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import "./Window3Icon.css";
+import Draggable from "react-draggable";
 
 const Window3Icon = () => {
   const onWindow3ImageClick = useCallback(() => {
@@ -10,12 +11,15 @@ const Window3Icon = () => {
   }, []);
 
   return (
-    <img
-      className="window-3-icon"
-      alt=""
-      src="/window-3@2x.png"
-      onClick={onWindow3ImageClick}
-    />
+    <Draggable>
+      <img
+        className="window-3-icon"
+        draggable="false"
+        alt=""
+        src="/window-3@2x.png"
+        onClick={onWindow3ImageClick}
+      />
+    </Draggable>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import "./Window2Icon.css";
+import Draggable from "react-draggable";
 
 const Window2Icon = () => {
   const onWindow2ImageClick = useCallback(() => {
@@ -10,12 +11,15 @@ const Window2Icon = () => {
   }, []);
 
   return (
-    <img
-      className="window-2-icon"
-      alt=""
-      src="/window-2@2x.png"
-      onClick={onWindow2ImageClick}
-    />
+    <Draggable>
+      <img
+        className="window-2-icon"
+        draggable="false"
+        alt=""
+        src="/window-2@2x.png"
+        onClick={onWindow2ImageClick}
+      />
+    </Draggable>
   );
 };
 

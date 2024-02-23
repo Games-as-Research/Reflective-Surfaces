@@ -27,6 +27,8 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      default:
+        break;
     }
 
     if (title) {
