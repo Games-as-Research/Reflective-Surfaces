@@ -4,7 +4,6 @@
   left: 0;
   width: 200px;
   height: 200px;
-  object-fit: cover;
   cursor: pointer;
 }
 
@@ -14,7 +13,6 @@
   left: 610px;
   width: 464px;
   height: 356px;
-  object-fit: cover;
   cursor: pointer;
 }
 
@@ -24,7 +22,6 @@
   left: 0;
   width: 842px;
   height: 907px;
-  object-fit: cover;
   cursor: pointer;
 }
 
