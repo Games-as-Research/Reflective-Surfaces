@@ -1,9 +1,19 @@
-import "./Window.css";
 import Draggable from "react-draggable";
 import { useState } from "react";
 
 const Window = (props) => {
   const [click, setClick] = useState(true);
+
+  function DragHandler() {
+    setClick(false);
+    props.onClick(props.index);
+  }
+  function ClickHandler() {
+    if (click) {
+      OpenLink();
+    }
+    setClick(true);
+  }
   function OpenLink() {
     if (props.link) {
       window.open(props.link);
@@ -11,22 +21,16 @@ const Window = (props) => {
   }
 
   return (
-    <Draggable
-      onDrag={() => {
-        setClick(false);
-        props.onClick(props.index);
-      }}
-      onStop={() => {
-        if (click) {
-          OpenLink();
-        }
-        setClick(true);
-      }}
-    >
+    <Draggable onDrag={DragHandler} onStop={ClickHandler}>
       <img
-        className={props.className ?? "default"}
-        draggable={props.draggable ?? "false"}
-        style={{ zIndex: props.index }}
+        draggable={"false"}
+        style={{
+          zIndex: props.index,
+          position: "absolute",
+          cursor: "pointer",
+          objectFit: "cover",
+          ...props.dimensions,
+        }}
         alt={props.alt ?? ""}
         src={props.src}
       />
