@@ -42,41 +42,6 @@ const Window = (props) => {
       }}
     />
   );
-
-  // return (
-  //   <Draggable onDrag={DragHandler} onStop={ClickHandler}>
-  //     <Resizable
-  //     lockAspectRatio={true}
-  //       defaultSize={{
-  //         width: props.dimensions.width,
-  //         height: props.dimensions.height,
-  //       }}
-  //       style={{
-  //         background: `url(${props.src})`,
-  //         backgroundSize: "contain",
-  //         objectFit: "cover",
-  //         cursor: "pointer",
-  //         // backgroundRepeat: "no-repeat",
-  //         top: props.dimensions.top,
-  //         left: props.dimensions.left,
-  //         zIndex: props.layer,
-  //       }}
-  //     >
-  //       {/* <img
-  //         draggable={"false"}
-  //         style={{
-  //           zIndex: props.layer,
-  //           position: "absolute",
-  //           cursor: "pointer",
-  //           objectFit: "cover",
-  //           ...props.dimensions,
-  //         }}
-  //         alt={props.alt ?? ""}
-  //         src={props.src}
-  //       /> */}
-  //     </Resizable>
-  //   </Draggable>
-  // );
 };
 
 export default Window;
