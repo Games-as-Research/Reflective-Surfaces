@@ -5,7 +5,7 @@ import { useState } from "react";
 const Screen10 = () => {
   const [ordWindows, setOrdWindows] = useState([
     {
-      index: 4,
+      layer: 4,
       src: "./window-1@2x.png",
       link: "https://y.yarn.co/7d9a564e-e131-4f7d-9ced-708018d38702_text.gif",
       dimensions: {
@@ -16,7 +16,7 @@ const Screen10 = () => {
       },
     },
     {
-      index: 3,
+      layer: 3,
       src: "./window-2@2x.png",
       dimensions: {
         top: 0,
@@ -26,7 +26,7 @@ const Screen10 = () => {
       },
     },
     {
-      index: 2,
+      layer: 2,
       src: "./window-3@2x.png",
       link: "https://miro.com/app/board/uXjVNyLKL2M=/",
       dimensions: {
@@ -37,7 +37,7 @@ const Screen10 = () => {
       },
     },
     {
-      index: 1,
+      layer: 1,
       src: "./window-4@2x.png",
       dimensions: {
         top: 0,
@@ -52,8 +52,8 @@ const Screen10 = () => {
   function ChangeScreenOrder(index) {
     const newOrder = ordWindows;
     for (let i = 0; i < newOrder.length; i++) {
-      if (newOrder[i].index === index && newOrder[i].index !== top) {
-        newOrder[i].index = top + 1;
+      if (newOrder[i].layer === index && newOrder[i].layer !== top) {
+        newOrder[i].layer = top + 1;
         break;
       }
     }
@@ -72,7 +72,7 @@ const Screen10 = () => {
       {ordWindows.map((item, idx) => (
         <Window
           key={idx}
-          index={item.index}
+          layer={item.layer}
           dimensions={item.dimensions}
           src={item.src}
           className={item.className}

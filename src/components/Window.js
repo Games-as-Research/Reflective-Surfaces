@@ -6,7 +6,7 @@ const Window = (props) => {
 
   function DragHandler() {
     setClick(false);
-    props.onClick(props.index);
+    props.onClick(props.layer);
   }
   function ClickHandler() {
     if (click) {
@@ -25,7 +25,7 @@ const Window = (props) => {
       <img
         draggable={"false"}
         style={{
-          zIndex: props.index,
+          zIndex: props.layer,
           position: "absolute",
           cursor: "pointer",
           objectFit: "cover",
