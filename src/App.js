@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Screen10 from "./pages/Screen10";
+import Screen10 from "./Screens/Screen10";
 
 function App() {
   const action = useNavigationType();
