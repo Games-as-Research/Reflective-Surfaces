@@ -1,4 +1,3 @@
-import "./Screen.css";
 import Window from "../components/Window";
 import { useState } from "react";
 
@@ -62,10 +61,24 @@ const Screen10 = () => {
   }
 
   return (
-    <div className="screen-10">
+    <div
+      style={{
+        width: "100%",
+        height: 1080,
+        position: "relative",
+        backgroundColor: "#fff",
+        overflow: "hidden",
+      }}
+    >
       <img
-        className="background-image"
-        alt=""
+        style={{
+          top: 0,
+          left: 0,
+          width: 1920,
+          height: 1080,
+          backgroundSize: "cover",
+          objectFit: "cover",
+        }}
         src="./page10/background@2x.png"
         data-scroll-to="backgroundImage"
       />
