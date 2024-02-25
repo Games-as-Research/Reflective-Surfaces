@@ -1,5 +1,5 @@
-import Draggable from "react-draggable";
 import { useState } from "react";
+import { Rnd } from "react-rnd";
 
 const Window = (props) => {
   const [click, setClick] = useState(true);
@@ -21,21 +21,62 @@ const Window = (props) => {
   }
 
   return (
-    <Draggable onDrag={DragHandler} onStop={ClickHandler}>
-      <img
-        draggable={"false"}
-        style={{
-          zIndex: props.layer,
-          position: "absolute",
-          cursor: "pointer",
-          objectFit: "cover",
-          ...props.dimensions,
-        }}
-        alt={props.alt ?? ""}
-        src={props.src}
-      />
-    </Draggable>
+    <Rnd
+      onDragStart={DragHandler}
+      lockAspectRatio={true}
+      default={{
+        x: props.dimensions.left,
+        y: props.dimensions.top,
+        width: props.dimensions.width,
+        height: props.dimensions.height,
+      }}
+      style={{
+        background: `url(${props.src})`,
+        backgroundSize: "contain",
+        objectFit: "cover",
+        cursor: "pointer",
+        backgroundRepeat: "no-repeat",
+        top: props.dimensions.top,
+        left: props.dimensions.left,
+        zIndex: props.layer,
+      }}
+    />
   );
+
+  // return (
+  //   <Draggable onDrag={DragHandler} onStop={ClickHandler}>
+  //     <Resizable
+  //     lockAspectRatio={true}
+  //       defaultSize={{
+  //         width: props.dimensions.width,
+  //         height: props.dimensions.height,
+  //       }}
+  //       style={{
+  //         background: `url(${props.src})`,
+  //         backgroundSize: "contain",
+  //         objectFit: "cover",
+  //         cursor: "pointer",
+  //         // backgroundRepeat: "no-repeat",
+  //         top: props.dimensions.top,
+  //         left: props.dimensions.left,
+  //         zIndex: props.layer,
+  //       }}
+  //     >
+  //       {/* <img
+  //         draggable={"false"}
+  //         style={{
+  //           zIndex: props.layer,
+  //           position: "absolute",
+  //           cursor: "pointer",
+  //           objectFit: "cover",
+  //           ...props.dimensions,
+  //         }}
+  //         alt={props.alt ?? ""}
+  //         src={props.src}
+  //       /> */}
+  //     </Resizable>
+  //   </Draggable>
+  // );
 };
 
 export default Window;
