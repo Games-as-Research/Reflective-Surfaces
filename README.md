@@ -30,9 +30,8 @@ There are easter eggs on each screen: recursive videos, screen invader, audio pl
 ## Documentation 
 Please see the [docs](./docs/) folder.
 
-> :warning: Please use `Yarn` with this project instead of `NPM`.
-
 ## Getting Started 
+> :warning: Please use `Yarn` with this project instead of `NPM`.
 
 1. Clone the repository. 
 2. Open a terminal in the root directory of the repository. 
