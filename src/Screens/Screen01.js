@@ -1,4 +1,4 @@
-import Window from "../components/Window";
+import Screen from "../components/Screen";
 import { useState } from "react";
 
 const Screen01 = () => {
@@ -34,54 +34,21 @@ const Screen01 = () => {
       },
     },
   ]);
-  const [top, setTop] = useState(4);
-
-  function ChangeScreenOrder(index) {
-    const newOrder = ordWindows;
-    for (let i = 0; i < newOrder.length; i++) {
-      if (newOrder[i].layer === index && newOrder[i].layer !== top) {
-        newOrder[i].layer = top + 1;
-        break;
-      }
-    }
-    setTop(top + 1);
-    setOrdWindows(newOrder);
-  }
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: 1150,
-        position: "relative",
-        backgroundColor: "#fff",
-        overflow: "hidden",
+    <Screen
+      windows={ordWindows}
+      setWindows={setOrdWindows}
+      backgroundImage={"./abstract/background.png"}
+      backgroundStyle={{
+        top: 0,
+        left: 0,
+        width: 1920,
+        height: 1484,
+        backgroundSize: "cover",
+        objectFit: "cover",
       }}
-    >
-      <img
-        style={{
-          top: 0,
-          left: 0,
-          width: 1920,
-          height: 1484,
-          backgroundSize: "cover",
-          objectFit: "cover",
-        }}
-        src="./abstract/background.png"
-        data-scroll-to="backgroundImage"
-      />
-      {ordWindows.map((item, idx) => (
-        <Window
-          key={idx}
-          layer={item.layer}
-          dimensions={item.dimensions}
-          src={item.src}
-          className={item.className}
-          onClick={ChangeScreenOrder}
-          link={item.link}
-        />
-      ))}
-    </div>
+    />
   );
 };
 
