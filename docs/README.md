@@ -15,9 +15,10 @@ Gameplay elements are the rules, interactions, pathways, and narrative defined o
 4. TaskBarWin11 
 5. Window
 6. Custom Window
-7. Screen 
-8. Screen Switcher
-9. Persistent Data Infrastructure 
+7. Desktop Icons
+8. Screen 
+9. Screen Switcher
+10. Persistent Data Infrastructure 
 
 
 ## [Gameplay Elements](./GameplayElements.md)
