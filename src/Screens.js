@@ -5,7 +5,7 @@ import Screen01 from "./Screens/Screen01";
 const Screens = (props) => {
   const [activeScreen, setActiveScreen] = useState(1);
 
-  if (activeScreen == 1) {
+  if (activeScreen === 1) {
     return <Screen01 />;
   } else if (activeScreen === 10) {
     return <Screen10 />;
