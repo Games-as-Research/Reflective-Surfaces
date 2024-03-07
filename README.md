@@ -2,15 +2,19 @@
 
 The playable version for the DIS 2024 paper submission.
 
-Please use `Yarn`with this project instead of `NPM`.
+For more documentation see the [docs](./docs/) folder.
 
-## Todo: 
+> :warning: Please use `Yarn` with this project instead of `NPM`.
 
-1. Get other pages in 
-    a. Pull all assets from the photoshop document 
-    b. Create every page
-2. Abstract out a Screen component 
-4. Implement screen changing mechanism 
-5. Fix background sizing - problematic implementation in Screen.css. Get the background to resize as the screen zooms in and out. 
-6. Get a persisten bottom bar. 
+## Getting Started 
 
+1. Clone the repository. 
+2. Open a terminal in the root directory of the repository. 
+3. Run `yarn install`.
+4. Run `yarn start`. This should open a new browser tab with the project. 
+
+## Dependencies 
+1. React `18.2.0`
+2. Node `20.10.0`
+3. Yarn `1.22.19`
+4. [Package.JSON](./package.json)
