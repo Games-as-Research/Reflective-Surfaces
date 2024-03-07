@@ -1,6 +1,7 @@
 # DIS-Playable 
+_An alternate timeline where digitial publications are **really** digitial._
 
-The playable version for the DIS 2024 paper submission.
+---
 
 The time is 10:09.
 
