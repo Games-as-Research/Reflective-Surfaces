@@ -1,7 +1,7 @@
 import Screen from "../components/Screen";
 import { useState } from "react";
 
-const Screen10 = () => {
+const Screen10 = (props) => {
   const [ordWindows, setOrdWindows] = useState([
     {
       layer: 4,
@@ -51,15 +51,9 @@ const Screen10 = () => {
     <Screen
       windows={ordWindows}
       setWindows={setOrdWindows}
-      backgroundImage={"./page10/background@2x.png"}
-      backgroundStyle={{
-        top: 0,
-        left: 0,
-        width: 1920,
-        height: 1080,
-        backgroundSize: "cover",
-        objectFit: "cover",
-      }}
+      backgroundImage={"./page10/Background.jpeg"}
+      nextScreen={props.nextScreen}
+      previousScreen={props.previousScreen}
     />
   );
 };
