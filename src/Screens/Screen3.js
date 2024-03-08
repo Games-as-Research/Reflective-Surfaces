@@ -1,7 +1,7 @@
 import Screen from "../components/Screen";
 import { useState } from "react";
 
-const Screen01 = (props) => {
+const Screen3 = (props) => {
   const [ordWindows, setOrdWindows] = useState([
     {
       layer: 3,
@@ -46,4 +46,4 @@ const Screen01 = (props) => {
   );
 };
 
-export default Screen01;
+export default Screen3;
