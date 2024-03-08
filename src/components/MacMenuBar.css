@@ -1,0 +1,35 @@
+.menubar-program {
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.menubar-item {
+  font-size: 15px;
+  font-family: sans-serif;
+  margin-left: 10px;
+}
+
+.menubar-container {
+  display: flex;
+  max-height: 27px;
+  /* border: black 10px solid; */
+  background-color: #d3d3d380;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+}
+
+.menubar-leftside {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menubar-rightside {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 20%;
+}
