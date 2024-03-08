@@ -59,7 +59,7 @@ const Screen2 = (props) => {
     <Screen
       windows={ordWindows}
       setWindows={setOrdWindows}
-      backgroundImage={"./S2_Matt/Background.jpg"}
+      backgroundImage={"./S2_Matt/Background.png"}
       nextScreen={props.nextScreen}
       previousScreen={props.previousScreen}
     />
