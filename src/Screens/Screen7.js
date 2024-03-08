@@ -1,11 +1,11 @@
 import Screen from "../components/Screen";
 import { useState } from "react";
 
-const Screen10 = (props) => {
+const Screen7 = (props) => {
   const [ordWindows, setOrdWindows] = useState([
     {
       layer: 4,
-      src: "./page10/window-1@2x.png",
+      src: "./S7_Femke/gif.png",
       link: "https://y.yarn.co/7d9a564e-e131-4f7d-9ced-708018d38702_text.gif",
       dimensions: {
         top: 686,
@@ -16,7 +16,7 @@ const Screen10 = (props) => {
     },
     {
       layer: 3,
-      src: "./page10/window-2@2x.png",
+      src: "./S7_Femke/blackboard.png",
       dimensions: {
         top: 0,
         left: 710,
@@ -26,7 +26,7 @@ const Screen10 = (props) => {
     },
     {
       layer: 2,
-      src: "./page10/window-3@2x.png",
+      src: "./S7_Femke/miro.png",
       link: "https://miro.com/app/board/uXjVNyLKL2M=/",
       dimensions: {
         top: 67,
@@ -37,7 +37,7 @@ const Screen10 = (props) => {
     },
     {
       layer: 1,
-      src: "./page10/window-4@2x.png",
+      src: "./S7_Femke/word.png",
       dimensions: {
         top: 0,
         left: 960,
@@ -51,11 +51,11 @@ const Screen10 = (props) => {
     <Screen
       windows={ordWindows}
       setWindows={setOrdWindows}
-      backgroundImage={"./page10/Background.jpeg"}
+      backgroundImage={"./S7_Femke/Background.jpeg"}
       nextScreen={props.nextScreen}
       previousScreen={props.previousScreen}
     />
   );
 };
 
-export default Screen10;
+export default Screen7;
