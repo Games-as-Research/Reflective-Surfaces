@@ -23,18 +23,20 @@ const Screen = (props) => {
   }
   return (
     <>
-      {props.OS !== "10" && props.OS !== "11" ? <MacMenuBar /> : null}
+      {props.OS !== "10" && props.OS !== "11" ? (
+        <MacMenuBar next={props.nextScreen} previous={props.previousScreen} />
+      ) : null}
       <img
         style={{
           maxWidth: "100%",
           maxHeight: "100%",
           backgroundSize: "cover",
           objectFit: "cover",
+          overflow: "auto",
         }}
         alt="Screen Background"
         src={props.backgroundImage}
         data-scroll-to="backgroundImage"
-        onClickCapture={props.nextScreen}
       />
       {props.windows.map((item, idx) => (
         <Window

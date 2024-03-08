@@ -20,9 +20,13 @@ const MacMenuBar = (props) => {
       </div>
 
       <div className="menubar-rightside">
-        <p className="menubar-item">{"<"}</p>
+        <p className="menubar-item" onClick={props.previous}>
+          {"<"}
+        </p>
 
-        <p className="menubar-item">{">"}</p>
+        <p className="menubar-item" onClick={props.next}>
+          {">"}
+        </p>
 
         <DesktopViewer />
         <AppleSearch />
