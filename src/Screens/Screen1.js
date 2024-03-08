@@ -4,33 +4,23 @@ import { useState } from "react";
 const Screen1 = (props) => {
   const [ordWindows, setOrdWindows] = useState([
     {
-      layer: 3,
-      src: "./S3_Rilla/Abstract/abstract.png",
-      dimensions: {
-        top: 173,
-        left: 81,
-        width: 981,
-        height: 325,
-      },
-    },
-    {
       layer: 2,
-      src: "./S3_Rilla/Abstract/docs.png",
+      src: "./S1_Pippin/github.png",
       dimensions: {
-        top: 193,
-        left: 436,
-        width: 1047,
-        height: 936,
+        top: 70,
+        left: 800,
+        width: 561,
+        height: 809,
       },
     },
     {
       layer: 1,
-      src: "./S3_Rilla/Abstract/pdf.png",
+      src: "./S1_Pippin/vscode.png",
       dimensions: {
-        top: 48,
-        left: 69,
-        width: 1592,
-        height: 1066,
+        top: 70,
+        left: 116,
+        width: 590,
+        height: 847,
       },
     },
   ]);
