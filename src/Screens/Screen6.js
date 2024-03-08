@@ -4,33 +4,63 @@ import { useState } from "react";
 const Screen6 = (props) => {
   const [ordWindows, setOrdWindows] = useState([
     {
-      layer: 3,
-      src: "./S3_Rilla/Abstract/abstract.png",
+      layer: 6,
+      src: "./S6_Enric/docs2.png",
       dimensions: {
-        top: 173,
-        left: 81,
-        width: 981,
-        height: 325,
+        top: 109,
+        left: 1123,
+        width: 528,
+        height: 862,
+      },
+    },
+    {
+      layer: 5,
+      src: "./S6_Enric/docs1.png",
+      dimensions: {
+        top: 109,
+        left: 532,
+        width: 576,
+        height: 862,
+      },
+    },
+    {
+      layer: 4,
+      src: "./S6_Enric/pic3.png",
+      dimensions: {
+        top: 58,
+        left: 82,
+        width: 188,
+        height: 529,
+      },
+    },
+    {
+      layer: 3,
+      src: "./S6_Enric/pic2.png",
+      dimensions: {
+        top: 380,
+        left: 192,
+        width: 408,
+        height: 412,
       },
     },
     {
       layer: 2,
-      src: "./S3_Rilla/Abstract/docs.png",
+      src: "./S6_Enric/pic4.png",
       dimensions: {
-        top: 193,
-        left: 436,
-        width: 1047,
-        height: 936,
+        top: 587,
+        left: 20,
+        width: 415,
+        height: 486,
       },
     },
     {
       layer: 1,
-      src: "./S3_Rilla/Abstract/pdf.png",
+      src: "./S6_Enric/pic1.png",
       dimensions: {
-        top: 48,
-        left: 69,
-        width: 1592,
-        height: 1066,
+        top: 666,
+        left: 461,
+        width: 499,
+        height: 387,
       },
     },
   ]);
