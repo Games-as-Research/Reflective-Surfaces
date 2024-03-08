@@ -5,7 +5,7 @@ const Screen01 = (props) => {
   const [ordWindows, setOrdWindows] = useState([
     {
       layer: 3,
-      src: "./abstract/window-1-abstract-txt.png",
+      src: "./S3_Rilla/Abstract/abstract.png",
       dimensions: {
         top: 173,
         left: 81,
@@ -15,7 +15,7 @@ const Screen01 = (props) => {
     },
     {
       layer: 2,
-      src: "./abstract/window-2-googledoc.png",
+      src: "./S3_Rilla/Abstract/docs.png",
       dimensions: {
         top: 193,
         left: 436,
@@ -25,7 +25,7 @@ const Screen01 = (props) => {
     },
     {
       layer: 1,
-      src: "./abstract/window-3-reorder-pdf.png",
+      src: "./S3_Rilla/Abstract/pdf.png",
       dimensions: {
         top: 48,
         left: 69,
@@ -39,7 +39,7 @@ const Screen01 = (props) => {
     <Screen
       windows={ordWindows}
       setWindows={setOrdWindows}
-      backgroundImage={"./abstract/Background.jpeg"}
+      backgroundImage={"./S3_Rilla/Background.jpeg"}
       nextScreen={props.nextScreen}
       previousScreen={props.previousScreen}
     />
