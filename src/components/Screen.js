@@ -1,4 +1,5 @@
 import MacMenuBar from "./MacMenuBar";
+import Taskbar10 from "./Taskbar10";
 import Window from "./Window";
 import { useState } from "react";
 
@@ -49,6 +50,9 @@ const Screen = (props) => {
           link={item.link}
         />
       ))}
+      {props.OS === "10" ? (
+        <Taskbar10 next={props.nextScreen} previous={props.previousScreen} />
+      ) : props.OS === "11" ? null : null}
     </>
   );
 };

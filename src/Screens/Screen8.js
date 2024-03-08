@@ -72,6 +72,7 @@ const Screen8 = (props) => {
       backgroundImage={"./S8_Vadim/Background.jpeg"}
       nextScreen={props.nextScreen}
       previousScreen={props.previousScreen}
+      OS={"10"}
     />
   );
 };

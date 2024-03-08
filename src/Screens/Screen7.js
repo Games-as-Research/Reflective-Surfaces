@@ -54,6 +54,7 @@ const Screen7 = (props) => {
       backgroundImage={"./S7_Femke/Background.jpeg"}
       nextScreen={props.nextScreen}
       previousScreen={props.previousScreen}
+      OS={"10"}
     />
   );
 };

@@ -72,6 +72,7 @@ const Screen6 = (props) => {
       backgroundImage={"./S6_Enric/Background.jpg"}
       nextScreen={props.nextScreen}
       previousScreen={props.previousScreen}
+      OS={"10"}
     />
   );
 };
