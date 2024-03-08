@@ -5,32 +5,32 @@ const Screen5 = (props) => {
   const [ordWindows, setOrdWindows] = useState([
     {
       layer: 3,
-      src: "./S3_Rilla/Abstract/abstract.png",
+      src: "./S5_Kalervo/discussion.png",
       dimensions: {
-        top: 173,
-        left: 81,
-        width: 981,
-        height: 325,
+        top: 90,
+        left: 708,
+        width: 797,
+        height: 680,
       },
     },
     {
       layer: 2,
-      src: "./S3_Rilla/Abstract/docs.png",
+      src: "./S5_Kalervo/docs.png",
       dimensions: {
-        top: 193,
-        left: 436,
-        width: 1047,
-        height: 936,
+        top: 90,
+        left: 56,
+        width: 713,
+        height: 894,
       },
     },
     {
       layer: 1,
-      src: "./S3_Rilla/Abstract/pdf.png",
+      src: "./S5_Kalervo/discord_rilla.png",
       dimensions: {
-        top: 48,
-        left: 69,
-        width: 1592,
-        height: 1066,
+        top: 205,
+        left: 750,
+        width: 683,
+        height: 751,
       },
     },
   ]);
