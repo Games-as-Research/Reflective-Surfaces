@@ -4,6 +4,8 @@
   "author": "shahrom ali",
   "private": true,
   "dependencies": {
+    "@babel/runtime": "^7.24.4",
+    "@p5-wrapper/react": "^4.3.4",
     "@react-spring/web": "^9.7.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
