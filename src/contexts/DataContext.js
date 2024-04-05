@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import ScreenSwitcher from "../components/ScreenSwitcher";
 
 const LOCAL_STORAGE_KEYS = {
   SCREEN_INDEX: "active_screen",
@@ -9,6 +10,17 @@ const DataProvider = (props) => {
   const [activeScreen, setActiveScreen] = useState(
     parseInt(localStorage.getItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX)) ?? 1
   );
+  const [switching, setSwitching] = useState(false);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, activeScreen);
+    } catch (error) {
+      console.error("DEBUG:: Local storage failed.\n" + error);
+    }
+  }, [activeScreen]);
+  
+
   function nextScreen() {
     console.log("Next Screen");
     if (activeScreen === 9) {
@@ -25,14 +37,19 @@ const DataProvider = (props) => {
       setActiveScreen(activeScreen - 1);
     }
   }
-  useEffect(() => {
-    try {
-      localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, activeScreen);
-    } catch (error) {
-      console.error("DEBUG:: Local storage failed.\n" + error);
-    }
-  }, [activeScreen]);
 
+  function showSwitcher() {
+    setSwitching(true);
+  }
+
+  function hideSwitcher() {
+    setSwitching(false);
+  }
+
+  function switchScreen(idx) {
+    if (idx > 0 && idx < 10) setActiveScreen(idx);
+    hideSwitcher();
+  }
   return (
     <DataContext.Provider
       value={{
@@ -42,8 +59,16 @@ const DataProvider = (props) => {
         //Methods
         previousScreen,
         nextScreen,
+        showSwitcher,
+        hideSwitcher,
+        switchScreen,
       }}
     >
+      <ScreenSwitcher
+        show={switching}
+        onClick={switchScreen}
+        close={hideSwitcher}
+      />
       {props.children}
     </DataContext.Provider>
   );
