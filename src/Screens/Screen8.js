@@ -1,3 +1,4 @@
+import { P5JS } from "../components/P5JS";
 import Screen from "../components/Screen";
 import { useState } from "react";
 
@@ -66,12 +67,15 @@ const Screen8 = (props) => {
   ]);
 
   return (
-    <Screen
-      windows={ordWindows}
-      setWindows={setOrdWindows}
-      backgroundImage={"./S8_Vadim/Background.jpeg"}
-      OS={"10"}
-    />
+    <>
+      <P5JS />
+      <Screen
+        windows={ordWindows}
+        setWindows={setOrdWindows}
+        backgroundImage={"./S8_Vadim/Background.jpeg"}
+        OS={"10"}
+      />
+    </>
   );
 };
 
