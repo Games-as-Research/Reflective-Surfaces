@@ -1,8 +1,14 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+
+const LOCAL_STORAGE_KEYS = {
+  SCREEN_INDEX: "active_screen",
+};
 
 const DataContext = createContext(null);
 const DataProvider = (props) => {
-  const [activeScreen, setActiveScreen] = useState(1);
+  const [activeScreen, setActiveScreen] = useState(
+    parseInt(localStorage.getItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX)) ?? 1
+  );
   function nextScreen() {
     console.log("Next Screen");
     if (activeScreen === 9) {
@@ -19,6 +25,13 @@ const DataProvider = (props) => {
       setActiveScreen(activeScreen - 1);
     }
   }
+  useEffect(() => {
+    try {
+      localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, activeScreen);
+    } catch (error) {
+      console.error("DEBUG:: Local storage failed.\n" + error);
+    }
+  }, [activeScreen]);
 
   return (
     <DataContext.Provider
