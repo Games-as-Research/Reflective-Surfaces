@@ -13,27 +13,29 @@ import DataContext from "./contexts/DataContext";
 
 const Screens = (props) => {
   const DataC = useContext(DataContext);
-
-  if (DataC.activeScreen === 1) {
-    return <Screen1 />;
-  } else if (DataC.activeScreen === 2) {
-    return <Screen2 />;
-  } else if (DataC.activeScreen === 3) {
-    return <Screen3 />;
-  } else if (DataC.activeScreen === 4) {
-    return <Screen4 />;
-  } else if (DataC.activeScreen === 5) {
-    return <Screen5 />;
-  } else if (DataC.activeScreen === 6) {
-    return <Screen6 />;
-  } else if (DataC.activeScreen === 7) {
-    return <Screen7 />;
-  } else if (DataC.activeScreen === 8) {
-    return <Screen8 />;
-  } else if (DataC.activeScreen === 9) {
-    return <Screen9 />;
-  } else {
-    return <></>;
+  // Lets let each screen deal with its own shit
+  
+  switch (DataC.activeScreen) {
+    case 1:
+      return <Screen1 />;
+    case 2:
+      return <Screen2 />;
+    case 3:
+      return <Screen3 />;
+    case 4:
+      return <Screen4 />;
+    case 5:
+      return <Screen5 />;
+    case 6:
+      return <Screen6 />;
+    case 7:
+      return <Screen7 />;
+    case 8:
+      return <Screen8 />;
+    case 9:
+      return <Screen9 />;
+    default:
+      return null;
   }
 };
 
