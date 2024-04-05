@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import Screen1 from "./Screens/Screen1";
 import Screen2 from "./Screens/Screen2";
@@ -9,12 +9,15 @@ import Screen6 from "./Screens/Screen6";
 import Screen7 from "./Screens/Screen7";
 import Screen8 from "./Screens/Screen8";
 import Screen9 from "./Screens/Screen9";
+import DataContext from "./contexts/DataContext";
 
 const Screens = (props) => {
   const [activeScreen, setActiveScreen] = useState(1);
+  const DataC = useContext(DataContext);
 
   function nextScreen() {
     console.log("Next Screen");
+    DataC.HelloWorld();
     if (activeScreen === 9) {
       setActiveScreen(1);
     } else {
