@@ -16,7 +16,7 @@ const ScreenSwitcher = (props) => {
         display: "flex",
         flexDirection: "column",
         position: "absolute",
-        zIndex: 15,
+        zIndex: 999,
       }}
     >
       <div style={{ display: "flex" }}>

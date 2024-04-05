@@ -27,8 +27,8 @@ const Screen = (props) => {
       {props.OS !== "10" && props.OS !== "11" ? <MacMenuBar /> : null}
       <img
         style={{
-          maxWidth: "100%",
-          maxHeight: "100%",
+          width: "100vw",
+          height: props.OS ? "95vh" : "97vh",
           backgroundSize: "cover",
           objectFit: "cover",
           overflow: "auto",
