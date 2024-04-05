@@ -1,7 +1,6 @@
 import Preview from "./DesktopPreview";
 
 const ScreenSwitcher = (props) => {
-
   if (!props.show) {
     return null;
   }
@@ -20,7 +19,7 @@ const ScreenSwitcher = (props) => {
         zIndex: 15,
       }}
     >
-      <div>
+      <div style={{ display: "flex" }}>
         <Preview
           onClick={() => props.onClick(1)}
           imgsrc={"./S1_Pippin/Background.png"}
@@ -34,7 +33,7 @@ const ScreenSwitcher = (props) => {
           imgsrc={"./S3_Rilla/Background.jpeg"}
         />
       </div>
-      <div>
+      <div style={{ display: "flex" }}>
         <Preview
           onClick={() => props.onClick(4)}
           imgsrc={"./S4_Chip/Background.jpg"}
@@ -48,7 +47,7 @@ const ScreenSwitcher = (props) => {
           imgsrc={"./S6_Enric/Background.jpg"}
         />
       </div>
-      <div>
+      <div style={{ display: "flex" }}>
         <Preview
           onClick={() => props.onClick(7)}
           imgsrc={"./S7_Femke/Background.jpeg"}
@@ -58,6 +57,7 @@ const ScreenSwitcher = (props) => {
           imgsrc={"./S8_Vadim/Background.jpeg"}
         />
         <Preview
+          locked
           onClick={() => props.onClick(9)}
           imgsrc={"./S9_Shahrom/Background.jpg"}
         />
