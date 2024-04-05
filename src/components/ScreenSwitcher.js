@@ -1,12 +1,13 @@
 import Preview from "./DesktopPreview";
+import { animated, useSpring } from "@react-spring/web";
 
 const ScreenSwitcher = (props) => {
-  if (!props.show) {
-    return null;
-  }
+  const spring = useSpring({
+    left: props.show ? 0 : window.innerWidth,
+  });
 
   return (
-    <div
+    <animated.div
       style={{
         width: "100%",
         height: "100%",
@@ -17,6 +18,7 @@ const ScreenSwitcher = (props) => {
         flexDirection: "column",
         position: "absolute",
         zIndex: 999,
+        ...spring,
       }}
     >
       <div style={{ display: "flex" }}>
@@ -62,7 +64,7 @@ const ScreenSwitcher = (props) => {
           imgsrc={"./S9_Shahrom/Background.jpg"}
         />
       </div>
-    </div>
+    </animated.div>
   );
 };
 
