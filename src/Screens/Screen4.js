@@ -50,8 +50,6 @@ const Screen4 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={"./S4_Chip/Background.jpg"}
-      nextScreen={props.nextScreen}
-      previousScreen={props.previousScreen}
     />
   );
 };

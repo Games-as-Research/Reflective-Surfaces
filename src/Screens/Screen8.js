@@ -70,8 +70,6 @@ const Screen8 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={"./S8_Vadim/Background.jpeg"}
-      nextScreen={props.nextScreen}
-      previousScreen={props.previousScreen}
       OS={"10"}
     />
   );

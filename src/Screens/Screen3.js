@@ -40,8 +40,6 @@ const Screen3 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={"./S3_Rilla/Background.jpeg"}
-      nextScreen={props.nextScreen}
-      previousScreen={props.previousScreen}
     />
   );
 };

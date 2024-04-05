@@ -7,7 +7,10 @@ import Windows10Charging from "../icons/windows10Charging";
 import Windows10Wifi from "../icons/windows10Wifi";
 import WindowsMute from "../icons/windowsMute";
 import Windows10Notifications from "../icons/windows10Notification";
+import { useContext } from "react";
+import DataContext from "../contexts/DataContext";
 const Taskbar10 = (props) => {
+  const DataC = useContext(DataContext);
   return (
     <div className="taskbar-container">
       <div className="taskbar-leftside">
@@ -19,10 +22,10 @@ const Taskbar10 = (props) => {
         <TaskView />
       </div>
       <div className="taskbar-rightside">
-        <p className="screen-controls" onClick={props.previous}>
+        <p className="screen-controls" onClick={DataC.previousScreen}>
           {"<"}
         </p>
-        <p className="screen-controls" onClick={props.next}>
+        <p className="screen-controls" onClick={DataC.nextScreen}>
           {">"}
         </p>
 

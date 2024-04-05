@@ -60,8 +60,6 @@ const Screen2 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={"./S2_Matt/Background.png"}
-      nextScreen={props.nextScreen}
-      previousScreen={props.previousScreen}
     />
   );
 };

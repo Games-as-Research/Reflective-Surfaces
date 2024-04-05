@@ -30,8 +30,6 @@ const Screen1 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={"./S1_Pippin/Background.png"}
-      nextScreen={props.nextScreen}
-      previousScreen={props.previousScreen}
     />
   );
 };

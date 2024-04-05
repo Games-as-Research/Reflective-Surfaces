@@ -40,8 +40,6 @@ const Screen5 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={"./S5_Kalervo/Background.jpeg"}
-      nextScreen={props.nextScreen}
-      previousScreen={props.previousScreen}
     />
   );
 };

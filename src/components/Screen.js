@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const MIN_WINDOWS_PER_SCREEN = 3;
 
-// props = {windows, setWindows, OS ("10", "11"), backgroundImage (path),nextScreen, previousScreen}
+// props = {windows, setWindows, OS ("10", "11"), backgroundImage (path)}
 const Screen = (props) => {
   const [top, setTop] = useState(
     props.windows?.length ?? MIN_WINDOWS_PER_SCREEN
@@ -24,9 +24,7 @@ const Screen = (props) => {
   }
   return (
     <>
-      {props.OS !== "10" && props.OS !== "11" ? (
-        <MacMenuBar next={props.nextScreen} previous={props.previousScreen} />
-      ) : null}
+      {props.OS !== "10" && props.OS !== "11" ? <MacMenuBar /> : null}
       <img
         style={{
           maxWidth: "100%",
@@ -50,9 +48,7 @@ const Screen = (props) => {
           link={item.link}
         />
       ))}
-      {props.OS === "10" ? (
-        <Taskbar10 next={props.nextScreen} previous={props.previousScreen} />
-      ) : props.OS === "11" ? null : null}
+      {props.OS === "10" ? <Taskbar10 /> : props.OS === "11" ? null : null}
     </>
   );
 };

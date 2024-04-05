@@ -4,8 +4,11 @@ import AppleSearch from "../icons/appleSearch";
 import DesktopViewer from "../icons/desktopViewer";
 
 import "./MacMenuBar.css";
+import { useContext } from "react";
+import DataContext from "../contexts/DataContext";
 
 const MacMenuBar = (props) => {
+  const DataC = useContext(DataContext);
   return (
     <div className="menubar-container">
       <div className="menubar-leftside">
@@ -20,11 +23,11 @@ const MacMenuBar = (props) => {
       </div>
 
       <div className="menubar-rightside">
-        <p className="menubar-item" onClick={props.previous}>
+        <p className="menubar-item" onClick={DataC.previousScreen}>
           {"<"}
         </p>
 
-        <p className="menubar-item" onClick={props.next}>
+        <p className="menubar-item" onClick={DataC.nextScreen}>
           {">"}
         </p>
 

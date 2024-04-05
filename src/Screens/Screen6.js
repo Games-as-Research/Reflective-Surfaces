@@ -70,8 +70,6 @@ const Screen6 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={"./S6_Enric/Background.jpg"}
-      nextScreen={props.nextScreen}
-      previousScreen={props.previousScreen}
       OS={"10"}
     />
   );
