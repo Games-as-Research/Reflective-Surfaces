@@ -32,6 +32,7 @@ const Screen = (props) => {
           backgroundSize: "cover",
           objectFit: "cover",
           overflow: "auto",
+          display: "block",
         }}
         alt="Screen Background"
         src={props.backgroundImage}
