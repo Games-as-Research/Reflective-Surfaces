@@ -3,7 +3,7 @@ import { animated, useSpring } from "@react-spring/web";
 
 const ScreenSwitcher = (props) => {
   const spring = useSpring({
-    left: props.show ? 0 : window.innerWidth,
+    left: props.show ? 0 : window.innerWidth * 5,
   });
 
   return (
