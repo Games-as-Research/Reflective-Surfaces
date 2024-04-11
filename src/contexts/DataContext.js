@@ -16,10 +16,9 @@ const DataProvider = (props) => {
     try {
       localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, activeScreen);
     } catch (error) {
-      console.error("DEBUG:: Local storage failed.\n" + error);
+      console.log("DEBUG:: Local storage failed.\n" + error);
     }
   }, [activeScreen]);
-  
 
   function nextScreen() {
     console.log("Next Screen");
