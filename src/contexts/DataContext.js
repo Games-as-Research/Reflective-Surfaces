@@ -7,10 +7,17 @@ const LOCAL_STORAGE_KEYS = {
 
 const DataContext = createContext(null);
 const DataProvider = (props) => {
-  const [activeScreen, setActiveScreen] = useState(
-    parseInt(localStorage.getItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX)) ?? 1
-  );
+  const [activeScreen, setActiveScreen] = useState(-1);
   const [switching, setSwitching] = useState(false);
+
+  useEffect(() => {
+    if (activeScreen === -1) {
+      const val = parseInt(
+        localStorage.getItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX) ?? 1
+      );
+      setActiveScreen(val);
+    }
+  }, []);
 
   useEffect(() => {
     try {
