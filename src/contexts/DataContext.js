@@ -11,17 +11,21 @@ const DataProvider = (props) => {
   const [switching, setSwitching] = useState(false);
 
   useEffect(() => {
-    if (activeScreen === -1) {
-      const val = parseInt(
-        localStorage.getItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX) ?? 1
-      );
-      setActiveScreen(val);
-    }
-  }, []);
-
-  useEffect(() => {
     try {
-      localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, activeScreen);
+      if (activeScreen == -1) {
+        const storage_val = localStorage.getItem(
+          LOCAL_STORAGE_KEYS.SCREEN_INDEX
+        );
+
+        if (storage_val) {
+          setActiveScreen(parseInt(storage_val));
+        } else {
+          setActiveScreen(1);
+          localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, 1);
+        }
+      } else {
+        localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, activeScreen);
+      }
     } catch (error) {
       console.log("DEBUG:: Local storage failed.\n" + error);
     }
