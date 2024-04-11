@@ -22,6 +22,7 @@ const Window = (props) => {
 
   return (
     <Rnd
+      // bounds={"parent"}
       onDragStart={DragHandler}
       lockAspectRatio={true}
       default={{

@@ -1,4 +1,4 @@
-# DIS-Playable: Core Components 
+# Reflective Surfaces: Core Components 
 
 ### Component 1: Screen 
 A screen is composed of 

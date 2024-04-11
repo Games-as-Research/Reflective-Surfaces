@@ -1,4 +1,4 @@
-# DIS-Playable 
+# Reflective Surfaces 
 
 There are [core components](#core-components) and then there are [gameplay elements](#gameplay-elements). 
 

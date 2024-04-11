@@ -1,10 +1,11 @@
+import MacMenuBar from "./MacMenuBar";
+import Taskbar10 from "./Taskbar10";
 import Window from "./Window";
 import { useState } from "react";
 
 const MIN_WINDOWS_PER_SCREEN = 3;
 
-// props = {windows, setWindows, backgroundImage (path), backgroundStyle (top, left, width, height, ...)}
-
+// props = {windows, setWindows, OS ("10", "11"), backgroundImage (path)}
 const Screen = (props) => {
   const [top, setTop] = useState(
     props.windows?.length ?? MIN_WINDOWS_PER_SCREEN
@@ -21,36 +22,22 @@ const Screen = (props) => {
     setTop(top + 1);
     props.setWindows(newOrder);
   }
-
   return (
-    <div
-      style={{
-        width: "100%",
-        height: props.backgroundStyle.height ?? 1080,
-        position: "relative",
-        backgroundColor: "white",
-        overflow: "hidden",
-        overscrollBehavior: "unset"
-      }}
-    >
+    <>
+      {props.OS !== "10" && props.OS !== "11" ? <MacMenuBar /> : null}
       <img
         style={{
-          // default values
-          top: 0,
-          left: 0,
-          width: 1920,
-          height: 1080,
+          width: "100vw",
+          height: props.OS ? "95vh" : "97vh",
           backgroundSize: "cover",
           objectFit: "cover",
-
-          // custom values
-          ...props.backgroundStyle,
+          overflow: "auto",
+          display: "block",
         }}
         alt="Screen Background"
         src={props.backgroundImage}
         data-scroll-to="backgroundImage"
       />
-
       {props.windows.map((item, idx) => (
         <Window
           key={idx}
@@ -62,7 +49,8 @@ const Screen = (props) => {
           link={item.link}
         />
       ))}
-    </div>
+      {props.OS === "10" ? <Taskbar10 /> : props.OS === "11" ? null : null}
+    </>
   );
 };
 
