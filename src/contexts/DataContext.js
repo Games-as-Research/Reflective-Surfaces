@@ -7,12 +7,23 @@ const LOCAL_STORAGE_KEYS = {
 
 const DataContext = createContext(null);
 const DataProvider = (props) => {
+  const [screensState, setScreensState] = useState([
+    { index: 1, locked: false, thumbnail: "./S1_Pippin/Background.png" },
+    { index: 2, locked: false, thumbnail: "./S2_Matt/Background.png" },
+    { index: 3, locked: false, thumbnail: "./S3_Rilla/Background.jpeg" },
+    { index: 4, locked: false, thumbnail: "./S4_Chip/Background.jpg" },
+    { index: 5, locked: true, thumbnail: "./S5_Kalervo/Background.jpeg" },
+    { index: 6, locked: true, thumbnail: "./S6_Enric/Background.jpg" },
+    { index: 7, locked: true, thumbnail: "./S7_Femke/Background.jpeg" },
+    { index: 8, locked: false, thumbnail: "./S8_Vadim/Background.jpeg" },
+    { index: 9, locked: false, thumbnail: "./S9_Shahrom/Background.jpg" },
+  ]);
   const [activeScreen, setActiveScreen] = useState(-1);
   const [switching, setSwitching] = useState(false);
 
   useEffect(() => {
     try {
-      if (activeScreen == -1) {
+      if (activeScreen === -1) {
         const storage_val = localStorage.getItem(
           LOCAL_STORAGE_KEYS.SCREEN_INDEX
         );
@@ -76,6 +87,7 @@ const DataProvider = (props) => {
     >
       <ScreenSwitcher
         show={switching}
+        screens={screensState}
         onClick={switchScreen}
         close={hideSwitcher}
       />
