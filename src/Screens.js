@@ -13,7 +13,6 @@ import DataContext from "./contexts/DataContext";
 
 const Screens = (props) => {
   const DataC = useContext(DataContext);
-  // Lets let each screen deal with its own shit
   
   switch (DataC.activeScreen) {
     case 1:
@@ -35,7 +34,7 @@ const Screens = (props) => {
     case 9:
       return <Screen9 />;
     default:
-      return null;
+      return <Screen1 />;
   }
 };
 
