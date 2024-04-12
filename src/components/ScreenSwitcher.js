@@ -1,6 +1,7 @@
 import { useCallback, useEffect } from "react";
 import Preview from "./DesktopPreview";
 import { animated, useSpring } from "@react-spring/web";
+import "./ScreenSwitcher.css";
 
 const ScreenSwitcher = (props) => {
   const spring = useSpring({
@@ -9,7 +10,7 @@ const ScreenSwitcher = (props) => {
 
   function HandleEscapeHide(e) {
     const { key, keycode } = e;
-    if (key === "Escape" && props.show) {
+    if (key === "Escape" || keycode === 27) {
       props.close();
     }
   }
@@ -24,27 +25,8 @@ const ScreenSwitcher = (props) => {
   }, [keydownCallback]);
 
   return (
-    <animated.div
-      style={{
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#000D",
-        alignItems: "center",
-        justifyContent: "center",
-        display: "flex",
-        flexDirection: "column",
-        position: "absolute",
-        zIndex: 999,
-        ...spring,
-      }}
-    >
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: 20,
-        }}
-      >
+    <animated.div className="container" style={spring}>
+      <div className="screens-grid">
         {props.screens.map((screen, idx) => {
           return (
             <Preview

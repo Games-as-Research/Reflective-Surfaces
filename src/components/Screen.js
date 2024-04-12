@@ -2,6 +2,7 @@ import MacMenuBar from "./MacMenuBar";
 import Taskbar10 from "./Taskbar10";
 import Window from "./Window";
 import { useState } from "react";
+import "./Screen.css";
 
 const MIN_WINDOWS_PER_SCREEN = 3;
 
@@ -26,13 +27,9 @@ const Screen = (props) => {
     <>
       {props.OS !== "10" && props.OS !== "11" ? <MacMenuBar /> : null}
       <img
+        className="background-image"
         style={{
-          width: "100vw",
           height: props.OS ? "95vh" : "97vh",
-          backgroundSize: "cover",
-          objectFit: "cover",
-          overflow: "auto",
-          display: "block",
         }}
         alt="Screen Background"
         src={props.backgroundImage}
