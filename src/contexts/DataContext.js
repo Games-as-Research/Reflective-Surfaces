@@ -8,15 +8,409 @@ const LOCAL_STORAGE_KEYS = {
 const DataContext = createContext(null);
 const DataProvider = (props) => {
   const [screensState, setScreensState] = useState([
-    { index: 1, locked: false, thumbnail: "./S1_Pippin/Background.png" },
-    { index: 2, locked: false, thumbnail: "./S2_Matt/Background.png" },
-    { index: 3, locked: false, thumbnail: "./S3_Rilla/Background.jpeg" },
-    { index: 4, locked: false, thumbnail: "./S4_Chip/Background.jpg" },
-    { index: 5, locked: true, thumbnail: "./S5_Kalervo/Background.jpeg" },
-    { index: 6, locked: true, thumbnail: "./S6_Enric/Background.jpg" },
-    { index: 7, locked: true, thumbnail: "./S7_Femke/Background.jpeg" },
-    { index: 8, locked: false, thumbnail: "./S8_Vadim/Background.jpeg" },
-    { index: 9, locked: false, thumbnail: "./S9_Shahrom/Background.jpg" },
+    {
+      index: 1,
+      locked: false,
+      thumbnail: "./S1_Pippin/Background.png",
+      background: "./S1_Pippin/Background.png",
+      windows: [
+        {
+          layer: 2,
+          src: "./S1_Pippin/github.png",
+          dimensions: {
+            top: 70,
+            left: 800,
+            width: 561,
+            height: 809,
+          },
+        },
+        {
+          layer: 1,
+          src: "./S1_Pippin/vscode.png",
+          dimensions: {
+            top: 70,
+            left: 116,
+            width: 590,
+            height: 847,
+          },
+        },
+      ],
+    },
+    {
+      index: 2,
+      locked: false,
+      thumbnail: "./S2_Matt/Background.png",
+      background: "./S2_Matt/Background.png",
+      windows: [
+        {
+          layer: 5,
+          src: "./S2_Matt/obsidian.png",
+          dimensions: {
+            top: 80,
+            left: 805,
+            width: 846,
+            height: 772,
+          },
+        },
+        {
+          layer: 4,
+          src: "./S2_Matt/firefox.png",
+          dimensions: {
+            top: 346,
+            left: 415,
+            width: 370,
+            height: 506,
+          },
+        },
+        {
+          layer: 3,
+          src: "./S2_Matt/ryder.png",
+          dimensions: {
+            top: 380,
+            left: 33,
+            width: 1073,
+            height: 566,
+          },
+        },
+        {
+          layer: 2,
+          src: "./S2_Matt/docs.png",
+          dimensions: {
+            top: 114,
+            left: 65,
+            width: 695,
+            height: 580,
+          },
+        },
+        {
+          layer: 1,
+          src: "./S2_Matt/github.png",
+          dimensions: {
+            top: 338,
+            left: 839,
+            width: 757,
+            height: 591,
+          },
+        },
+      ],
+    },
+    {
+      index: 3,
+      locked: false,
+      thumbnail: "./S3_Rilla/Background.jpeg",
+      background: "./S3_Rilla/Background.jpeg",
+      windows: [
+        {
+          layer: 3,
+          src: "./S3_Rilla/Abstract/abstract.png",
+          dimensions: {
+            top: 100,
+            left: 129,
+            width: 867,
+            height: 261,
+          },
+        },
+        {
+          layer: 2,
+          src: "./S3_Rilla/Abstract/docs.png",
+          dimensions: {
+            top: 454,
+            left: 129,
+            width: 571,
+            height: 508,
+          },
+        },
+        {
+          layer: 1,
+          src: "./S3_Rilla/Abstract/pdf.png",
+          dimensions: {
+            top: 129,
+            left: 384,
+            width: 1260,
+            height: 833,
+          },
+        },
+      ],
+    },
+    {
+      index: 4,
+      locked: false,
+      thumbnail: "./S4_Chip/Background.jpg",
+      background: "./S4_Chip/Background.jpg",
+      windows: [
+        {
+          layer: 4,
+          src: "./S4_Chip/video_transcript.png",
+          dimensions: {
+            top: 113,
+            left: 832,
+            width: 836,
+            height: 853,
+          },
+        },
+        {
+          layer: 3,
+          src: "./S4_Chip/hiteam.png",
+          dimensions: {
+            top: 240,
+            left: 39,
+            width: 678,
+            height: 767,
+          },
+        },
+        {
+          layer: 2,
+          src: "./S4_Chip/audio.png",
+          dimensions: {
+            top: 59,
+            left: 330,
+            width: 888,
+            height: 399,
+          },
+        },
+        {
+          layer: 1,
+          src: "./S4_Chip/discord_rilla.png",
+          dimensions: {
+            top: 585,
+            left: 717,
+            width: 485,
+            height: 422,
+          },
+        },
+      ],
+    },
+    {
+      index: 5,
+      locked: true,
+      thumbnail: "./S5_Kalervo/Background.jpeg",
+      background: "./S5_Kalervo/Background.jpeg",
+      windows: [
+        {
+          layer: 3,
+          src: "./S5_Kalervo/discussion.png",
+          dimensions: {
+            top: 90,
+            left: 708,
+            width: 797,
+            height: 680,
+          },
+        },
+        {
+          layer: 2,
+          src: "./S5_Kalervo/docs.png",
+          dimensions: {
+            top: 90,
+            left: 56,
+            width: 713,
+            height: 894,
+          },
+        },
+        {
+          layer: 1,
+          src: "./S5_Kalervo/discord_rilla.png",
+          dimensions: {
+            top: 205,
+            left: 750,
+            width: 683,
+            height: 751,
+          },
+        },
+      ],
+    },
+    {
+      index: 6,
+      locked: true,
+      thumbnail: "./S6_Enric/Background.jpg",
+      background: "./S6_Enric/Background.jpg",
+      windows: [
+        {
+          layer: 6,
+          src: "./S6_Enric/docs2.png",
+          dimensions: {
+            top: 109,
+            left: 1123,
+            width: 528,
+            height: 862,
+          },
+        },
+        {
+          layer: 5,
+          src: "./S6_Enric/docs1.png",
+          dimensions: {
+            top: 109,
+            left: 532,
+            width: 576,
+            height: 862,
+          },
+        },
+        {
+          layer: 4,
+          src: "./S6_Enric/pic3.png",
+          dimensions: {
+            top: 58,
+            left: 82,
+            width: 188,
+            height: 529,
+          },
+        },
+        {
+          layer: 3,
+          src: "./S6_Enric/pic2.png",
+          dimensions: {
+            top: 380,
+            left: 192,
+            width: 408,
+            height: 412,
+          },
+        },
+        {
+          layer: 2,
+          src: "./S6_Enric/pic4.png",
+          dimensions: {
+            top: 587,
+            left: 20,
+            width: 415,
+            height: 486,
+          },
+        },
+        {
+          layer: 1,
+          src: "./S6_Enric/pic1.png",
+          dimensions: {
+            top: 666,
+            left: 461,
+            width: 499,
+            height: 387,
+          },
+        },
+      ],
+    },
+    {
+      index: 7,
+      locked: true,
+      thumbnail: "./S7_Femke/Background.jpeg",
+      background: "./S7_Femke/Background.jpeg",
+      windows: [
+        {
+          layer: 4,
+          src: "./S7_Femke/gif.png",
+          link: "https://y.yarn.co/7d9a564e-e131-4f7d-9ced-708018d38702_text.gif",
+          dimensions: {
+            top: 490,
+            left: 330,
+            width: 464,
+            height: 356,
+          },
+        },
+        {
+          layer: 3,
+          src: "./S7_Femke/blackboard.png",
+          dimensions: {
+            top: 39,
+            left: 352,
+            width: 440,
+            height: 361,
+          },
+        },
+        {
+          layer: 2,
+          src: "./S7_Femke/miro.png",
+          link: "https://miro.com/app/board/uXjVNyLKL2M=/",
+          dimensions: {
+            top: 268,
+            left: 33,
+            width: 575,
+            height: 619,
+          },
+        },
+        {
+          layer: 1,
+          src: "./S7_Femke/word.png",
+          dimensions: {
+            top: 63,
+            left: 819,
+            width: 746,
+            height: 810,
+          },
+        },
+      ],
+    },
+    {
+      index: 8,
+      locked: false,
+      thumbnail: "./S8_Vadim/Background.jpeg",
+      background: "./S8_Vadim/Background.jpeg",
+      windows: [
+        {
+          layer: 6,
+          src: "./S8_Vadim/word1.png",
+          dimensions: {
+            top: 82,
+            left: 891,
+            width: 658,
+            height: 759,
+          },
+        },
+        {
+          layer: 5,
+          src: "./S8_Vadim/word2.png",
+          dimensions: {
+            top: 280,
+            left: 624,
+            width: 596,
+            height: 686,
+          },
+        },
+        {
+          layer: 4,
+          src: "./S8_Vadim/unity.png",
+          dimensions: {
+            top: 606,
+            left: 326,
+            width: 521,
+            height: 361,
+          },
+        },
+        {
+          layer: 3,
+          src: "./S8_Vadim/trello.png",
+          dimensions: {
+            top: 82,
+            left: 326,
+            width: 476,
+            height: 598,
+          },
+        },
+        {
+          layer: 2,
+          src: "./S8_Vadim/gitKraken.png",
+          dimensions: {
+            top: 216,
+            left: 87,
+            width: 492,
+            height: 304,
+          },
+        },
+        {
+          layer: 1,
+          src: "./S8_Vadim/ryder.png",
+          dimensions: {
+            top: 606,
+            left: 86,
+            width: 490,
+            height: 290,
+          },
+        },
+      ],
+    },
+    {
+      index: 9,
+      locked: false,
+      thumbnail: "./S9_Shahrom/Background.jpg",
+      background: "./S9_Shahrom/Background.jpg",
+      windows: [],
+    },
   ]);
   const [activeScreen, setActiveScreen] = useState(-1);
   const [switching, setSwitching] = useState(false);
@@ -76,6 +470,7 @@ const DataProvider = (props) => {
       value={{
         // State
         activeScreen,
+        screensState,
 
         //Methods
         previousScreen,
