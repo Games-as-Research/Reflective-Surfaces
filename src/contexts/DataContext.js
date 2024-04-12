@@ -16,6 +16,7 @@ const DataProvider = (props) => {
       windows: [
         {
           layer: 2,
+          minimized: false,
           src: "./S1_Pippin/github.png",
           dimensions: {
             top: 70,
@@ -26,6 +27,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 1,
+          minimized: false,
           src: "./S1_Pippin/vscode.png",
           dimensions: {
             top: 70,
@@ -38,12 +40,13 @@ const DataProvider = (props) => {
     },
     {
       index: 2,
-      locked: false,
+      locked: true,
       thumbnail: "./S2_Matt/Background.png",
       background: "./S2_Matt/Background.png",
       windows: [
         {
           layer: 5,
+          minimized: false,
           src: "./S2_Matt/obsidian.png",
           dimensions: {
             top: 80,
@@ -54,6 +57,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 4,
+          minimized: false,
           src: "./S2_Matt/firefox.png",
           dimensions: {
             top: 346,
@@ -64,6 +68,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 3,
+          minimized: false,
           src: "./S2_Matt/ryder.png",
           dimensions: {
             top: 380,
@@ -74,6 +79,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 2,
+          minimized: false,
           src: "./S2_Matt/docs.png",
           dimensions: {
             top: 114,
@@ -84,6 +90,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 1,
+          minimized: false,
           src: "./S2_Matt/github.png",
           dimensions: {
             top: 338,
@@ -96,12 +103,13 @@ const DataProvider = (props) => {
     },
     {
       index: 3,
-      locked: false,
+      locked: true,
       thumbnail: "./S3_Rilla/Background.jpeg",
       background: "./S3_Rilla/Background.jpeg",
       windows: [
         {
           layer: 3,
+          minimized: false,
           src: "./S3_Rilla/Abstract/abstract.png",
           dimensions: {
             top: 100,
@@ -112,6 +120,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 2,
+          minimized: false,
           src: "./S3_Rilla/Abstract/docs.png",
           dimensions: {
             top: 454,
@@ -122,6 +131,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 1,
+          minimized: false,
           src: "./S3_Rilla/Abstract/pdf.png",
           dimensions: {
             top: 129,
@@ -134,12 +144,13 @@ const DataProvider = (props) => {
     },
     {
       index: 4,
-      locked: false,
+      locked: true,
       thumbnail: "./S4_Chip/Background.jpg",
       background: "./S4_Chip/Background.jpg",
       windows: [
         {
           layer: 4,
+          minimized: false,
           src: "./S4_Chip/video_transcript.png",
           dimensions: {
             top: 113,
@@ -150,6 +161,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 3,
+          minimized: false,
           src: "./S4_Chip/hiteam.png",
           dimensions: {
             top: 240,
@@ -160,6 +172,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 2,
+          minimized: false,
           src: "./S4_Chip/audio.png",
           dimensions: {
             top: 59,
@@ -170,6 +183,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 1,
+          minimized: false,
           src: "./S4_Chip/discord_rilla.png",
           dimensions: {
             top: 585,
@@ -188,6 +202,7 @@ const DataProvider = (props) => {
       windows: [
         {
           layer: 3,
+          minimized: false,
           src: "./S5_Kalervo/discussion.png",
           dimensions: {
             top: 90,
@@ -198,6 +213,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 2,
+          minimized: false,
           src: "./S5_Kalervo/docs.png",
           dimensions: {
             top: 90,
@@ -208,6 +224,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 1,
+          minimized: false,
           src: "./S5_Kalervo/discord_rilla.png",
           dimensions: {
             top: 205,
@@ -226,6 +243,7 @@ const DataProvider = (props) => {
       windows: [
         {
           layer: 6,
+          minimized: false,
           src: "./S6_Enric/docs2.png",
           dimensions: {
             top: 109,
@@ -236,6 +254,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 5,
+          minimized: false,
           src: "./S6_Enric/docs1.png",
           dimensions: {
             top: 109,
@@ -246,6 +265,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 4,
+          minimized: false,
           src: "./S6_Enric/pic3.png",
           dimensions: {
             top: 58,
@@ -256,6 +276,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 3,
+          minimized: false,
           src: "./S6_Enric/pic2.png",
           dimensions: {
             top: 380,
@@ -266,6 +287,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 2,
+          minimized: false,
           src: "./S6_Enric/pic4.png",
           dimensions: {
             top: 587,
@@ -276,6 +298,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 1,
+          minimized: false,
           src: "./S6_Enric/pic1.png",
           dimensions: {
             top: 666,
@@ -294,6 +317,7 @@ const DataProvider = (props) => {
       windows: [
         {
           layer: 4,
+          minimized: false,
           src: "./S7_Femke/gif.png",
           link: "https://y.yarn.co/7d9a564e-e131-4f7d-9ced-708018d38702_text.gif",
           dimensions: {
@@ -305,6 +329,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 3,
+          minimized: false,
           src: "./S7_Femke/blackboard.png",
           dimensions: {
             top: 39,
@@ -315,6 +340,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 2,
+          minimized: false,
           src: "./S7_Femke/miro.png",
           link: "https://miro.com/app/board/uXjVNyLKL2M=/",
           dimensions: {
@@ -326,6 +352,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 1,
+          minimized: false,
           src: "./S7_Femke/word.png",
           dimensions: {
             top: 63,
@@ -338,12 +365,13 @@ const DataProvider = (props) => {
     },
     {
       index: 8,
-      locked: false,
+      locked: true,
       thumbnail: "./S8_Vadim/Background.jpeg",
       background: "./S8_Vadim/Background.jpeg",
       windows: [
         {
           layer: 6,
+          minimized: false,
           src: "./S8_Vadim/word1.png",
           dimensions: {
             top: 82,
@@ -354,6 +382,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 5,
+          minimized: false,
           src: "./S8_Vadim/word2.png",
           dimensions: {
             top: 280,
@@ -364,6 +393,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 4,
+          minimized: false,
           src: "./S8_Vadim/unity.png",
           dimensions: {
             top: 606,
@@ -374,6 +404,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 3,
+          minimized: false,
           src: "./S8_Vadim/trello.png",
           dimensions: {
             top: 82,
@@ -384,6 +415,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 2,
+          minimized: false,
           src: "./S8_Vadim/gitKraken.png",
           dimensions: {
             top: 216,
@@ -394,6 +426,7 @@ const DataProvider = (props) => {
         },
         {
           layer: 1,
+          minimized: false,
           src: "./S8_Vadim/ryder.png",
           dimensions: {
             top: 606,
@@ -406,7 +439,7 @@ const DataProvider = (props) => {
     },
     {
       index: 9,
-      locked: false,
+      locked: true,
       thumbnail: "./S9_Shahrom/Background.jpg",
       background: "./S9_Shahrom/Background.jpg",
       windows: [],
@@ -461,6 +494,21 @@ const DataProvider = (props) => {
     setSwitching(false);
   }
 
+  function updateScreen(index, properties) {
+    // pass the index (as defined in each object, not the positional index),
+    // and pass an object containing all properties that need to be updated
+
+    if (index <= 8 && index >= 0) {
+      const updated_screens_state = screensState;
+      const updated_screen = screensState[index];
+      for (const key in properties) {
+        updated_screen[key] = properties[key];
+      }
+      updated_screens_state[index] = updated_screen;
+      setScreensState(updated_screens_state);
+    }
+  }
+
   function switchScreen(idx) {
     if (idx > 0 && idx < 10) setActiveScreen(idx);
     hideSwitcher();
@@ -478,6 +526,7 @@ const DataProvider = (props) => {
         showSwitcher,
         hideSwitcher,
         switchScreen,
+        updateScreen,
       }}
     >
       <ScreenSwitcher
