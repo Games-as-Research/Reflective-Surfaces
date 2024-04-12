@@ -1,6 +1,6 @@
 import AppleIcon from "../icons/appleIcon";
 import ControlCenter from "../icons/controlCenter";
-import AppleSearch from "../icons/appleSearch";
+import AppleReset from "../icons/appleReset";
 import DesktopViewer from "../icons/desktopViewer";
 
 import "./MacMenuBar.css";
@@ -32,7 +32,11 @@ const MacMenuBar = (props) => {
         </p>
 
         <DesktopViewer />
-        <AppleSearch />
+        <AppleReset
+          onClick={() => {
+            DataC.resetScreen(0);
+          }}
+        />
         <ControlCenter />
         <p className="menubar-item">Thu Mar 7</p>
         <p className="menubar-item">10:09</p>
