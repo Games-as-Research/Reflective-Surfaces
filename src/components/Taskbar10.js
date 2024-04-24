@@ -1,4 +1,4 @@
-import "./Taskbar10.css";
+import "../stylesheets/Taskbar10.css";
 import Windows10Logo from "../icons/windows10";
 import WindowsSearch from "../icons/windowsSearch";
 import TaskView from "../icons/taskview";

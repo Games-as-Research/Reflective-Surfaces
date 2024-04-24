@@ -2,7 +2,7 @@ import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import "./global.css";
+import "./stylesheets/index.css";
 import { DataProvider } from "./contexts/DataContext";
 
 const container = document.getElementById("root");

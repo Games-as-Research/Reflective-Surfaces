@@ -3,7 +3,7 @@ import ControlCenter from "../icons/controlCenter";
 import AppleReset from "../icons/appleReset";
 import DesktopViewer from "../icons/desktopViewer";
 
-import "./MacMenuBar.css";
+import "../stylesheets/MacMenuBar.css";
 import { useContext } from "react";
 import DataContext from "../contexts/DataContext";
 

@@ -2,7 +2,7 @@ import MacMenuBar from "./MacMenuBar";
 import Taskbar10 from "./Taskbar10";
 import Window from "./Window";
 import { useState } from "react";
-import "./Screen.css";
+import "../stylesheets/Screen.css";
 
 const MIN_WINDOWS_PER_SCREEN = 3;
 

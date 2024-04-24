@@ -1,5 +1,5 @@
 import { IoLockClosed } from "react-icons/io5";
-import "./DesktopPreview.css";
+import "../stylesheets/DesktopPreview.css";
 
 const Preview = (props) => {
   if (props.locked) {

@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import Preview from "./DesktopPreview";
 import { animated, useSpring } from "@react-spring/web";
-import "./ScreenSwitcher.css";
+import "../stylesheets/ScreenSwitcher.css";
 
 const ScreenSwitcher = (props) => {
   const spring = useSpring({
