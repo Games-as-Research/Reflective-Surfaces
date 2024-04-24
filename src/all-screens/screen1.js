@@ -1,14 +1,14 @@
 import Screen from "../components/Screen";
 import { useContext, useState, useEffect } from "react";
-import DataContext from "../contexts/DataContext";
+import GameManager from "../managers/GameManager";
 
 const Screen1 = (props) => {
-  const DataC = useContext(DataContext);
-  const [ordWindows, setOrdWindows] = useState(DataC.screensState[0].windows);
+  const GameMan = useContext(GameManager);
+  const [ordWindows, setOrdWindows] = useState(GameMan.screensState[0].windows);
 
   useEffect(() => {
-    if (DataC.screensState[0].locked) {
-      DataC.updateScreen(0, { locked: false });
+    if (GameMan.screensState[0].locked) {
+      GameMan.updateScreen(0, { locked: false });
     }
   }, []);
   
@@ -16,7 +16,7 @@ const Screen1 = (props) => {
     <Screen
       windows={ordWindows}
       setWindows={setOrdWindows}
-      backgroundImage={DataC.screensState[0].background}
+      backgroundImage={GameMan.screensState[0].background}
     />
   );
 };

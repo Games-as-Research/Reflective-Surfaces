@@ -2,8 +2,8 @@ import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import "./stylesheets/index.css";
-import { DataProvider } from "./contexts/DataContext";
+import "./index.css";
+import { GameManagementProvider } from "./managers/GameManager";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -11,9 +11,9 @@ const root = createRoot(container);
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <DataProvider>
+      <GameManagementProvider>
         <App />
-      </DataProvider>
+      </GameManagementProvider>
     </BrowserRouter>
   </StrictMode>
 );

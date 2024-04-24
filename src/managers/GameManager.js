@@ -1,13 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import ScreenSwitcher from "../components/ScreenSwitcher";
-import default_state from "./default_values";
+import DEFAULT_STATE from "./DefaultState";
 const LOCAL_STORAGE_KEYS = {
   SCREEN_INDEX: "active_screen",
 };
 
-const DataContext = createContext(null);
-const DataProvider = (props) => {
-  const [screensState, setScreensState] = useState(default_state);
+const GameManager = createContext(null);
+const GameManagementProvider = (props) => {
+  const [screensState, setScreensState] = useState(DEFAULT_STATE);
   const [activeScreen, setActiveScreen] = useState(-1);
   const [switching, setSwitching] = useState(false);
 
@@ -59,16 +59,16 @@ const DataProvider = (props) => {
 
   function resetScreen(index) {
     const updated_screens_state = screensState;
-    console.log(default_state[index]);
+    console.log(DEFAULT_STATE[index]);
     console.log(updated_screens_state[index]);
 
-    updated_screens_state[index] = default_state[index];
+    updated_screens_state[index] = DEFAULT_STATE[index];
     updated_screens_state[index].locked = false;
     setScreensState(updated_screens_state);
   }
 
   function resetSystem() {
-    setScreensState(default_state);
+    setScreensState(DEFAULT_STATE);
   }
   function updateScreen(index, properties) {
     // pass the index (as defined in each object, not the positional index),
@@ -90,7 +90,7 @@ const DataProvider = (props) => {
     hideSwitcher();
   }
   return (
-    <DataContext.Provider
+    <GameManager.Provider
       value={{
         // State
         activeScreen,
@@ -114,9 +114,9 @@ const DataProvider = (props) => {
         close={hideSwitcher}
       />
       {props.children}
-    </DataContext.Provider>
+    </GameManager.Provider>
   );
 };
 
-export default DataContext;
-export { DataProvider };
+export default GameManager;
+export { GameManagementProvider };

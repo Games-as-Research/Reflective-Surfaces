@@ -1,16 +1,16 @@
 import "../stylesheets/Taskbar10.css";
-import Windows10Logo from "../icons/windows10";
-import WindowsSearch from "../icons/windowsSearch";
-import TaskView from "../icons/taskview";
-import WindowsMore from "../icons/windowsMore";
-import Windows10Charging from "../icons/windows10Charging";
-import Windows10Wifi from "../icons/windows10Wifi";
-import WindowsMute from "../icons/windowsMute";
-import Windows10Notifications from "../icons/windows10Notification";
+import Windows10Logo from "./windows-icons/windows10";
+import WindowsSearch from "./windows-icons/windowsSearch";
+import TaskView from "./windows-icons/taskview";
+import WindowsMore from "./windows-icons/windowsMore";
+import Windows10Charging from "./windows-icons/windows10Charging";
+import Windows10Wifi from "./windows-icons/windows10Wifi";
+import WindowsMute from "./windows-icons/windowsMute";
+import Windows10Notifications from "./windows-icons/windows10Notification";
 import { useContext } from "react";
-import DataContext from "../contexts/DataContext";
+import GameManager from "../managers/GameManager";
 const Taskbar10 = (props) => {
-  const DataC = useContext(DataContext);
+  const GameMan = useContext(GameManager);
   return (
     <div className="taskbar-container">
       <div className="taskbar-leftside">
@@ -22,10 +22,10 @@ const Taskbar10 = (props) => {
         <TaskView />
       </div>
       <div className="taskbar-rightside">
-        <p className="screen-controls" onClick={DataC.previousScreen}>
+        <p className="screen-controls" onClick={GameMan.previousScreen}>
           {"<"}
         </p>
-        <p className="screen-controls" onClick={DataC.nextScreen}>
+        <p className="screen-controls" onClick={GameMan.nextScreen}>
           {">"}
         </p>
 

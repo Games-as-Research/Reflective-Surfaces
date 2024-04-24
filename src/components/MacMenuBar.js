@@ -1,14 +1,14 @@
-import AppleIcon from "../icons/appleIcon";
-import ControlCenter from "../icons/controlCenter";
-import AppleReset from "../icons/appleReset";
-import DesktopViewer from "../icons/desktopViewer";
+import AppleIcon from "./apple-icons/appleIcon";
+import ControlCenter from "./apple-icons/controlCenter";
+import AppleReset from "./apple-icons/appleReset";
+import DesktopViewer from "./apple-icons/desktopViewer";
 
 import "../stylesheets/MacMenuBar.css";
 import { useContext } from "react";
-import DataContext from "../contexts/DataContext";
+import GameManager from "../managers/GameManager";
 
 const MacMenuBar = (props) => {
-  const DataC = useContext(DataContext);
+  const GameMan = useContext(GameManager);
   return (
     <div className="menubar-container">
       <div className="menubar-leftside">
@@ -23,18 +23,18 @@ const MacMenuBar = (props) => {
       </div>
 
       <div className="menubar-rightside">
-        <p className="menubar-item" onClick={DataC.previousScreen}>
+        <p className="menubar-item" onClick={GameMan.previousScreen}>
           {"<"}
         </p>
 
-        <p className="menubar-item" onClick={DataC.nextScreen}>
+        <p className="menubar-item" onClick={GameMan.nextScreen}>
           {">"}
         </p>
 
         <DesktopViewer />
         <AppleReset
           onClick={() => {
-            DataC.resetScreen(0);
+            GameMan.resetScreen(0);
           }}
         />
         <ControlCenter />

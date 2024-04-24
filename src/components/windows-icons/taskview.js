@@ -1,14 +1,14 @@
 import * as React from "react";
-import DataContext from "../contexts/DataContext";
+import GameManager from "../../managers/GameManager";
 const TaskView = (props) => {
-  const DataC = React.useContext(DataContext);
+  const GameMan = React.useContext(GameManager);
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={16}
       height={15}
       fill="none"
-      onClick={DataC.showSwitcher}
+      onClick={GameMan.showSwitcher}
       {...props}
     >
       <path

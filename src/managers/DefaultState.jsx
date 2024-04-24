@@ -1,4 +1,4 @@
-const default_state = [
+const DEFAULT_STATE = [
   {
     index: 1,
     locked: false,
@@ -437,4 +437,4 @@ const default_state = [
   },
 ];
 
-export default default_state;
+export default DEFAULT_STATE;
