@@ -32,7 +32,11 @@ const GameManagementProvider = (props) => {
     }
   }, [activeScreen]);
 
-  function nextScreen() {
+  function nextScreen(index = null) {
+    if (index && index > 0 && index <= 9) {
+      setActiveScreen(index);
+    }
+
     console.log("Next Screen");
     if (activeScreen === 9) {
       setActiveScreen(1);
