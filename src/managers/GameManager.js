@@ -21,8 +21,8 @@ const GameManagementProvider = (props) => {
         if (storage_val) {
           setActiveScreen(parseInt(storage_val));
         } else {
-          setActiveScreen(1);
-          localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, 1);
+          setActiveScreen(0);
+          localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, 0);
         }
       } else {
         localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, activeScreen);
@@ -33,7 +33,7 @@ const GameManagementProvider = (props) => {
   }, [activeScreen]);
 
   function nextScreen(index = null) {
-    if (index && index > 0 && index <= 9) {
+    if (index && index >= 0 && index <= 9) {
       setActiveScreen(index);
     }
 
@@ -77,6 +77,9 @@ const GameManagementProvider = (props) => {
   function updateScreen(index, properties) {
     // pass the index (as defined in each object, not the positional index),
     // and pass an object containing all properties that need to be updated
+
+    //MSA: This discrepancy between the two index values is going 
+    //  to get complicated when I revisit this code in the future 
 
     if (index <= 8 && index >= 0) {
       const updated_screens_state = screensState;

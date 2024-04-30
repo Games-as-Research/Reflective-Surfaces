@@ -19,18 +19,19 @@
 }
 
 .play-button {
+  display: flex;
   border-width: 2px;
   border-radius: 10px;
   border-color: white;
   border-style: solid;
   width: 15%;
   height: 6%;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .play-button-text {
   color: white;
   font-size: 28px;
-  margin: 0px;
   text-align: center;
 }
