@@ -13,7 +13,7 @@ const Screen8 = (props) => {
   }, []);
   return (
     <>
-      <P5JS />
+      {/* <P5JS /> */}
       <Screen
         windows={ordWindows}
         setWindows={setOrdWindows}
