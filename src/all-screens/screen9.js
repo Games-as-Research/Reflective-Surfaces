@@ -1,6 +1,7 @@
 import Screen from "../components/Screen";
 import { useContext, useEffect, useState } from "react";
 import GameManager from "../managers/GameManager";
+import DesktopIcon from "../components/DesktopIcon";
 
 const Screen9 = (props) => {
   const GameMan = useContext(GameManager);
@@ -11,11 +12,33 @@ const Screen9 = (props) => {
     }
   }, []);
   return (
-    <Screen
-      windows={ordWindows}
-      setWindows={setOrdWindows}
-      backgroundImage={GameMan.screensState[8].background}
-    />
+    <>
+      <Screen
+        windows={ordWindows}
+        setWindows={setOrdWindows}
+        backgroundImage={GameMan.screensState[8].background}
+      />
+      <DesktopIcon
+        default={{ x: 1550, y: 50 }}
+        label={"Macintosh HD"}
+        sprite={null}
+      />
+      <DesktopIcon
+        default={{ x: 1550, y: 200 }}
+        label={"Screenshot 2024-02-11-11.59PM.png"}
+        sprite={null}
+      />
+      <DesktopIcon
+        default={{ x: 1550, y: 300 }}
+        label={"Unity 2022.3.15f1"}
+        sprite={null}
+      />
+      <DesktopIcon
+        default={{ x: 1550, y: 300 }}
+        label={"Spotify"}
+        sprite={null}
+      />
+    </>
   );
 };
 
