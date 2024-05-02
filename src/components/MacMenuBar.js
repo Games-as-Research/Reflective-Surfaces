@@ -8,7 +8,6 @@ import { useContext } from "react";
 import GameManager from "../managers/GameManager";
 
 const MacMenuBar = (props) => {
-  const GameMan = useContext(GameManager);
   return (
     <div className="menubar-container">
       <div className="menubar-leftside">
@@ -23,25 +22,42 @@ const MacMenuBar = (props) => {
       </div>
 
       <div className="menubar-rightside">
-        <p className="menubar-item" onClick={GameMan.previousScreen}>
-          {"<"}
-        </p>
-
-        <p className="menubar-item" onClick={GameMan.nextScreen}>
-          {">"}
-        </p>
+        <ScreenControls />
+        <div style={{ width: 20 }} />
 
         <DesktopViewer />
-        <AppleReset
-          onClick={() => {
-            GameMan.resetScreen(0);
-          }}
-        />
+        <div style={{ width: 20 }} />
         <ControlCenter />
-        <p className="menubar-item">Thu Mar 7</p>
-        <p className="menubar-item">10:09</p>
+        <div style={{ width: 20 }} />
+
+        <MacDateTime />
       </div>
     </div>
+  );
+};
+
+const MacDateTime = (props) => {
+  return (
+    <div className="mac-datetime-container">
+      <p className="mac-datetime">Thu Mar 7</p>
+      <p className="mac-datetime">10:09</p>
+    </div>
+  );
+};
+
+const ScreenControls = (props) => {
+  const GameMan = useContext(GameManager);
+
+  return (
+    <>
+      <p className="menubar-item" onClick={GameMan.previousScreen}>
+        {"<"}
+      </p>
+      <div style={{ width: 20 }} />
+      <p className="menubar-item" onClick={GameMan.nextScreen}>
+        {">"}
+      </p>{" "}
+    </>
   );
 };
 

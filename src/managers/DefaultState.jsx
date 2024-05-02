@@ -376,7 +376,7 @@ const DEFAULT_STATE = [
         minimized: false,
         src: "./S8_Vadim/word2.png",
         dimensions: {
-          top: 280,
+          top: 140,
           left: 624,
           width: 596,
           height: 686,
@@ -387,7 +387,7 @@ const DEFAULT_STATE = [
         minimized: false,
         src: "./S8_Vadim/unity.png",
         dimensions: {
-          top: 606,
+          top: 404,
           left: 326,
           width: 521,
           height: 361,
@@ -420,7 +420,7 @@ const DEFAULT_STATE = [
         minimized: false,
         src: "./S8_Vadim/ryder.png",
         dimensions: {
-          top: 606,
+          top: 550,
           left: 86,
           width: 490,
           height: 290,

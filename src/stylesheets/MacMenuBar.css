@@ -32,5 +32,24 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 20%;
+
+}
+
+.mac-datetime-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.mac-datetime {
+  font-size: 15px;
+  font-family: sans-serif;
+  margin-right: 10px;
+}
+
+.show-borders {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
 }
