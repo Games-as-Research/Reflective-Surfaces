@@ -237,7 +237,7 @@ const DEFAULT_STATE = [
         minimized: false,
         src: "./S6_Enric/docs2.png",
         dimensions: {
-          top: 109,
+          top: 30,
           left: 1123,
           width: 528,
           height: 862,
@@ -248,7 +248,7 @@ const DEFAULT_STATE = [
         minimized: false,
         src: "./S6_Enric/docs1.png",
         dimensions: {
-          top: 109,
+          top: 30,
           left: 532,
           width: 576,
           height: 862,
@@ -259,8 +259,8 @@ const DEFAULT_STATE = [
         minimized: false,
         src: "./S6_Enric/pic3.png",
         dimensions: {
-          top: 58,
-          left: 82,
+          top: 20,
+          left: 42,
           width: 188,
           height: 529,
         },
@@ -270,7 +270,7 @@ const DEFAULT_STATE = [
         minimized: false,
         src: "./S6_Enric/pic2.png",
         dimensions: {
-          top: 380,
+          top: 100,
           left: 192,
           width: 408,
           height: 412,
@@ -281,8 +281,8 @@ const DEFAULT_STATE = [
         minimized: false,
         src: "./S6_Enric/pic4.png",
         dimensions: {
-          top: 587,
-          left: 20,
+          top: 200,
+          left: 44,
           width: 415,
           height: 486,
         },
@@ -292,7 +292,7 @@ const DEFAULT_STATE = [
         minimized: false,
         src: "./S6_Enric/pic1.png",
         dimensions: {
-          top: 666,
+          top: 333,
           left: 461,
           width: 499,
           height: 387,
