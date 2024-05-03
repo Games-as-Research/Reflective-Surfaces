@@ -18,7 +18,7 @@ const Screen8 = (props) => {
         windows={ordWindows}
         setWindows={setOrdWindows}
         backgroundImage={GameMan.screensState[7].background}
-        OS={"10"}
+        OS={"11"}
       />
     </>
   );

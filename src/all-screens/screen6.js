@@ -17,7 +17,7 @@ const Screen6 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={GameMan.screensState[5].background}
-      OS={"10"}
+      OS={"11"}
     />
   );
 };
