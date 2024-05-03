@@ -1,8 +1,10 @@
 import MacMenuBar from "./MacMenuBar";
 import Taskbar10 from "./Taskbar10";
+import Taskbar11 from "./Taskbar11";
 import Window from "./Window";
 import { useState } from "react";
 import "../stylesheets/Screen.css";
+import MacDock from "./MacDock";
 
 const MIN_WINDOWS_PER_SCREEN = 3;
 
@@ -46,7 +48,15 @@ const Screen = (props) => {
           link={item.link}
         />
       ))}
-      {props.OS === "10" ? <Taskbar10 /> : props.OS === "11" ? null : null}
+      {props.OS ? (
+        props.OS === "10" ? (
+          <Taskbar10 />
+        ) : (
+          <Taskbar11 />
+        )
+      ) : (
+        <MacDock />
+      )}
     </>
   );
 };
