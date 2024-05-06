@@ -20,22 +20,22 @@ const Screen9 = (props) => {
         dock_icons={["FIREFOX", "OBSIDIAN", "UNITY", "TERMINAL"]}
       />
       <DesktopIcon
-        default={{ x: 1650, y: 50 }}
+        default={{ x: 1400, y: 50 }}
         label={"Macintosh HD"}
         sprite={"./Icons/macintosh_hd.png"}
       />
       <DesktopIcon
-        default={{ x: 1650, y: 200 }}
+        default={{ x: 1400, y: 200 }}
         label={"Photos"}
         sprite={"./Icons/images_folder.png"}
       />
       <DesktopIcon
-        default={{ x: 1650, y: 300 }}
+        default={{ x: 1400, y: 300 }}
         label={"Unity 2022.3.15f1"}
         sprite={"./Icons/unity.png"}
       />
       <DesktopIcon
-        default={{ x: 1650, y: 500 }}
+        default={{ x: 1400, y: 500 }}
         label={"Spotify"}
         sprite={"./Icons/spotify.png"}
       />
