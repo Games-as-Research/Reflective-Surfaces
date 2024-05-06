@@ -17,6 +17,7 @@ const Screen9 = (props) => {
         windows={ordWindows}
         setWindows={setOrdWindows}
         backgroundImage={GameMan.screensState[8].background}
+        dock_icons={["FIREFOX", "OBSIDIAN", "UNITY", "DISCORD"]}
       />
       <DesktopIcon
         default={{ x: 1650, y: 50 }}

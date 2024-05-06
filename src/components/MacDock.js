@@ -1,27 +1,41 @@
 import "../stylesheets/MacDock.css";
 
+const ICON_LOCATIONS = {
+  FIREFOX: "./Icons/firefox.png",
+  CHROME: "./Icons/chrome.png",
+  FINDER: "./Icons/finder.png",
+  VSCODE: "./Icons/vscode.png",
+  PREVIEW: "./Icons/preview.png",
+  HD: "./Icons/macintosh_hd.png",
+  GARAGEBAND: "./Icons/garage_band.png",
+  TEXTEDIT: "./Icons/textedit.png",
+  DISCORD: "./Icons/discord.png",
+  OBSIDIAN: "./Icons/obsidian.png",
+  RIDER: "./Icons/rider.png",
+  UNITY: "./Icons/unity.png",
+  TRASH_EMPTY: "./Icons/trash_empty.png",
+  TRASH_FULL: "./Icons/trash_full.png",
+};
+
+/**
+ * @param {*} props -> {icons}
+ * icons: an array of strings containing names same as ICONS_LOCATIONS keys.
+ * @returns Dock component for mac
+ */
 const MacDock = (props) => {
   return (
     <div className="dock-container">
-      <DockIcon src={"./icons/finder.png"} />
+      <DockIcon src={ICON_LOCATIONS.FINDER} />
 
-      {/* Add the rest of icons here */}
-
-      <DockIcon src={"./icons/chrome.png"} />
-      <DockIcon src={"./icons/vscode.png"} />
-      <DockIcon src={"./icons/preview.png"} />
-      <DockIcon src={"./icons/garage_band.png"} />
-      <DockIcon src={"./icons/textedit.png"} />
-      <DockIcon src={"./icons/discord.png"} />
-      <DockIcon src={"./icons/obsidian.png"} />
-      <DockIcon src={"./icons/firefox.png"} />
-      <DockIcon src={"./icons/rider.png"} />
+      {props.icons?.map((icon) => (
+        <DockIcon src={ICON_LOCATIONS[icon]} />
+      ))}
 
       <div className="divider" />
       {props.trashEmpty ? (
-        <DockIcon src={"./icons/Trash-Empty-icon.png"} />
+        <DockIcon src={ICON_LOCATIONS.TRASH_EMPTY} />
       ) : (
-        <DockIcon src={"./icons/Trash-full-icon.png"} />
+        <DockIcon src={ICON_LOCATIONS.TRASH_FULL} />
       )}
     </div>
   );

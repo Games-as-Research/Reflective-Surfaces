@@ -55,7 +55,7 @@ const Screen = (props) => {
           <Taskbar11 />
         )
       ) : (
-        <MacDock />
+        <MacDock icons={props.dock_icons} />
       )}
     </div>
   );
