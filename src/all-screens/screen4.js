@@ -17,6 +17,18 @@ const Screen4 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={GameMan.screensState[3].background}
+      dock_icons={[
+        "FIREFOX",
+        "PAGES",
+        "MAIL",
+        "BLENDER",
+        "MUSIC",
+        "GARAGEBAND",
+        "TEXTEDIT",
+        "DISCORD",
+        "ZOTERO",
+        "VOICEMEMO",
+      ]}
     />
   );
 };

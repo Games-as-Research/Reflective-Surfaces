@@ -11,12 +11,13 @@ const Screen1 = (props) => {
       GameMan.updateScreen(0, { locked: false });
     }
   }, []);
-  
+
   return (
     <Screen
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={GameMan.screensState[0].background}
+      dock_icons={["CHROME", "VSCODE", "UNITY"]}
     />
   );
 };

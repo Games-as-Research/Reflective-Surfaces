@@ -15,6 +15,7 @@ const Screen5 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={GameMan.screensState[4].background}
+      dock_icons={["FIREFOX", "TEXTEDIT", "DISCORD", "SPOTIFY"]}
     />
   );
 };

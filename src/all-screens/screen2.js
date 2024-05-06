@@ -17,6 +17,7 @@ const Screen2 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={GameMan.screensState[1].background}
+      dock_icons={["FIREFOX", "OBSIDIAN", "RIDER", "DISCORD"]}
     />
   );
 };

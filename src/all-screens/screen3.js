@@ -15,6 +15,7 @@ const Screen3 = (props) => {
       windows={ordWindows}
       setWindows={setOrdWindows}
       backgroundImage={GameMan.screensState[2].background}
+      dock_icons={["CHROME", "PREVIEW", "TEXTEDIT", "DISCORD", "GITHUB"]}
     />
   );
 };
