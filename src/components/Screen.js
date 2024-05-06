@@ -36,6 +36,7 @@ const Screen = (props) => {
         alt="Screen Background"
         src={props.backgroundImage}
         data-scroll-to="backgroundImage"
+        draggable={false}
       />
       {props.windows.map((item, idx) => (
         <Window
