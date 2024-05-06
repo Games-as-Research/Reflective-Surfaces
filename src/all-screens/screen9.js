@@ -19,24 +19,24 @@ const Screen9 = (props) => {
         backgroundImage={GameMan.screensState[8].background}
       />
       <DesktopIcon
-        default={{ x: 1550, y: 50 }}
+        default={{ x: 1650, y: 50 }}
         label={"Macintosh HD"}
-        sprite={null}
+        sprite={"./Icons/macintosh_hd.png"}
       />
       <DesktopIcon
-        default={{ x: 1550, y: 200 }}
-        label={"Screenshot 2024-02-11-11.59PM.png"}
-        sprite={null}
+        default={{ x: 1650, y: 200 }}
+        label={"Photos"}
+        sprite={"./Icons/images_folder.png"}
       />
       <DesktopIcon
-        default={{ x: 1550, y: 300 }}
+        default={{ x: 1650, y: 300 }}
         label={"Unity 2022.3.15f1"}
-        sprite={null}
+        sprite={"./Icons/unity.png"}
       />
       <DesktopIcon
-        default={{ x: 1550, y: 300 }}
+        default={{ x: 1650, y: 500 }}
         label={"Spotify"}
-        sprite={null}
+        sprite={"./Icons/spotify.png"}
       />
     </>
   );

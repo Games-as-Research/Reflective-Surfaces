@@ -15,7 +15,7 @@ const DesktopIcon = (props) => {
       dragGrid={[50, 50]}
     >
       {/* Make into img component */}
-      <div className="icon-sprite" />
+      <img className="icon-sprite" src={props.sprite ?? ""}/>
       <p className="icon-label">{props.label}</p>
     </Rnd>
   );
