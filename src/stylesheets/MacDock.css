@@ -1,10 +1,29 @@
 .dock-container {
   display: flex;
-  top: 95%;
-  min-width: 100px;
-  min-height: 100px;
+  flex-direction: row;
+  height: 80px;
+  position: absolute;
+  background: rgba(52, 52, 52, 0.27);
+  border-radius: 20px;
+  border: 0.5px solid #a1a1a1;
+  justify-content: center;
+  align-items: center;
   align-self: center;
-  background-color: #49494970;
+  box-sizing: border-box;
+  top: 91%;
+
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+}
+
+.divider {
+  height: 70%;
+  border-color: #fff8;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .show-borders {
@@ -12,6 +31,3 @@
   border-style: solid;
   border-width: 1px;
 }
-
-/* 
-*/
