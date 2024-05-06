@@ -26,7 +26,7 @@ const Screen = (props) => {
     props.setWindows(newOrder);
   }
   return (
-    <>
+    <div className="screen-container">
       {props.OS !== "10" && props.OS !== "11" ? <MacMenuBar /> : null}
       <img
         className="background-image"
@@ -57,7 +57,7 @@ const Screen = (props) => {
       ) : (
         <MacDock />
       )}
-    </>
+    </div>
   );
 };
 
