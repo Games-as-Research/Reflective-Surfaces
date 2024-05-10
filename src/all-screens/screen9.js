@@ -5,7 +5,20 @@ import DesktopIcon from "../components/DesktopIcon";
 
 const DEFAULT_STATE = {
   background: "./S9_Shahrom/Background.jpg",
-  windows: [],
+  windows: [
+    {
+      layer: 1,
+      minimized: false,
+      type: "FINDER",
+      src: "./S9_Shahrom/infinite_recursion.png",
+      dimensions: {
+        top: 114,
+        left: 65,
+        width: 690,
+        height: 190,
+      },
+    },
+  ],
   dock_icons: ["FIREFOX", "OBSIDIAN", "UNITY", "TERMINAL"],
 };
 
@@ -14,7 +27,7 @@ const Screen9 = (props) => {
   useEffect(() => {
     GameMan.unlockScreen(8);
   }, []);
-  
+
   return (
     <>
       <Screen state={DEFAULT_STATE} />
