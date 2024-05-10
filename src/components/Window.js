@@ -10,7 +10,7 @@ const Window = (props) => {
 
   useEffect(() => {
     const element = imgRef?.current?.firstElementChild;
-    element.setAttribute("draggable", false);
+    element?.setAttribute("draggable", false);
   }, [props.config.minimized]);
 
   function DragHandler() {
