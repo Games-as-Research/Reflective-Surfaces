@@ -1,7 +1,7 @@
 import "../stylesheets/MacDock.css";
 import useMousePosition from "../customHooks/useMousePosition";
 import useWindowDimensions from "../customHooks/useWindowDimensions";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const ICON_LOCATIONS = {
   FIREFOX: "./Icons/firefox.png",
@@ -42,12 +42,18 @@ const MacDock = (props) => {
   const windowDimensions = useWindowDimensions();
 
   // These are percentages
-  const showDockThreshold = 0.95; 
-  const hideDockThreshold = 0.90; 
+  const showDockThreshold = 0.95;
+  const hideDockThreshold = 0.9;
 
-  if (!showDock && mousePosition.y / windowDimensions.height > showDockThreshold) {
+  if (
+    !showDock &&
+    mousePosition.y / windowDimensions.height > showDockThreshold
+  ) {
     setShowDock(true);
-  } else if ( showDock && mousePosition.y / windowDimensions.height < hideDockThreshold) {
+  } else if (
+    showDock &&
+    mousePosition.y / windowDimensions.height < hideDockThreshold
+  ) {
     setShowDock(false);
   }
 

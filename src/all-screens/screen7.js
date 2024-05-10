@@ -3,12 +3,13 @@ import { useContext, useEffect, useState } from "react";
 import GameManager from "../managers/GameManager";
 
 const DEFAULT_STATE = {
-  thumbnail: "./S7_Femke/Background.jpeg",
   background: "./S7_Femke/Background.jpeg",
+  OS: "10",
   windows: [
     {
       layer: 4,
       minimized: false,
+      type: "CHROME",
       src: "./S7_Femke/gif.png",
       link: "https://y.yarn.co/7d9a564e-e131-4f7d-9ced-708018d38702_text.gif",
       dimensions: {
@@ -21,6 +22,7 @@ const DEFAULT_STATE = {
     {
       layer: 3,
       minimized: false,
+      type: "CHROME",
       src: "./S7_Femke/blackboard.png",
       dimensions: {
         top: 39,
@@ -32,6 +34,7 @@ const DEFAULT_STATE = {
     {
       layer: 2,
       minimized: false,
+      type: "CHROME",
       src: "./S7_Femke/miro.png",
       link: "https://miro.com/app/board/uXjVNyLKL2M=/",
       dimensions: {
@@ -44,6 +47,7 @@ const DEFAULT_STATE = {
     {
       layer: 1,
       minimized: false,
+      type: "WORD",
       src: "./S7_Femke/word.png",
       dimensions: {
         top: 63,
@@ -53,7 +57,6 @@ const DEFAULT_STATE = {
       },
     },
   ],
-  OS: "10",
 };
 
 const Screen7 = (props) => {

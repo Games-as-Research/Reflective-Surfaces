@@ -3,12 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import GameManager from "../managers/GameManager";
 
 const DEFAULT_STATE = {
-  thumbnail: "./S2_Matt/Background.png",
   background: "./S2_Matt/Background.png",
   windows: [
     {
       layer: 5,
       minimized: false,
+      type: "OBSIDIAN",
       src: "./S2_Matt/obsidian.png",
       dimensions: {
         top: 80,
@@ -20,6 +20,7 @@ const DEFAULT_STATE = {
     {
       layer: 4,
       minimized: false,
+      type: "FIREFOX",
       src: "./S2_Matt/firefox.png",
       dimensions: {
         top: 346,
@@ -31,6 +32,7 @@ const DEFAULT_STATE = {
     {
       layer: 3,
       minimized: false,
+      type: "RIDER",
       src: "./S2_Matt/ryder.png",
       dimensions: {
         top: 380,
@@ -42,6 +44,7 @@ const DEFAULT_STATE = {
     {
       layer: 2,
       minimized: false,
+      type: "FIREFOX",
       src: "./S2_Matt/docs.png",
       dimensions: {
         top: 114,
@@ -53,6 +56,7 @@ const DEFAULT_STATE = {
     {
       layer: 1,
       minimized: false,
+      type: "FIREFOX",
       src: "./S2_Matt/github.png",
       dimensions: {
         top: 338,

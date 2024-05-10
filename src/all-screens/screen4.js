@@ -3,12 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import GameManager from "../managers/GameManager";
 
 const DEFAULT_STATE = {
-  thumbnail: "./S4_Chip/Background.jpg",
   background: "./S4_Chip/Background.jpg",
   windows: [
     {
       layer: 4,
       minimized: false,
+      type: "GARAGEBAND",
       src: "./S4_Chip/video_transcript.png",
       dimensions: {
         top: 113,
@@ -20,6 +20,7 @@ const DEFAULT_STATE = {
     {
       layer: 3,
       minimized: false,
+      type: "FIREFOX",
       src: "./S4_Chip/hiteam.png",
       dimensions: {
         top: 240,
@@ -31,6 +32,7 @@ const DEFAULT_STATE = {
     {
       layer: 2,
       minimized: false,
+      type: "GARAGEBAND",
       src: "./S4_Chip/audio.png",
       dimensions: {
         top: 59,
@@ -42,6 +44,7 @@ const DEFAULT_STATE = {
     {
       layer: 1,
       minimized: false,
+      type: "DISCORD",
       src: "./S4_Chip/discord_rilla.png",
       dimensions: {
         top: 585,

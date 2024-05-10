@@ -3,12 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import GameManager from "../managers/GameManager";
 
 const DEFAULT_STATE = {
-  thumbnail: "./S3_Rilla/Background.jpeg",
   background: "./S3_Rilla/Background.jpeg",
   windows: [
     {
       layer: 3,
       minimized: false,
+      type: "TEXTEDIT",
       src: "./S3_Rilla/Abstract/abstract.png",
       dimensions: {
         top: 100,
@@ -20,6 +20,7 @@ const DEFAULT_STATE = {
     {
       layer: 2,
       minimized: false,
+      type: "CHROME",
       src: "./S3_Rilla/Abstract/docs.png",
       dimensions: {
         top: 454,
@@ -31,6 +32,7 @@ const DEFAULT_STATE = {
     {
       layer: 1,
       minimized: false,
+      type: "PREVIEW",
       src: "./S3_Rilla/Abstract/pdf.png",
       dimensions: {
         top: 129,

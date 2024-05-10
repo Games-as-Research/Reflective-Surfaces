@@ -4,12 +4,13 @@ import { useContext, useEffect, useState } from "react";
 import GameManager from "../managers/GameManager";
 
 const DEFAULT_STATE = {
-  thumbnail: "./S8_Vadim/Background.jpeg",
   background: "./S8_Vadim/Background.jpeg",
+  OS: "11",
   windows: [
     {
       layer: 6,
       minimized: false,
+      type: "WORD",
       src: "./S8_Vadim/word1.png",
       dimensions: {
         top: 82,
@@ -21,6 +22,7 @@ const DEFAULT_STATE = {
     {
       layer: 5,
       minimized: false,
+      type: "WORD",
       src: "./S8_Vadim/word2.png",
       dimensions: {
         top: 140,
@@ -32,6 +34,7 @@ const DEFAULT_STATE = {
     {
       layer: 4,
       minimized: false,
+      type: "UNITY",
       src: "./S8_Vadim/unity.png",
       dimensions: {
         top: 404,
@@ -43,6 +46,7 @@ const DEFAULT_STATE = {
     {
       layer: 3,
       minimized: false,
+      type: "EDGE",
       src: "./S8_Vadim/trello.png",
       dimensions: {
         top: 82,
@@ -54,6 +58,7 @@ const DEFAULT_STATE = {
     {
       layer: 2,
       minimized: false,
+      type: "GITKRAKEN",
       src: "./S8_Vadim/gitKraken.png",
       dimensions: {
         top: 216,
@@ -65,6 +70,7 @@ const DEFAULT_STATE = {
     {
       layer: 1,
       minimized: false,
+      type: "RIDER",
       src: "./S8_Vadim/ryder.png",
       dimensions: {
         top: 550,
@@ -74,7 +80,6 @@ const DEFAULT_STATE = {
       },
     },
   ],
-  OS: "11",
 };
 
 const Screen8 = (props) => {

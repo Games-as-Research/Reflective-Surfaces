@@ -3,12 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import GameManager from "../managers/GameManager";
 
 const DEFAULT_STATE = {
-  thumbnail: "./S5_Kalervo/Background.jpeg",
   background: "./S5_Kalervo/Background.jpeg",
   windows: [
     {
       layer: 3,
       minimized: false,
+      type: "TEXTEDIT",
       src: "./S5_Kalervo/discussion.png",
       dimensions: {
         top: 90,
@@ -20,6 +20,7 @@ const DEFAULT_STATE = {
     {
       layer: 2,
       minimized: false,
+      type: "FIREFOX",
       src: "./S5_Kalervo/docs.png",
       dimensions: {
         top: 90,
@@ -31,6 +32,7 @@ const DEFAULT_STATE = {
     {
       layer: 1,
       minimized: false,
+      type: "DISCORD",
       src: "./S5_Kalervo/discord_rilla.png",
       dimensions: {
         top: 205,

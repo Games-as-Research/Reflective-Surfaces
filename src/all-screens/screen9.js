@@ -4,7 +4,6 @@ import GameManager from "../managers/GameManager";
 import DesktopIcon from "../components/DesktopIcon";
 
 const DEFAULT_STATE = {
-  thumbnail: "./S9_Shahrom/Background.jpg",
   background: "./S9_Shahrom/Background.jpg",
   windows: [],
   dock_icons: ["FIREFOX", "OBSIDIAN", "UNITY", "TERMINAL"],

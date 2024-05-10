@@ -1,11 +1,11 @@
 import Screen from "../components/Screen";
 
 const DEFAULT_STATE = {
-  thumbnail: "./S1_Pippin/Background.png",
   background: "./S1_Pippin/Background.png",
   windows: [
     {
       layer: 2,
+      type: "CHROME",
       minimized: false,
       src: "./S1_Pippin/github.png",
       dimensions: {
@@ -18,6 +18,7 @@ const DEFAULT_STATE = {
     {
       layer: 1,
       minimized: false,
+      type: "VSCODE",
       src: "./S1_Pippin/vscode.png",
       dimensions: {
         top: 70,
