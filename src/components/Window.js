@@ -1,47 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Rnd } from "react-rnd";
 
 const Window = (props) => {
-  const [click, setClick] = useState(true);
+  const [dimensions, setDimensions] = useState(props.config.dimensions);
 
   function DragHandler() {
-    setClick(false);
-    props.onClick(props.layer);
+    props.onClick(props.config.layer);
   }
-  function ClickHandler() {
-    if (click) {
-      OpenLink();
-    }
-    setClick(true);
-  }
-  function OpenLink() {
-    if (props.link) {
-      window.open(props.link);
-    }
+
+  function DragStopHandler(e, data) {
+    props.onDragStop(props.index, data.x, data.y);
   }
 
   return (
-    <Rnd
-      // bounds={"parent"}
-      onDragStart={DragHandler}
-      lockAspectRatio={true}
-      default={{
-        x: props.dimensions.left,
-        y: props.dimensions.top,
-        width: props.dimensions.width,
-        height: props.dimensions.height,
-      }}
-      style={{
-        background: `url(${props.src})`,
-        backgroundSize: "contain",
-        objectFit: "cover",
-        cursor: "pointer",
-        backgroundRepeat: "no-repeat",
-        top: props.dimensions.top,
-        left: props.dimensions.left,
-        zIndex: props.layer,
-      }}
-    />
+    <>
+      {props.config.minimized ? null : (
+        <Rnd
+          lockAspectRatio={true}
+          onDragStart={DragHandler}
+          onDragStop={DragStopHandler}
+          default={{
+            x: dimensions.left,
+            y: dimensions.top,
+            width: dimensions.width,
+            height: dimensions.height,
+          }}
+          style={{
+            background: `url(${props.config.src})`,
+            backgroundSize: "contain",
+            objectFit: "cover",
+            cursor: "pointer",
+            backgroundRepeat: "no-repeat",
+            zIndex: props.config.layer,
+          }}
+        />
+      )}
+    </>
   );
 };
 

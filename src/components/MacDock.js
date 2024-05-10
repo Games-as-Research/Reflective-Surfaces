@@ -64,10 +64,8 @@ const MacDock = (props) => {
       {props.icons?.map((icon, idx) => (
         <DockIcon
           key={idx}
-          src={ICON_LOCATIONS[icon]}
-          onClick={() => {
-            console.log("Hello Dock Icons");
-          }}
+          src={ICON_LOCATIONS[icon.name]}
+          onClick={icon.onClick}
         />
       ))}
 

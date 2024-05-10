@@ -2,7 +2,7 @@ import MacMenuBar from "./MacMenuBar";
 import Taskbar10 from "./Taskbar10";
 import Taskbar11 from "./Taskbar11";
 import Window from "./Window";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../stylesheets/Screen.css";
 import MacDock from "./MacDock";
 
@@ -11,14 +11,26 @@ const MIN_WINDOWS_PER_SCREEN = 3;
 // props = {state}
 const Screen = (props) => {
   const [screenState, setScreenState] = useState(props.state);
+  const [dockIcons, setDockIcons] = useState([]);
   const [top, setTop] = useState(
     props.state.windows?.length ?? MIN_WINDOWS_PER_SCREEN
   );
 
-  function changeWindowOrder(index) {
+  useEffect(() => {
+    const _dockicons = [];
+    for (let index = 0; index < screenState.windows.length; index++) {
+      _dockicons.push({
+        name: screenState.windows[index].type ?? "",
+        onClick: () => toggleWindowMinimized(index),
+      });
+    }
+    setDockIcons(_dockicons);
+  }, []);
+
+  function changeWindowOrder(window_layer) {
     const new_order = screenState.windows;
     for (let i = 0; i < new_order.length; i++) {
-      if (new_order[i].layer === index && new_order[i].layer !== top) {
+      if (new_order[i].layer === window_layer && new_order[i].layer !== top) {
         new_order[i].layer = top + 1;
         break;
       }
@@ -26,9 +38,16 @@ const Screen = (props) => {
     setTop(top + 1);
     setScreenState({ ...screenState, windows: new_order });
   }
-
-  function resetScreen() {
-    setScreenState(props.state);
+  function toggleWindowMinimized(index) {
+    const new_conf = screenState.windows;
+    new_conf[index].minimized = !new_conf[index].minimized;
+    setScreenState({ ...screenState, windows: new_conf });
+  }
+  function updatePosition(index, x, y) {
+    const new_conf = screenState.windows;
+    new_conf[index].dimensions.top = y;
+    new_conf[index].dimensions.left = x;
+    setScreenState({ ...screenState, windows: new_conf });
   }
 
   return (
@@ -52,12 +71,10 @@ const Screen = (props) => {
       {screenState.windows.map((item, idx) => (
         <Window
           key={idx}
-          layer={item.layer}
-          dimensions={item.dimensions}
-          src={item.src}
-          className={item.className}
+          index={idx}
+          config={item}
           onClick={changeWindowOrder}
-          link={item.link}
+          onDragStop={updatePosition}
         />
       ))}
 
@@ -69,7 +86,7 @@ const Screen = (props) => {
           <Taskbar11 />
         )
       ) : (
-        <MacDock icons={screenState.dock_icons} />
+        <MacDock icons={dockIcons} />
       )}
     </div>
   );
