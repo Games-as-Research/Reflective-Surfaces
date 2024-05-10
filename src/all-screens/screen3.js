@@ -90,6 +90,41 @@ const DEFAULT_STATE = {
         width: 695,
         height: 597,
       },
+      map: {
+        name: "Screen3",
+        areas: [
+          {
+            id: "469f9800-c45a-483f-b13e-bd24f3fb79f4",
+            title: "old-messages--previous",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [521, 1550, 1555, 1550, 1555, 1585, 521, 1585],
+            polygon: [
+              [521, 1550],
+              [1555, 1550],
+              [1555, 1585],
+              [521, 1585],
+            ],
+          },
+          {
+            id: "48859794-b30v-483f-b13e-bd24f3fb79f",
+            title: "chat-with-chip--next",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [130, 920, 480, 920, 480, 985, 130, 985],
+            polygon: [
+              [130, 920],
+              [480, 920],
+              [480, 985],
+              [130, 985],
+            ],
+          },
+        ],
+      },
     },
     {
       layer: 3,
