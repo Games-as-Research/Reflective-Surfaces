@@ -1,4 +1,7 @@
 import "../stylesheets/MacDock.css";
+import useMousePosition from "../customHooks/useMousePosition";
+import useWindowDimensions from "../customHooks/useWindowDimensions";
+import { useEffect, useState } from "react";
 
 const ICON_LOCATIONS = {
   FIREFOX: "./Icons/firefox.png",
@@ -34,12 +37,32 @@ const ICON_LOCATIONS = {
  * @returns Dock component for mac
  */
 const MacDock = (props) => {
-  return (
+  const [showDock, setShowDock] = useState(false);
+  const mousePosition = useMousePosition();
+  const windowDimensions = useWindowDimensions();
+
+  // These are percentages
+  const showDockThreshold = 0.98; 
+  const hideDockThreshold = 0.90; 
+
+  if (!showDock && mousePosition.y / windowDimensions.height > showDockThreshold) {
+    setShowDock(true);
+  } else if ( showDock && mousePosition.y / windowDimensions.height < hideDockThreshold) {
+    setShowDock(false);
+  }
+
+  return showDock ? (
     <div className="dock-container">
       <DockIcon src={ICON_LOCATIONS.FINDER} />
 
-      {props.icons?.map((icon) => (
-        <DockIcon src={ICON_LOCATIONS[icon]} />
+      {props.icons?.map((icon, idx) => (
+        <DockIcon
+          key={idx}
+          src={ICON_LOCATIONS[icon]}
+          onClick={() => {
+            console.log("Hello Dock Icons");
+          }}
+        />
       ))}
 
       <div className="divider" />
@@ -49,11 +72,18 @@ const MacDock = (props) => {
         <DockIcon src={ICON_LOCATIONS.TRASH_FULL} />
       )}
     </div>
-  );
+  ) : null;
 };
 
 const DockIcon = (props) => {
-  return <img className="icon" alt="dock icon" src={props.src} />;
+  return (
+    <img
+      onClick={props.onClick}
+      className="icon"
+      alt="dock icon"
+      src={props.src}
+    />
+  );
 };
 
 export default MacDock;
