@@ -22,7 +22,7 @@ const Screen = (props) => {
       _dockicons.push({
         name: screenState.windows[index].type ?? "",
         active: true, // this is to dislay the activity indicator on the dock/taskbar.
-        onClick: () => toggleWindowMinimized(index),
+        onClick: () => macDockIconClickHandler(index),
       });
     }
 
@@ -49,7 +49,7 @@ const Screen = (props) => {
     setTop(top + 1);
     setScreenState({ ...screenState, windows: new_order });
   }
-  function toggleWindowMinimized(index) {
+  function macDockIconClickHandler(index) {
     const new_conf = screenState.windows;
     new_conf[index].minimized = !new_conf[index].minimized;
     setScreenState({ ...screenState, windows: new_conf });
