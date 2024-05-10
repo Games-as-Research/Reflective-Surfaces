@@ -1,13 +1,54 @@
 import { createContext, useEffect, useState } from "react";
 import ScreenSwitcher from "../components/ScreenSwitcher";
-import DEFAULT_STATE from "./DefaultState";
+
 const LOCAL_STORAGE_KEYS = {
   SCREEN_INDEX: "active_screen",
+  SAVESTATE: "RS_PLAYABLE_SAVEFILE",
+};
+const DEFAULT_STATE = {
+  screens: [
+    {
+      locked: false,
+      thumbnail: "./S1_Pippin/Background.png",
+    },
+    {
+      locked: true,
+      thumbnail: "./S2_Matt/Background.png",
+    },
+    {
+      locked: true,
+      thumbnail: "./S3_Rilla/Background.jpeg",
+    },
+    {
+      locked: true,
+      thumbnail: "./S4_Chip/Background.jpg",
+    },
+    {
+      locked: true,
+      thumbnail: "./S5_Kalervo/Background.jpeg",
+    },
+    {
+      locked: true,
+      thumbnail: "./S6_Enric/Background.jpg",
+    },
+    {
+      locked: true,
+      thumbnail: "./S7_Femke/Background.jpeg",
+    },
+    {
+      locked: true,
+      thumbnail: "./S8_Vadim/Background.jpeg",
+    },
+    {
+      locked: true,
+      thumbnail: "./S9_Shahrom/Background.jpg",
+    },
+  ],
 };
 
 const GameManager = createContext(null);
 const GameManagementProvider = (props) => {
-  const [screensState, setScreensState] = useState(DEFAULT_STATE);
+  const [screens, updateScreens] = useState(DEFAULT_STATE.screens);
   const [activeScreen, setActiveScreen] = useState(-1);
   const [switching, setSwitching] = useState(false);
 
@@ -36,8 +77,6 @@ const GameManagementProvider = (props) => {
     if (index && index >= 0 && index <= 9) {
       setActiveScreen(index);
     }
-
-    console.log("Next Screen");
     if (activeScreen === 9) {
       setActiveScreen(1);
     } else {
@@ -61,31 +100,13 @@ const GameManagementProvider = (props) => {
     setSwitching(false);
   }
 
-  function resetScreen(index) {
-    const updated_screens_state = screensState;
-    console.log(DEFAULT_STATE[index]);
-    console.log(updated_screens_state[index]);
-
-    updated_screens_state[index] = DEFAULT_STATE[index];
-    updated_screens_state[index].locked = false;
-    setScreensState(updated_screens_state);
-  }
-
-  function resetSystem() {
-    setScreensState(DEFAULT_STATE);
-  }
-  function updateScreen(index, properties) {
-    // pass the index (as defined in each object, not the positional index),
-    // and pass an object containing all properties that need to be updated
-
-    //MSA: This discrepancy between the two index values is going 
-    //  to get complicated when I revisit this code in the future 
-
-    if (index <= 8 && index >= 0) {
-      const updated_screens_state = screensState;
-      const updated_screen = screensState[index];
-      for (const key in properties) {
-        updated_screen[key] = properties[key];
+  function unlockScreen(index) {
+    // Unlocks screen in switcher
+    if (index <= 8 && index > 0) {
+      if (screens[index].locked) {
+        const updated_screens_state = screens;
+        updated_screens_state[index].locked = false;
+        updateScreens(updated_screens_state);
       }
       updated_screens_state[index] = updated_screen;
       setScreensState(updated_screens_state);

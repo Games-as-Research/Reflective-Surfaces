@@ -3,17 +3,40 @@ import { useContext, useState, useEffect } from "react";
 import GameManager from "../managers/GameManager";
 import "../stylesheets/screen0.css";
 
+const DEFAULT_STATE = {
+  index: 0,
+  background: "./S1_Pippin/Background.png",
+  windows: [
+    {
+      layer: 2,
+      minimized: false,
+      src: "./S1_Pippin/github.png",
+      dimensions: {
+        top: 70,
+        left: 800,
+        width: 561,
+        height: 809,
+      },
+    },
+    {
+      layer: 1,
+      minimized: false,
+      src: "./S1_Pippin/vscode.png",
+      dimensions: {
+        top: 70,
+        left: 116,
+        width: 590,
+        height: 847,
+      },
+    },
+  ],
+  dock_icons: ["CHROME", "VSCODE", "UNITY"],
+};
+
 const Screen0 = (props) => {
   // This is the startScreen
 
   const GameMan = useContext(GameManager);
-  const [ordWindows, setOrdWindows] = useState(GameMan.screensState[0].windows);
-
-  useEffect(() => {
-    if (GameMan.screensState[0].locked) {
-      GameMan.updateScreen(0, { locked: false });
-    }
-  }, []);
 
   function PlayHandler() {
     GameMan.nextScreen(1);
@@ -21,11 +44,7 @@ const Screen0 = (props) => {
 
   return (
     <>
-      <Screen
-        windows={[]}
-        setWindows={[]}
-        backgroundImage={GameMan.screensState[0].background}
-      />
+      <Screen state={DEFAULT_STATE} />
       <div className="dark-overlay">
         <p className="title-text">Reflective Surfaces</p>
         <div className="play-button" onClick={PlayHandler}>

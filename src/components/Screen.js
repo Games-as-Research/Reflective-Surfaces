@@ -8,55 +8,68 @@ import MacDock from "./MacDock";
 
 const MIN_WINDOWS_PER_SCREEN = 3;
 
-// props = {windows, setWindows, OS ("10", "11"), backgroundImage (path)}
+// props = {state}
 const Screen = (props) => {
+  const [screenState, setScreenState] = useState(props.state);
   const [top, setTop] = useState(
-    props.windows?.length ?? MIN_WINDOWS_PER_SCREEN
+    props.state.windows?.length ?? MIN_WINDOWS_PER_SCREEN
   );
 
-  function ChangeScreenOrder(index) {
-    const newOrder = props.windows;
-    for (let i = 0; i < newOrder.length; i++) {
-      if (newOrder[i].layer === index && newOrder[i].layer !== top) {
-        newOrder[i].layer = top + 1;
+  function changeWindowOrder(index) {
+    const new_order = screenState.windows;
+    for (let i = 0; i < new_order.length; i++) {
+      if (new_order[i].layer === index && new_order[i].layer !== top) {
+        new_order[i].layer = top + 1;
         break;
       }
     }
     setTop(top + 1);
-    props.setWindows(newOrder);
+    setScreenState({ ...screenState, windows: new_order });
   }
+
+  function resetScreen() {
+    setScreenState(props.state);
+  }
+
   return (
     <div className="screen-container">
-      {props.OS !== "10" && props.OS !== "11" ? <MacMenuBar /> : null}
+      {/* Top */}
+      {screenState.OS ? null : <MacMenuBar />}
+
+      {/* Background */}
       <img
         className="background-image"
         style={{
-          height: props.OS ? "95vh" : "97vh",
+          height: screenState.OS ? "95vh" : "97vh",
         }}
         alt="Screen Background"
-        src={props.backgroundImage}
+        src={screenState.background}
         data-scroll-to="backgroundImage"
         draggable={false}
       />
-      {props.windows.map((item, idx) => (
+
+      {/* Windows */}
+      {screenState.windows.map((item, idx) => (
         <Window
           key={idx}
           layer={item.layer}
           dimensions={item.dimensions}
           src={item.src}
           className={item.className}
-          onClick={ChangeScreenOrder}
+          onClick={changeWindowOrder}
           link={item.link}
         />
       ))}
-      {props.OS ? (
-        props.OS === "10" ? (
+
+      {/* Bottom */}
+      {screenState.OS ? (
+        screenState.OS === "10" ? (
           <Taskbar10 />
         ) : (
           <Taskbar11 />
         )
       ) : (
-        <MacDock icons={props.dock_icons} />
+        <MacDock icons={screenState.dock_icons} />
       )}
     </div>
   );

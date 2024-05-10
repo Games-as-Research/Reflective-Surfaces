@@ -42,7 +42,7 @@ const MacDock = (props) => {
   const windowDimensions = useWindowDimensions();
 
   // These are percentages
-  const showDockThreshold = 0.98; 
+  const showDockThreshold = 0.95; 
   const hideDockThreshold = 0.90; 
 
   if (!showDock && mousePosition.y / windowDimensions.height > showDockThreshold) {
@@ -82,6 +82,7 @@ const DockIcon = (props) => {
       className="icon"
       alt="dock icon"
       src={props.src}
+      draggable={false}
     />
   );
 };

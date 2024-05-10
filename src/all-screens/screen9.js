@@ -3,22 +3,24 @@ import { useContext, useEffect, useState } from "react";
 import GameManager from "../managers/GameManager";
 import DesktopIcon from "../components/DesktopIcon";
 
+const DEFAULT_STATE = {
+  index: 9,
+  locked: true,
+  thumbnail: "./S9_Shahrom/Background.jpg",
+  background: "./S9_Shahrom/Background.jpg",
+  windows: [],
+  dock_icons: ["FIREFOX", "OBSIDIAN", "UNITY", "TERMINAL"],
+};
+
 const Screen9 = (props) => {
   const GameMan = useContext(GameManager);
-  const [ordWindows, setOrdWindows] = useState(GameMan.screensState[8].windows);
   useEffect(() => {
-    if (GameMan.screensState[8].locked) {
-      GameMan.updateScreen(8, { locked: false });
-    }
+    GameMan.unlockScreen(8);
   }, []);
+  
   return (
     <>
-      <Screen
-        windows={ordWindows}
-        setWindows={setOrdWindows}
-        backgroundImage={GameMan.screensState[8].background}
-        dock_icons={["FIREFOX", "OBSIDIAN", "UNITY", "TERMINAL"]}
-      />
+      <Screen state={DEFAULT_STATE} />
       <DesktopIcon
         default={{ x: 1400, y: 50 }}
         label={"Macintosh HD"}
