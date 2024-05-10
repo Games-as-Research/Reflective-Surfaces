@@ -15,6 +15,19 @@ const Window = (props) => {
     props.onDragStop(props.index, data.x, data.y);
   }
 
+  function regionClicked(area, index, e) {
+    const title = area.title ?? null;
+    if (title != null) {
+      if (title.includes("--next")) {
+        GameMan.nextScreen();
+      } else if (title.includes("--previous")) {
+        GameMan.previousScreen();
+      } else if (title.includes("--hyperlink")) {
+        window.open(area.url ?? "");
+      }
+    }
+  }
+
   return (
     <>
       {props.config.minimized ? null : (
@@ -43,8 +56,6 @@ const Window = (props) => {
             objectFit: "cover",
             zIndex: props.config.layer,
             cursor: "pointer",
-
-            // border: "1px solid white"
           }}
         >
           <ImageMapper
@@ -52,7 +63,7 @@ const Window = (props) => {
             width={dimensions.width}
             height={dimensions.height}
             responsive={true}
-            onClick={GameMan.nextScreen}
+            onClick={regionClicked}
             parentWidth={dimensions.width}
             map={
               props.config.map ?? {
