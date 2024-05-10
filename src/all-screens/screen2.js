@@ -40,6 +40,26 @@ const DEFAULT_STATE = {
         width: 1073,
         height: 566,
       },
+      map: {
+        name: "Screen2",
+        areas: [
+          {
+            id: "469f9800-c45a-483f-b13e-bd24f3fb79f4",
+            title: "commit-and-push--next",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [225, 1535, 521, 1535, 521, 1585, 225, 1585],
+            polygon: [
+              [225, 1535],
+              [521, 1535],
+              [521, 1585],
+              [225, 1585],
+            ],
+          },
+        ],
+      },
     },
     {
       layer: 2,
