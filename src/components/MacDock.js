@@ -57,9 +57,18 @@ const MacDock = (props) => {
     setShowDock(false);
   }
 
+  function anyFinderWindows() {
+    for (let index = 0; index < props.icons.length; index++) {
+      if (props.icons[index].name == "FINDER") {
+        return true;
+      }
+    }
+    return false;
+  }
+
   return showDock ? (
     <div className="dock-container">
-      <DockIcon src={ICON_LOCATIONS.FINDER} />
+      {anyFinderWindows() ? null : <DockIcon src={ICON_LOCATIONS.FINDER} />}
 
       {props.icons?.map((icon, idx) => (
         <DockIcon
