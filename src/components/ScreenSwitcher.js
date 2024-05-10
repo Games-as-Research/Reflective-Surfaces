@@ -32,7 +32,7 @@ const ScreenSwitcher = (props) => {
             <Preview
               key={idx}
               locked={screen.locked}
-              onClick={() => props.onClick(screen.index)}
+              onClick={() => props.onClick(idx)}
               imgsrc={screen.thumbnail}
             />
           );

@@ -39,7 +39,7 @@ const StartScreen = (props) => {
   const GameMan = useContext(GameManager);
 
   function PlayHandler() {
-    GameMan.nextScreen(1);
+    GameMan.jumpToScreen(0);
   }
 
   return (

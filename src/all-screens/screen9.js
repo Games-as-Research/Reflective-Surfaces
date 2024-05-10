@@ -4,8 +4,6 @@ import GameManager from "../managers/GameManager";
 import DesktopIcon from "../components/DesktopIcon";
 
 const DEFAULT_STATE = {
-  index: 9,
-  locked: true,
   thumbnail: "./S9_Shahrom/Background.jpg",
   background: "./S9_Shahrom/Background.jpg",
   windows: [],

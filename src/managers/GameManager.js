@@ -62,8 +62,7 @@ const GameManagementProvider = (props) => {
         if (storage_val) {
           setActiveScreen(parseInt(storage_val));
         } else {
-          setActiveScreen(0);
-          localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, 0);
+          localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, -1);
         }
       } else {
         localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, activeScreen);
@@ -73,25 +72,36 @@ const GameManagementProvider = (props) => {
     }
   }, [activeScreen]);
 
-  function nextScreen(index = null) {
-    if (index && index >= 0 && index <= 9) {
-      setActiveScreen(index);
-    }
-    if (activeScreen === 9) {
-      setActiveScreen(1);
+  // #region Screen Chaning
+  function nextScreen() {
+    if (activeScreen === 8) {
+      setActiveScreen(0);
     } else {
       setActiveScreen(activeScreen + 1);
     }
   }
 
   function previousScreen() {
-    if (activeScreen === 1) {
-      setActiveScreen(9);
+    if (activeScreen === 0) {
+      setActiveScreen(8);
     } else {
       setActiveScreen(activeScreen - 1);
     }
   }
 
+  function jumpToScreen(index) {
+    if (index == null) return;
+
+    
+    if (index >= 0 && index <= 8) {
+      setActiveScreen(index);
+      if (switching) hideSwitcher();
+    }
+  }
+
+  // #endregion
+
+  // #region Switcher Methods
   function showSwitcher() {
     setSwitching(true);
   }
@@ -102,43 +112,32 @@ const GameManagementProvider = (props) => {
 
   function unlockScreen(index) {
     // Unlocks screen in switcher
-    if (index <= 8 && index > 0) {
-      if (screens[index].locked) {
-        const updated_screens_state = screens;
-        updated_screens_state[index].locked = false;
-        updateScreens(updated_screens_state);
-      }
-      updated_screens_state[index] = updated_screen;
-      setScreensState(updated_screens_state);
+    if (index > 0 && index <= 8 && screens[index].locked) {
+      const updated_screens_state = screens;
+      updated_screens_state[index].locked = false;
+      updateScreens(updated_screens_state);
     }
   }
+  // #endregion
 
-  function switchScreen(idx) {
-    if (idx > 0 && idx < 10) setActiveScreen(idx);
-    hideSwitcher();
-  }
   return (
     <GameManager.Provider
       value={{
         // State
         activeScreen,
-        screensState,
 
         //Methods
         previousScreen,
         nextScreen,
+        unlockScreen,
+        jumpToScreen,
         showSwitcher,
-        hideSwitcher,
-        switchScreen,
-        updateScreen,
-        resetScreen,
-        resetSystem,
       }}
     >
       <ScreenSwitcher
         show={switching}
-        screens={screensState}
-        onClick={switchScreen}
+        screens={screens}
+        onClick={jumpToScreen}
         close={hideSwitcher}
       />
       {props.children}

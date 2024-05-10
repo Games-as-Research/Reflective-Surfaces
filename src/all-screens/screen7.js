@@ -3,8 +3,6 @@ import { useContext, useEffect, useState } from "react";
 import GameManager from "../managers/GameManager";
 
 const DEFAULT_STATE = {
-  index: 7,
-  locked: true,
   thumbnail: "./S7_Femke/Background.jpeg",
   background: "./S7_Femke/Background.jpeg",
   windows: [

@@ -1,8 +1,6 @@
 import Screen from "../components/Screen";
 
 const DEFAULT_STATE = {
-  index: 1,
-  locked: false,
   thumbnail: "./S1_Pippin/Background.png",
   background: "./S1_Pippin/Background.png",
   windows: [

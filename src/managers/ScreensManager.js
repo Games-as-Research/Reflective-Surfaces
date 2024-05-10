@@ -17,24 +17,22 @@ const ScreensManager = (props) => {
 
   switch (GameMan.activeScreen) {
     case 0:
-      return <Screen0 />;
-    case 1:
       return <Screen1 />;
-    case 2:
+    case 1:
       return <Screen2 />;
-    case 3:
+    case 2:
       return <Screen3 />;
-    case 4:
+    case 3:
       return <Screen4 />;
-    case 5:
+    case 4:
       return <Screen5 />;
-    case 6:
+    case 5:
       return <Screen6 />;
-    case 7:
+    case 6:
       return <Screen7 />;
-    case 8:
+    case 7:
       return <Screen8 />;
-    case 9:
+    case 8:
       return <Screen9 />;
     default:
       return <StartScreen />;
