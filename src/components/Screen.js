@@ -51,10 +51,22 @@ const Screen = (props) => {
   }
   function macDockIconClickHandler(index) {
     const new_conf = screenState.windows;
-    new_conf[index].minimized = !new_conf[index].minimized;
-    setScreenState({ ...screenState, windows: new_conf });
+
+    // if corresponding window is not minimized, and not at front, bring to front.
+    // if corresponding window is not minimized and at front, minimize.
+    // if corresponding window is minimized, maximize.
+
     if (new_conf[index].minimized) {
+      new_conf[index].minimized = false;
+      setScreenState({ ...screenState, windows: new_conf });
       changeWindowOrder(screenState.windows[index].layer);
+    } else {
+      if (screenState.windows[index].layer < top - 1) {
+        changeWindowOrder(screenState.windows[index].layer);
+      } else {
+        new_conf[index].minimized = true;
+        setScreenState({ ...screenState, windows: new_conf });
+      }
     }
   }
   function updatePosition(index, x, y) {

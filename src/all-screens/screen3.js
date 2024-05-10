@@ -6,7 +6,7 @@ const DEFAULT_STATE = {
   background: "./S3_Rilla/Background.jpeg",
   windows: [
     {
-      layer: 4,
+      layer: 1,
       minimized: true,
       type: "FINDER",
       src: "./S3_Rilla/Closing/file_explorer.png",
