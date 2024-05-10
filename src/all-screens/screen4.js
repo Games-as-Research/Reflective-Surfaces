@@ -28,6 +28,26 @@ const DEFAULT_STATE = {
         width: 678,
         height: 767,
       },
+      map: {
+        name: "Screen4Window0",
+        areas: [
+          {
+            id: "82034948-c45a-483f-95d3-bd24f3fb79f4",
+            title: "google-doc--next",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [470, 1650, 520, 1650, 520, 1690, 470, 1690],
+            polygon: [
+              [470, 1650],
+              [520, 1650],
+              [520, 1690],
+              [470, 1690],
+            ],
+          },
+        ],
+      },
     },
     {
       layer: 2,
@@ -39,6 +59,26 @@ const DEFAULT_STATE = {
         left: 330,
         width: 888,
         height: 399,
+      },
+      map: {
+        name: "Screen4Window1",
+        areas: [
+          {
+            id: "72046284-d82n-483f-0c82-bd24f3fb79f4",
+            title: "audiorecording--play",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [1000, 70, 1080, 70, 1080, 170, 1000, 170],
+            polygon: [
+              [1000, 70],
+              [1080, 70],
+              [1080, 170],
+              [1000, 170],
+            ],
+          },
+        ],
       },
     },
     {
@@ -52,16 +92,29 @@ const DEFAULT_STATE = {
         width: 485,
         height: 422,
       },
+      map: {
+        name: "Screen4Window2",
+        areas: [
+          {
+            id: "72046284-d82n-483f-0c82-bd24f3fb79f4",
+            title: "rilla-discord--previous",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [160, 1100, 625, 1100, 625, 1200, 160, 1200],
+            polygon: [
+              [160, 1100],
+              [625, 1100],
+              [625, 1200],
+              [160, 1200],
+            ],
+          },
+        ],
+      },
     },
   ],
-  dock_icons: [
-    "PAGES",
-    "MAIL",
-    "BLENDER",
-    "MUSIC",
-    "ZOTERO",
-    "VOICEMEMO",
-  ],
+  dock_icons: ["PAGES", "MAIL", "BLENDER", "MUSIC", "ZOTERO", "VOICEMEMO"],
 };
 
 const Screen4 = (props) => {
