@@ -10,7 +10,7 @@ import Screen7 from "../all-screens/screen7";
 import Screen8 from "../all-screens/screen8";
 import Screen9 from "../all-screens/screen9";
 import GameManager from "./GameManager";
-import Screen0 from "../all-screens/screen0";
+import StartScreen from "../all-screens/startScreen";
 
 const ScreensManager = (props) => {
   const GameMan = useContext(GameManager);
@@ -37,7 +37,7 @@ const ScreensManager = (props) => {
     case 9:
       return <Screen9 />;
     default:
-      return <Screen0 />;
+      return <StartScreen />;
   }
 };
 

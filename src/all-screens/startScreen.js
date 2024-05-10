@@ -1,7 +1,7 @@
 import Screen from "../components/Screen";
 import { useContext, useState, useEffect } from "react";
 import GameManager from "../managers/GameManager";
-import "../stylesheets/screen0.css";
+import "../stylesheets/startScreen.css";
 
 const DEFAULT_STATE = {
   index: 0,
@@ -33,7 +33,7 @@ const DEFAULT_STATE = {
   dock_icons: ["CHROME", "VSCODE", "UNITY"],
 };
 
-const Screen0 = (props) => {
+const StartScreen = (props) => {
   // This is the startScreen
 
   const GameMan = useContext(GameManager);
@@ -55,4 +55,4 @@ const Screen0 = (props) => {
   );
 };
 
-export default Screen0;
+export default StartScreen;
