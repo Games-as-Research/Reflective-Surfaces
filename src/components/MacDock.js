@@ -66,6 +66,7 @@ const MacDock = (props) => {
           key={idx}
           src={ICON_LOCATIONS[icon.name]}
           onClick={icon.onClick}
+          activeWindow={true}
         />
       ))}
 
@@ -81,13 +82,21 @@ const MacDock = (props) => {
 
 const DockIcon = (props) => {
   return (
-    <img
-      onClick={props.onClick}
-      className="icon"
-      alt="dock icon"
-      src={props.src}
-      draggable={false}
-    />
+    <div className="icon-container">
+      <img
+        onClick={props.onClick}
+        className="icon"
+        alt="dock icon"
+        src={props.src}
+        draggable={false}
+      />
+      <div
+        className="icon-activity-indicator"
+        style={{
+          backgroundColor: props.activeWindow ? "white" : "transparent",
+        }}
+      />
+    </div>
   );
 };
 
