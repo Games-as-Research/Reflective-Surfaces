@@ -26,6 +26,26 @@ const DEFAULT_STATE = {
         width: 590,
         height: 847,
       },
+      map: {
+        name: "Screen1",
+        areas: [
+          {
+            id: "469f9800-c45a-483f-b13e-bd24f3fb79f4",
+            title: "git-commit",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [140, 665, 520, 665, 520, 725, 140, 725],
+            polygon: [
+              [140, 665],
+              [520, 665],
+              [520, 725],
+              [140, 725],
+            ],
+          },
+        ],
+      },
     },
   ],
   dock_icons: ["UNITY"],
