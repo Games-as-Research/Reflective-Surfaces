@@ -42,7 +42,7 @@ const DEFAULT_STATE = {
       },
     },
   ],
-  dock_icons: ["FIREFOX", "TEXTEDIT", "DISCORD", "SPOTIFY"],
+  dock_icons: ["SPOTIFY"],
 };
 
 const Screen5 = (props) => {

@@ -8,7 +8,7 @@ const DEFAULT_STATE = {
     {
       layer: 4,
       minimized: false,
-      type: "GARAGEBAND",
+      type: "TEXTEDIT",
       src: "./S4_Chip/video_transcript.png",
       dimensions: {
         top: 113,
@@ -55,14 +55,10 @@ const DEFAULT_STATE = {
     },
   ],
   dock_icons: [
-    "FIREFOX",
     "PAGES",
     "MAIL",
     "BLENDER",
     "MUSIC",
-    "GARAGEBAND",
-    "TEXTEDIT",
-    "DISCORD",
     "ZOTERO",
     "VOICEMEMO",
   ],

@@ -21,9 +21,20 @@ const Screen = (props) => {
     for (let index = 0; index < screenState.windows.length; index++) {
       _dockicons.push({
         name: screenState.windows[index].type ?? "",
+        active: true, // this is to dislay the activity indicator on the dock/taskbar.
         onClick: () => toggleWindowMinimized(index),
       });
     }
+
+    for (let i = 0; i < props.state.dock_icons?.length; i++) {
+      _dockicons.push({
+        name: props.state.dock_icons[i],
+        active: false,
+        onClick: null,
+      });
+    }
+    // can also add custom icons here.
+
     setDockIcons(_dockicons);
   }, []);
 

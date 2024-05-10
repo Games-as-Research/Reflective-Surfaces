@@ -57,6 +57,7 @@ const DEFAULT_STATE = {
       },
     },
   ],
+  dock_icons: [],
 };
 
 const Screen7 = (props) => {

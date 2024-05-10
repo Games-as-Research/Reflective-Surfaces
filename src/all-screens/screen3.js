@@ -42,7 +42,7 @@ const DEFAULT_STATE = {
       },
     },
   ],
-  dock_icons: ["CHROME", "PREVIEW", "TEXTEDIT", "DISCORD", "GITHUB"],
+  dock_icons: ["DISCORD", "GITHUB"],
 };
 
 const Screen3 = (props) => {

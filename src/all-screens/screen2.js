@@ -66,7 +66,7 @@ const DEFAULT_STATE = {
       },
     },
   ],
-  dock_icons: ["FIREFOX", "OBSIDIAN", "RIDER", "DISCORD"],
+  dock_icons: [],
 };
 
 const Screen2 = (props) => {

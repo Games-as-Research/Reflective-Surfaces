@@ -28,7 +28,7 @@ const DEFAULT_STATE = {
       },
     },
   ],
-  dock_icons: ["CHROME", "VSCODE", "UNITY"],
+  dock_icons: ["UNITY"],
 };
 
 const Screen1 = (props) => {

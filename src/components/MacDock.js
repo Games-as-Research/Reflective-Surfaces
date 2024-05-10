@@ -66,7 +66,7 @@ const MacDock = (props) => {
           key={idx}
           src={ICON_LOCATIONS[icon.name]}
           onClick={icon.onClick}
-          activeWindow={true}
+          activeWindow={icon.active}
         />
       ))}
 

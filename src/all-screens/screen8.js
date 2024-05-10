@@ -80,6 +80,7 @@ const DEFAULT_STATE = {
       },
     },
   ],
+  dock_icons: [],
 };
 
 const Screen8 = (props) => {
