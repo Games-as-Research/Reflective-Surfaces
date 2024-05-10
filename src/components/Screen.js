@@ -53,6 +53,9 @@ const Screen = (props) => {
     const new_conf = screenState.windows;
     new_conf[index].minimized = !new_conf[index].minimized;
     setScreenState({ ...screenState, windows: new_conf });
+    if (new_conf[index].minimized) {
+      changeWindowOrder(screenState.windows[index].layer);
+    }
   }
   function updatePosition(index, x, y) {
     const new_conf = screenState.windows;
