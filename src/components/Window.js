@@ -1,11 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Rnd } from "react-rnd";
 import ImageMapper from "react-img-mapper";
 import GameManager from "../managers/GameManager";
 
 const Window = (props) => {
   const GameMan = useContext(GameManager);
+  const imgRef = useRef();
   const [dimensions, setDimensions] = useState(props.config.dimensions);
+
+  useEffect(() => {
+    const element = imgRef?.current?.firstElementChild;
+    element.setAttribute("draggable", false);
+  }, [props.config.minimized]);
 
   function DragHandler() {
     props.onClick(props.config.layer);
@@ -60,6 +66,7 @@ const Window = (props) => {
         >
           <ImageMapper
             src={props.config.src}
+            containerRef={imgRef}
             width={dimensions.width}
             height={dimensions.height}
             responsive={true}
