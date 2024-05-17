@@ -1,7 +1,8 @@
 import "../stylesheets/MacDock.css";
 import useMousePosition from "../customHooks/useMousePosition";
 import useWindowDimensions from "../customHooks/useWindowDimensions";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import GameManager from "../managers/GameManager";
 
 const ICON_LOCATIONS = {
   FIREFOX: "./Icons/firefox.png",
@@ -40,13 +41,14 @@ const MacDock = (props) => {
   const [showDock, setShowDock] = useState(false);
   const mousePosition = useMousePosition();
   const windowDimensions = useWindowDimensions();
+  const GameMan = useContext(GameManager);
 
   // These are percentages
   const showDockThreshold = 0.95;
   const hideDockThreshold = 0.9;
 
   if (
-    !showDock &&
+    !showDock && GameMan.activeScreen >= 0 && 
     mousePosition.y / windowDimensions.height > showDockThreshold
   ) {
     setShowDock(true);
