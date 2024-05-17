@@ -29,6 +29,26 @@ const DEFAULT_STATE = {
         width: 576,
         height: 862,
       },
+      map: {
+        name: "Screen6Window1",
+        areas: [
+          {
+            id: "824v520v-d82n-81bv-0c82-bd24f3fb79f4",
+            title: "all-the-time--previous",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [680, 490, 1400, 490, 1400, 550, 680, 550],
+            polygon: [
+              [680, 490],
+              [1400, 490],
+              [1400, 550],
+              [680, 550],
+            ],
+          },
+        ],
+      },
     },
     {
       layer: 4,
@@ -40,6 +60,26 @@ const DEFAULT_STATE = {
         left: 42,
         width: 188,
         height: 529,
+      },
+      map: {
+        name: "Screen6Window2",
+        areas: [
+          {
+            id: "824v520v-d82n-81fv-0c82-bd24f3fb79f4",
+            title: "portal--dead",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [150, 180, 260, 180, 260, 290, 150, 290],
+            polygon: [
+              [150, 180],
+              [260, 180],
+              [260, 290],
+              [150, 290],
+            ],
+          },
+        ],
       },
     },
     {
@@ -76,6 +116,26 @@ const DEFAULT_STATE = {
         left: 461,
         width: 499,
         height: 387,
+      },
+      map: {
+        name: "Screen6Window3",
+        areas: [
+          {
+            id: "824v520v-d8dd-81bv-0c82-bd24f3fb79f4",
+            title: "portal--next",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [700, 440, 880, 440, 880, 620, 700, 620],
+            polygon: [
+              [700, 440],
+              [880, 440],
+              [880, 620],
+              [700, 620],
+            ],
+          },
+        ],
       },
     },
   ],

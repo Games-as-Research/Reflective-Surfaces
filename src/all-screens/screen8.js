@@ -18,6 +18,26 @@ const DEFAULT_STATE = {
         width: 658,
         height: 759,
       },
+      map: {
+        name: "Screen8Window1",
+        areas: [
+          {
+            id: "824v520v-d82n-81fv-0d82-bd24f3fb79f4",
+            title: "autosave--previous",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [60, 15, 200, 15, 200, 45, 60, 45],
+            polygon: [
+              [60, 15],
+              [200, 15],
+              [200, 45],
+              [60, 45],
+            ],
+          },
+        ],
+      },
     },
     {
       layer: 5,
@@ -53,6 +73,26 @@ const DEFAULT_STATE = {
         left: 326,
         width: 476,
         height: 598,
+      },
+      map: {
+        name: "Screen8Window2",
+        areas: [
+          {
+            id: "824v520v-d82N-81fv-0d82-bd24f3fb79f4",
+            title: "jira--next",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [950, 710, 1150, 710, 1150, 750, 950, 750],
+            polygon: [
+              [950, 710],
+              [1150, 710],
+              [1150, 750],
+              [950, 750],
+            ],
+          },
+        ],
       },
     },
     {

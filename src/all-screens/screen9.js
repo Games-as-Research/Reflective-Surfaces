@@ -13,9 +13,29 @@ const DEFAULT_STATE = {
       src: "./S9_Shahrom/github_1.PNG",
       dimensions: {
         top: 415,
-        left: 186,
+        left: 320,
         width: 825,
         height: 464,
+      },
+      map: {
+        name: "Screen9Window1",
+        areas: [
+          {
+            id: "824v520v-d82N-81fv-0d82-bd24f3fb79f4",
+            title: "github-fetch--next",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [680, 30, 940, 30, 940, 90, 680, 90],
+            polygon: [
+              [680, 30],
+              [940, 30],
+              [940, 90],
+              [680, 90],
+            ],
+          },
+        ],
       },
     },
     {
@@ -40,6 +60,26 @@ const DEFAULT_STATE = {
         left: 560,
         width: 1044,
         height: 587,
+      },
+      map: {
+        name: "Screen9Window2",
+        areas: [
+          {
+            id: "824v520v-d82N-81fv-0d82-bd24f3fbiop4",
+            title: "jira-close--previous",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [1605, 100, 1630, 100, 1630, 125, 1605, 125],
+            polygon: [
+              [1605, 100],
+              [1630, 100],
+              [1630, 125],
+              [1605, 125],
+            ],
+          },
+        ],
       },
     },
     {

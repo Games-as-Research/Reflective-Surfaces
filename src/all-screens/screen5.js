@@ -16,6 +16,26 @@ const DEFAULT_STATE = {
         width: 797,
         height: 680,
       },
+      map: {
+        name: "Screen5Window1",
+        areas: [
+          {
+            id: "829f020v-d82n-483f-0c82-bd24f3fb79f4",
+            title: "discussions--next",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [110, 135, 150, 135, 150, 165, 110, 165],
+            polygon: [
+              [110, 135],
+              [150, 135],
+              [150, 165],
+              [110, 165],
+            ],
+          },
+        ],
+      },
     },
     {
       layer: 2,
@@ -27,6 +47,26 @@ const DEFAULT_STATE = {
         left: 56,
         width: 713,
         height: 894,
+      },
+      map: {
+        name: "Screen5Window2",
+        areas: [
+          {
+            id: "829f020v-d82n-81bv-0c82-bd24f3fb79f4",
+            title: "discussions--previous",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [30, 100, 70, 100, 70, 165, 30, 165],
+            polygon: [
+              [30, 100],
+              [70, 100],
+              [70, 165],
+              [30, 165],
+            ],
+          },
+        ],
       },
     },
     {

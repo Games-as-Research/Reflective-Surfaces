@@ -30,6 +30,26 @@ const DEFAULT_STATE = {
         width: 440,
         height: 361,
       },
+      map: {
+        name: "Screen7Window1",
+        areas: [
+          {
+            id: "824v520v-d001-81fv-0c82-bd24f3fb79f4",
+            title: "portal--previous",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [20, 80, 50, 80, 50, 120, 20, 120],
+            polygon: [
+              [20, 80],
+              [50, 80],
+              [50, 120],
+              [20, 120],
+            ],
+          },
+        ],
+      },
     },
     {
       layer: 2,
@@ -55,6 +75,26 @@ const DEFAULT_STATE = {
         width: 746,
         height: 810,
       },
+      map: {
+        name: "Screen7Window2",
+        areas: [
+          {
+            id: "824v520v-d82n-81fv-0c82-bd24f3fb79f4",
+            title: "autosave--next",
+            shape: "poly",
+            name: "1",
+            fillColor: "#84BDE388",
+            strokeColor: "black",
+            coords: [40, 15, 240, 15, 240, 60, 40, 60],
+            polygon: [
+              [40, 15],
+              [240, 15],
+              [240, 60],
+              [40, 60],
+            ],
+          },
+        ],
+      },
     },
   ],
   dock_icons: [],
@@ -62,11 +102,11 @@ const DEFAULT_STATE = {
 
 const Screen7 = (props) => {
   const GameMan = useContext(GameManager);
-  
+
   useEffect(() => {
     GameMan.unlockScreen(6);
   }, []);
-  
+
   return <Screen state={DEFAULT_STATE} />;
 };
 
