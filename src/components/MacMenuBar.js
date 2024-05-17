@@ -22,8 +22,8 @@ const MacMenuBar = (props) => {
       </div>
 
       <div className="menubar-rightside">
-        <ScreenControls />
-        <div style={{ width: 20 }} />
+        {/* <ScreenControls /> */}
+        {/* <div style={{ width: 20 }} /> */}
 
         <DesktopViewer />
         <div style={{ width: 20 }} />

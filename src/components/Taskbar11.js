@@ -22,12 +22,12 @@ const Taskbar11 = (props) => {
         <TaskView />
       </div>
       <div className="taskbar-rightside">
-        <p className="screen-controls" onClick={GameMan.previousScreen}>
+        {/* <p className="screen-controls" onClick={GameMan.previousScreen}>
           {"<"}
         </p>
         <p className="screen-controls" onClick={GameMan.nextScreen}>
           {">"}
-        </p>
+        </p> */}
 
         <WindowsMore />
         <Windows10Charging />
