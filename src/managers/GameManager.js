@@ -41,7 +41,7 @@ const DEFAULT_STATE = {
     },
     {
       locked: true,
-      thumbnail: "./S9_Shahrom/Background.jpg",
+      thumbnail: "./S9_Shahrom/Background.png",
     },
   ],
 };

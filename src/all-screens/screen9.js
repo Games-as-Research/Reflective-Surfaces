@@ -4,8 +4,44 @@ import GameManager from "../managers/GameManager";
 import DesktopIcon from "../components/DesktopIcon";
 
 const DEFAULT_STATE = {
-  background: "./S9_Shahrom/Background.jpg",
+  background: "./S9_Shahrom/Background.png",
   windows: [
+    {
+      layer: 2,
+      minimized: false,
+      type: "GITHUB",
+      src: "./S9_Shahrom/github_1.PNG",
+      dimensions: {
+        top: 415,
+        left: 186,
+        width: 825,
+        height: 464,
+      },
+    },
+    {
+      layer: 3,
+      minimized: false,
+      type: "OBSIDIAN",
+      src: "./S9_Shahrom/obsidian.PNG",
+      dimensions: {
+        top: 191,
+        left: 788,
+        width: 958,
+        height: 539,
+      },
+    },
+    {
+      layer: 4,
+      minimized: false,
+      type: "CHROME",
+      src: "./S9_Shahrom/jira.PNG",
+      dimensions: {
+        top: 234,
+        left: 560,
+        width: 1044,
+        height: 587,
+      },
+    },
     {
       layer: 1,
       minimized: false,
@@ -19,7 +55,7 @@ const DEFAULT_STATE = {
       },
     },
   ],
-  dock_icons: ["FIREFOX", "OBSIDIAN", "UNITY", "TERMINAL"],
+  dock_icons: ["FIREFOX", "TERMINAL"],
 };
 
 const Screen9 = (props) => {
@@ -31,6 +67,7 @@ const Screen9 = (props) => {
   return (
     <>
       <Screen state={DEFAULT_STATE} />
+      {/* Add a terminal Window :D  */}
       <DesktopIcon
         default={{ x: 1400, y: 50 }}
         label={"Macintosh HD"}
