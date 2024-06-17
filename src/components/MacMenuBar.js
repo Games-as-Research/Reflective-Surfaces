@@ -1,14 +1,13 @@
-import AppleIcon from "../icons/appleIcon";
-import ControlCenter from "../icons/controlCenter";
-import AppleSearch from "../icons/appleSearch";
-import DesktopViewer from "../icons/desktopViewer";
+import AppleIcon from "./apple-icons/appleIcon";
+import ControlCenter from "./apple-icons/controlCenter";
+import AppleReset from "./apple-icons/appleReset";
+import DesktopViewer from "./apple-icons/desktopViewer";
 
-import "./MacMenuBar.css";
+import "../stylesheets/MacMenuBar.css";
 import { useContext } from "react";
-import DataContext from "../contexts/DataContext";
+import GameManager from "../managers/GameManager";
 
 const MacMenuBar = (props) => {
-  const DataC = useContext(DataContext);
   return (
     <div className="menubar-container">
       <div className="menubar-leftside">
@@ -23,21 +22,42 @@ const MacMenuBar = (props) => {
       </div>
 
       <div className="menubar-rightside">
-        <p className="menubar-item" onClick={DataC.previousScreen}>
-          {"<"}
-        </p>
-
-        <p className="menubar-item" onClick={DataC.nextScreen}>
-          {">"}
-        </p>
+        {/* <ScreenControls /> */}
+        {/* <div style={{ width: 20 }} /> */}
 
         <DesktopViewer />
-        <AppleSearch />
+        <div style={{ width: 20 }} />
         <ControlCenter />
-        <p className="menubar-item">Thu Mar 7</p>
-        <p className="menubar-item">10:09</p>
+        <div style={{ width: 20 }} />
+
+        <MacDateTime />
       </div>
     </div>
+  );
+};
+
+const MacDateTime = (props) => {
+  return (
+    <div className="mac-datetime-container">
+      <p className="mac-datetime">Thu Mar 7</p>
+      <p className="mac-datetime">10:09</p>
+    </div>
+  );
+};
+
+const ScreenControls = (props) => {
+  const GameMan = useContext(GameManager);
+
+  return (
+    <>
+      <p className="menubar-item" onClick={GameMan.previousScreen}>
+        {"<"}
+      </p>
+      <div style={{ width: 20 }} />
+      <p className="menubar-item" onClick={GameMan.nextScreen}>
+        {">"}
+      </p>{" "}
+    </>
   );
 };
 

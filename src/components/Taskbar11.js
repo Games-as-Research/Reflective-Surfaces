@@ -1,4 +1,4 @@
-import "../stylesheets/Taskbar10.css";
+import "../stylesheets/Taskbar11.css";
 import Windows10Logo from "./windows-icons/windows10";
 import WindowsSearch from "./windows-icons/windowsSearch";
 import TaskView from "./windows-icons/taskview";
@@ -9,7 +9,7 @@ import WindowsMute from "./windows-icons/windowsMute";
 import Windows10Notifications from "./windows-icons/windows10Notification";
 import { useContext } from "react";
 import GameManager from "../managers/GameManager";
-const Taskbar10 = (props) => {
+const Taskbar11 = (props) => {
   const GameMan = useContext(GameManager);
   return (
     <div className="taskbar-container">
@@ -42,4 +42,4 @@ const Taskbar10 = (props) => {
   );
 };
 
-export default Taskbar10;
+export default Taskbar11;

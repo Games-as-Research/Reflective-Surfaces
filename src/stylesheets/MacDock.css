@@ -1,0 +1,53 @@
+.dock-container {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  padding: 5px;
+  position: fixed;
+  bottom: 4px;
+  border-radius: 16px;
+  /* border: 0.5px solid #a1a1a1; */
+  border: 1px solid rgba(206, 206, 206, 0.57);
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  box-sizing: border-box;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  background: rgba(206, 206, 206, 0.4);
+  backdrop-filter: blur(4.8px);
+  -webkit-backdrop-filter: blur(4.8px);
+  z-index: 10000;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.icon-activity-indicator {
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.divider {
+  height: 70%;
+  border-color: #fff8;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.show-borders {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}

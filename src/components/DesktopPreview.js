@@ -1,25 +1,10 @@
 import { IoLockClosed } from "react-icons/io5";
+import "../stylesheets/DesktopPreview.css";
 
 const Preview = (props) => {
   if (props.locked) {
     return (
-      <div
-        style={{
-          display: "flex",
-          width: 340,
-          height: 240,
-          borderWidth: 5,
-          borderStyle: "solid",
-          borderColor: "#656565",
-          borderRadius: 15,
-          zIndex: 30,
-          marginLeft: 20,
-          marginBottom: 20,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#fff2"
-        }}
-      >
+      <div className="locked-desktop">
         <IoLockClosed
           color="#656565"
           size={100}
@@ -30,18 +15,7 @@ const Preview = (props) => {
   }
   return (
     <img
-      style={{
-        width: 350,
-        height: 250,
-        backgroundSize: "cover",
-        objectFit: "cover",
-        overflow: "auto",
-        borderRadius: 15,
-        zIndex: 30,
-        marginLeft: 20,
-        marginBottom: 20,
-        opacity: "80%",
-      }}
+      className="desktop"
       alt="desktop"
       src={props.imgsrc}
       onClick={props.onClick}

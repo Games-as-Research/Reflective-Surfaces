@@ -1,0 +1,57 @@
+.menubar-program {
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.menubar-item {
+  font-size: 15px;
+  font-family: sans-serif;
+  margin-left: 10px;
+}
+
+.menubar-container {
+  display: flex;
+  height: 3vh;
+  /* border: black 10px solid; */
+  background-color: rgba(206, 206, 206, 0.4);
+  backdrop-filter: blur(4.8px);
+  -webkit-backdrop-filter: blur(4.8px);
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menubar-leftside {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menubar-rightside {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.mac-datetime-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.mac-datetime {
+  font-size: 15px;
+  font-family: sans-serif;
+  margin-right: 10px;
+}
+
+.show-borders {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}

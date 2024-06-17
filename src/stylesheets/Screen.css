@@ -1,0 +1,19 @@
+.background-image {
+  width: 100vw;
+  height: 97vh;
+  background-size: cover;
+  object-fit: cover;
+  overflow: auto;
+  display: block;
+}
+
+.screen-container {
+  display: flex;
+  flex-direction: column;
+
+}
+.show-borders {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}

@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Screens from "./Screens";
+import ScreensManager from "./managers/ScreensManager";
 
 function App() {
   const action = useNavigationType();
@@ -47,7 +47,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Screens />} />
+      <Route path="/" element={<ScreensManager />} />
     </Routes>
   );
 }

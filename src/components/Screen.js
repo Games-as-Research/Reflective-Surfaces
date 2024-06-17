@@ -1,56 +1,120 @@
 import MacMenuBar from "./MacMenuBar";
 import Taskbar10 from "./Taskbar10";
+import Taskbar11 from "./Taskbar11";
 import Window from "./Window";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import "../stylesheets/Screen.css";
+import MacDock from "./MacDock";
 
 const MIN_WINDOWS_PER_SCREEN = 3;
 
-// props = {windows, setWindows, OS ("10", "11"), backgroundImage (path)}
+// props = {state}
 const Screen = (props) => {
+  const [screenState, setScreenState] = useState(props.state);
+  const [dockIcons, setDockIcons] = useState([]);
   const [top, setTop] = useState(
-    props.windows?.length ?? MIN_WINDOWS_PER_SCREEN
+    props.state.windows?.length ?? MIN_WINDOWS_PER_SCREEN
   );
 
-  function ChangeScreenOrder(index) {
-    const newOrder = props.windows;
-    for (let i = 0; i < newOrder.length; i++) {
-      if (newOrder[i].layer === index && newOrder[i].layer !== top) {
-        newOrder[i].layer = top + 1;
+  useEffect(() => {
+    const _dockicons = [];
+    for (let index = 0; index < screenState.windows.length; index++) {
+      _dockicons.push({
+        name: screenState.windows[index].type ?? "",
+        active: true, // this is to dislay the activity indicator on the dock/taskbar.
+        onClick: () => macDockIconClickHandler(index),
+      });
+    }
+
+    for (let i = 0; i < props.state.dock_icons?.length; i++) {
+      _dockicons.push({
+        name: props.state.dock_icons[i],
+        active: false,
+        onClick: null,
+      });
+    }
+    // can also add custom icons here.
+
+    setDockIcons(_dockicons);
+  }, []);
+
+  function changeWindowOrder(window_layer) {
+    const new_order = screenState.windows;
+    for (let i = 0; i < new_order.length; i++) {
+      if (new_order[i].layer === window_layer && new_order[i].layer !== top) {
+        new_order[i].layer = top + 1;
         break;
       }
     }
     setTop(top + 1);
-    props.setWindows(newOrder);
+    setScreenState({ ...screenState, windows: new_order });
   }
+  function macDockIconClickHandler(index) {
+    const new_conf = screenState.windows;
+
+    // if corresponding window is not minimized, and not at front, bring to front.
+    // if corresponding window is not minimized and at front, minimize.
+    // if corresponding window is minimized, maximize.
+
+    if (new_conf[index].minimized) {
+      new_conf[index].minimized = false;
+      setScreenState({ ...screenState, windows: new_conf });
+      changeWindowOrder(screenState.windows[index].layer);
+    } else {
+      if (screenState.windows[index].layer < top - 1) {
+        changeWindowOrder(screenState.windows[index].layer);
+      } else {
+        new_conf[index].minimized = true;
+        setScreenState({ ...screenState, windows: new_conf });
+      }
+    }
+  }
+  function updatePosition(index, x, y) {
+    const new_conf = screenState.windows;
+    new_conf[index].dimensions.top = y;
+    new_conf[index].dimensions.left = x;
+    setScreenState({ ...screenState, windows: new_conf });
+  }
+
   return (
-    <>
-      {props.OS !== "10" && props.OS !== "11" ? <MacMenuBar /> : null}
+    <div className="screen-container">
+      {/* Top */}
+      {screenState.OS ? null : <MacMenuBar />}
+
+      {/* Background */}
       <img
+        className="background-image"
         style={{
-          width: "100vw",
-          height: props.OS ? "95vh" : "97vh",
-          backgroundSize: "cover",
-          objectFit: "cover",
-          overflow: "auto",
-          display: "block",
+          height: screenState.OS ? "95vh" : "97vh",
         }}
         alt="Screen Background"
-        src={props.backgroundImage}
+        src={screenState.background}
         data-scroll-to="backgroundImage"
+        draggable={false}
       />
-      {props.windows.map((item, idx) => (
+
+      {/* Windows */}
+      {screenState.windows.map((item, idx) => (
         <Window
           key={idx}
-          layer={item.layer}
-          dimensions={item.dimensions}
-          src={item.src}
-          className={item.className}
-          onClick={ChangeScreenOrder}
-          link={item.link}
+          index={idx}
+          config={item}
+          onClick={changeWindowOrder}
+          onDragStop={updatePosition}
         />
       ))}
-      {props.OS === "10" ? <Taskbar10 /> : props.OS === "11" ? null : null}
-    </>
+
+      {/* Bottom */}
+      {screenState.OS ? (
+        screenState.OS === "10" ? (
+          <Taskbar10 />
+        ) : (
+          <Taskbar11 />
+        )
+      ) : (
+        <MacDock icons={dockIcons} />
+      )}
+    </div>
   );
 };
 
