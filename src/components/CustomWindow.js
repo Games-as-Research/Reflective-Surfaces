@@ -2,9 +2,9 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { Rnd } from "react-rnd";
 import ImageMapper from "react-img-mapper";
 import GameManager from "../managers/GameManager";
-import CustomWindow from "./CustomWindow";
+import "../stylesheets/CustomWindow.css";
 
-const Window = (props) => {
+const CustomWindow = (props) => {
   const GameMan = useContext(GameManager);
   const imgRef = useRef();
   const [dimensions, setDimensions] = useState(props.config.dimensions);
@@ -33,10 +33,6 @@ const Window = (props) => {
         window.open(area.url ?? "");
       }
     }
-  }
-
-  if (props.config.custom == true) {
-    return <CustomWindow {...props} />;
   }
 
   return (
@@ -69,35 +65,86 @@ const Window = (props) => {
             cursor: "pointer",
           }}
         >
-          <ImageMapper
-            src={props.config.src}
-            containerRef={imgRef}
-            width={dimensions.width}
-            height={dimensions.height}
-            responsive={true}
-            onClick={regionClicked}
-            parentWidth={dimensions.width}
-            map={
-              props.config.map ?? {
-                name: "",
-                areas: [],
-              }
-            }
-          />
-          {/* <img
-            src={props.config.src}
-            draggable={false}
+          <div
             style={{
-              width: dimensions.width,
-              height: dimensions.height,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "contain",
+              backgroundColor: props.config.backgroundcolor ?? "black",
+              width: "100%",
+              height: "100%",
+              borderRadius: 10,
             }}
-          /> */}
+          >
+            {/* top bar */}
+            <div className="top-bar">
+              <WindowControls />
+              <p
+                style={{
+                  color: "white",
+                  fontFamily: "monospace",
+                  alignSelf: "center",
+                  justifySelf: "center",
+                  marginRight: "45%",
+                }}
+              >
+                {props.config.title}
+              </p>
+            </div>
+
+            <p
+              style={{
+                fontFamily: "monospace",
+                color: "white",
+                padding: 5,
+                fontSize: 20,
+              }}
+            >
+              {props.config.text}
+            </p>
+          </div>
         </Rnd>
       )}
     </>
   );
 };
 
-export default Window;
+const WindowControls = (props) => {
+  return (
+    <div
+      style={{
+        height: "100%",
+        alignItems: "center",
+        display: "flex",
+        flexDirection: "row",
+      }}
+    >
+      <div
+        style={{
+          width: 10,
+          height: 10,
+          borderRadius: 20,
+          backgroundColor: "#ff5e57",
+          marginLeft: 10,
+        }}
+      />
+      <div
+        style={{
+          width: 10,
+          height: 10,
+          borderRadius: 20,
+          backgroundColor: "#fdbc2d",
+          marginLeft: 5,
+        }}
+      />
+      <div
+        style={{
+          width: 10,
+          height: 10,
+          borderRadius: 20,
+          backgroundColor: "#28c840",
+          marginLeft: 5,
+        }}
+      />
+    </div>
+  );
+};
+
+export default CustomWindow;

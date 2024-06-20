@@ -18,6 +18,20 @@ const DEFAULT_STATE = {
       },
     },
     {
+      layer: 4,
+      custom: true,
+      minimized: false,
+      type: "TEXTEDIT",
+      title: "transcript.txt",
+      text: "All right, it's February 1 2024.",
+      dimensions: {
+        top: 113,
+        left: 832,
+        width: 836,
+        height: 853,
+      },
+    },
+    {
       layer: 3,
       minimized: false,
       type: "FIREFOX",
