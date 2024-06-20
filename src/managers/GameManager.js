@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import ScreenSwitcher from "../components/ScreenSwitcher";
+import ScreenTransition from "../components/ScreenTransition";
 
 const LOCAL_STORAGE_KEYS = {
   SCREEN_INDEX: "active_screen",
@@ -51,6 +52,7 @@ const GameManagementProvider = (props) => {
   const [screens, updateScreens] = useState(DEFAULT_STATE.screens);
   const [activeScreen, setActiveScreen] = useState(-1);
   const [switching, setSwitching] = useState(false);
+  const [transitioningAlpha, settransitioningAlpha] = useState(0);
 
   useEffect(() => {
     try {
@@ -72,27 +74,50 @@ const GameManagementProvider = (props) => {
     }
   }, [activeScreen]);
 
+  const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+  async function transitionIn() {
+    const transition_step = 0.1;
+    for (let index = 0; index <= 10; index++) {
+      settransitioningAlpha(transition_step * index);
+      await delay(30);
+    }
+  }
+
+  async function transitionOut() {
+    const transition_step = 0.1;
+    for (let index = 10; index >= 0; index--) {
+      settransitioningAlpha(transition_step * index);
+      await delay(30);
+    }
+  }
+
   // #region Screen Chaning
-  function nextScreen() {
+  async function nextScreen() {
+    await transitionIn();
     if (activeScreen === 8) {
       setActiveScreen(0);
     } else {
       setActiveScreen(activeScreen + 1);
     }
+    await transitionOut();
   }
 
-  function previousScreen() {
+  async function previousScreen() {
+    await transitionIn();
+
     if (activeScreen === 0) {
       setActiveScreen(8);
     } else {
       setActiveScreen(activeScreen - 1);
     }
+
+    await transitionOut();
   }
 
   function jumpToScreen(index) {
     if (index == null) return;
 
-    
     if (index >= 0 && index <= 8) {
       setActiveScreen(index);
       if (switching) hideSwitcher();
@@ -134,6 +159,8 @@ const GameManagementProvider = (props) => {
         showSwitcher,
       }}
     >
+      <ScreenTransition alpha={transitioningAlpha} />
+
       <ScreenSwitcher
         show={switching}
         screens={screens}
