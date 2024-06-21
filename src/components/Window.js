@@ -66,7 +66,7 @@ const Window = (props) => {
             justifyContent: "center",
             objectFit: "cover",
             zIndex: props.config.layer,
-            cursor: "pointer",
+            cursor: "none",
           }}
         >
           <ImageMapper
