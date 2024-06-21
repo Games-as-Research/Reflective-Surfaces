@@ -1,6 +1,9 @@
 import { createContext, useEffect, useState } from "react";
 import ScreenSwitcher from "../components/ScreenSwitcher";
 import ScreenTransition from "../components/ScreenTransition";
+import CustomCursor from 'custom-cursor-react';
+import 'custom-cursor-react/dist/index.css';
+
 const DEV = process.env.NODE_ENV == "development";
 const LOCAL_STORAGE_KEYS = {
   SCREEN_INDEX: "active_screen",
@@ -53,6 +56,7 @@ const GameManagementProvider = (props) => {
   const [activeScreen, setActiveScreen] = useState(-1);
   const [switching, setSwitching] = useState(false);
   const [transitioningAlpha, settransitioningAlpha] = useState(0);
+  const [cursorColor, setCursorColor] = useState("red");
 
   useEffect(() => {
     try {
@@ -161,6 +165,18 @@ const GameManagementProvider = (props) => {
         showSwitcher,
       }}
     >
+      <CustomCursor
+        targets={[".refsurf-control"]}
+        customClass="custom-cursor"
+        dimensions={30}
+        fill={cursorColor}
+        smoothness={{
+          movement: 0.2,
+          scale: 0.1,
+          opacity: 0.2,
+        }}
+        targetOpacity={0.5}
+      />
       <ScreenTransition alpha={transitioningAlpha} />
 
       <ScreenSwitcher

@@ -7,6 +7,7 @@ const DesktopViewer = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       width={28}
       height={18}
+      className="refsurf-control"
       fill="none"
       onClick={GameMan.showSwitcher}
       {...props}
