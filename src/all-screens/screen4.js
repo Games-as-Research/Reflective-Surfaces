@@ -22,7 +22,7 @@ const DEFAULT_STATE = {
       custom: true,
       minimized: false,
       type: "TEXTEDIT",
-      title: "transcript.txt",
+      title: "otter.ai_transcript_of_Voice_Note.txt",
       text: "All right, it's February 1 2024.",
       dimensions: {
         top: 113,

@@ -82,7 +82,9 @@ const CustomWindow = (props) => {
                   fontFamily: "monospace",
                   alignSelf: "center",
                   justifySelf: "center",
-                  marginRight: "45%",
+                  position: "absolute",
+                  marginLeft: "32%",
+                  textWrap: true,
                 }}
               >
                 {props.config.title}
@@ -94,7 +96,7 @@ const CustomWindow = (props) => {
                 fontFamily: "monospace",
                 color: "white",
                 padding: 5,
-                fontSize: 20,
+                fontSize: 12,
               }}
             >
               {props.config.text}
@@ -118,8 +120,8 @@ const WindowControls = (props) => {
     >
       <div
         style={{
-          width: 10,
-          height: 10,
+          width: 14,
+          height: 14,
           borderRadius: 20,
           backgroundColor: "#ff5e57",
           marginLeft: 10,
@@ -127,20 +129,20 @@ const WindowControls = (props) => {
       />
       <div
         style={{
-          width: 10,
-          height: 10,
+          width: 14,
+          height: 14,
           borderRadius: 20,
           backgroundColor: "#fdbc2d",
-          marginLeft: 5,
+          marginLeft: 8,
         }}
       />
       <div
         style={{
-          width: 10,
-          height: 10,
+          width: 14,
+          height: 14,
           borderRadius: 20,
           backgroundColor: "#28c840",
-          marginLeft: 5,
+          marginLeft: 8,
         }}
       />
     </div>

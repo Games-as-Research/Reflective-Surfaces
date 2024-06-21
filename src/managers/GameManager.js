@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import ScreenSwitcher from "../components/ScreenSwitcher";
 import ScreenTransition from "../components/ScreenTransition";
-
+const DEV = process.env.NODE_ENV == "development";
 const LOCAL_STORAGE_KEYS = {
   SCREEN_INDEX: "active_screen",
   SAVESTATE: "RS_PLAYABLE_SAVEFILE",
@@ -13,35 +13,35 @@ const DEFAULT_STATE = {
       thumbnail: "./S1_Pippin/Background.png",
     },
     {
-      locked: true,
+      locked: !DEV,
       thumbnail: "./S2_Matt/Background.png",
     },
     {
-      locked: true,
+      locked: !DEV,
       thumbnail: "./S3_Rilla/Background.jpeg",
     },
     {
-      locked: true,
+      locked: !DEV,
       thumbnail: "./S4_Chip/Background.jpg",
     },
     {
-      locked: true,
+      locked: !DEV,
       thumbnail: "./S5_Kalervo/Background.jpeg",
     },
     {
-      locked: true,
+      locked: !DEV,
       thumbnail: "./S6_Enric/Background.jpg",
     },
     {
-      locked: true,
+      locked: !DEV,
       thumbnail: "./S7_Femke/Background.jpeg",
     },
     {
-      locked: true,
+      locked: !DEV,
       thumbnail: "./S8_Vadim/Background.jpeg",
     },
     {
-      locked: true,
+      locked: !DEV,
       thumbnail: "./S9_Shahrom/Background.png",
     },
   ],
@@ -119,8 +119,10 @@ const GameManagementProvider = (props) => {
     if (index == null) return;
 
     if (index >= 0 && index <= 8) {
+      transitionIn();
       setActiveScreen(index);
       if (switching) hideSwitcher();
+      transitionOut();
     }
   }
 
