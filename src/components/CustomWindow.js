@@ -62,7 +62,6 @@ const CustomWindow = (props) => {
             justifyContent: "center",
             objectFit: "cover",
             zIndex: props.config.layer,
-            cursor: "none",
           }}
         >
           <div

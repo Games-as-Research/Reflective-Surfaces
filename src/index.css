@@ -1,6 +1,9 @@
+* { 
+  cursor: none;
+}
+
 body {
   margin: 0;
   line-height: normal;
   overflow: hidden;
-  cursor: none;
 }
