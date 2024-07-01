@@ -1,18 +1,31 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../stylesheets/TitleScreen.css";
+import GameManager from "../managers/GameManager";
 
 //Utility
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 // Components
 const Button = (props) => {
+  const [divClass, setDivClass] = useState("button-container");
+  const [pClass, setPClass] = useState("button-label");
+  function focusing() {
+    setDivClass("button-container-focused");
+    setPClass("button-label-focused");
+  }
+  function relaxing() {
+    setDivClass("button-container");
+    setPClass("button-label");
+  }
   return (
     <div
-      className="button-container"
+      className={divClass}
       onClick={props.onClick ?? null}
       style={props.style ?? {}}
+      onMouseEnter={focusing}
+      onMouseLeave={relaxing}
     >
-      <p className="button-label">{props.label}</p>
+      <p className={pClass}>{props.label}</p>
     </div>
   );
 };
@@ -209,9 +222,10 @@ const Page2 = (props) => {
   const [buttonOpacity, setButtonOpacity] = useState(0);
   const lastLine = 5;
 
+  const GameMan = useContext(GameManager);
+
   function StartHandler() {
-    // set opacity to 0
-    // set screen to 1
+    GameMan.jumpToScreen(0);
   }
 
   useEffect(() => {

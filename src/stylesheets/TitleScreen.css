@@ -49,7 +49,6 @@
 }
 
 .intro-line {
-
   font-family: "Inknut Antiqua";
   font-style: normal;
   font-weight: 300;
@@ -77,12 +76,38 @@
   margin-top: 20px;
 }
 
+.button-container-focused {
+  /* Rectangle 20 */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 256px;
+  height: 64px;
+  align-self: center;
+  justify-self: center;
+  border: 3px solid #918f8f;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: #918f8f;
+}
+
 .button-label {
   font-family: "Inknut Antiqua";
   font-weight: 400;
-  font-size: 24px;
+  font-size: 22px;
   text-align: center;
   text-transform: capitalize;
 
   color: #ffffff;
+}
+
+.button-label-focused {
+  font-family: "Inknut Antiqua";
+  font-weight: 400;
+  font-size: 22px;
+  text-align: center;
+  text-transform: capitalize;
+
+  color: #000;
 }
