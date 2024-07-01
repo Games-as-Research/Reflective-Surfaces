@@ -233,6 +233,7 @@ const Page2 = (props) => {
 
   function StartHandler() {
     GameMan.jumpToScreen(0);
+    GameMan.sendReflectionMessage("Good, you're here! I need your help", 1000);
   }
 
   useEffect(() => {

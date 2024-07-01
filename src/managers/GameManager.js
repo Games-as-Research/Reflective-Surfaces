@@ -3,6 +3,7 @@ import ScreenSwitcher from "../components/ScreenSwitcher";
 import ScreenTransition from "../components/ScreenTransition";
 import CustomCursor from "custom-cursor-react";
 import "custom-cursor-react/dist/index.css";
+import Reflection from "../components/Reflection";
 
 const DEV = process.env.NODE_ENV == "development";
 const LOCAL_STORAGE_KEYS = {
@@ -49,6 +50,7 @@ const DEFAULT_STATE = {
     },
   ],
 };
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const GameManager = createContext(null);
 const GameManagementProvider = (props) => {
@@ -56,7 +58,8 @@ const GameManagementProvider = (props) => {
   const [activeScreen, setActiveScreen] = useState(-1);
   const [switching, setSwitching] = useState(false);
   const [transitioningAlpha, settransitioningAlpha] = useState(0);
-
+  const [showReflection, setShowReflection] = useState(false);
+  const [reflectionMessage, setReflectionMessage] = useState();
   useEffect(() => {
     try {
       if (activeScreen !== null && activeScreen > -1) {
@@ -66,8 +69,6 @@ const GameManagementProvider = (props) => {
       console.log("DEBUG:: Local storage failed.\n" + error);
     }
   }, [activeScreen]);
-
-  const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
   async function transitionIn() {
     const transition_step = 0.1;
@@ -85,7 +86,7 @@ const GameManagementProvider = (props) => {
     }
   }
 
-  // #region Screen Chaning
+  // #region Screen Changing
   async function nextScreen() {
     await transitionIn();
     if (activeScreen === 10) {
@@ -140,6 +141,27 @@ const GameManagementProvider = (props) => {
   }
   // #endregion
 
+  async function sendReflectionMessage(msg, wait = 0) {
+    if (wait > 0) {
+      await delay(wait);
+    }
+    if (msg) {
+      setReflectionMessage(msg);
+    }
+    setShowReflection(true);
+  }
+
+  function SendHelp() {
+    const tips = [
+      "Press me to close this bubble",
+      "The mouse will grow larger on an active site. Use this to search for portals",
+      "Refresh page if mouse malfunctions",
+      "For all the Mac screens, move the cursor to the bottom of the page to view the dock.",
+    ];
+    const idx = Math.floor(Math.random() * tips.length);
+    sendReflectionMessage(tips[idx]);
+  }
+
   return (
     <GameManager.Provider
       value={{
@@ -152,8 +174,15 @@ const GameManagementProvider = (props) => {
         unlockScreen,
         jumpToScreen,
         showSwitcher,
+        sendReflectionMessage,
+        SendHelp,
       }}
     >
+      <Reflection
+        message={reflectionMessage}
+        show={showReflection}
+        setShow={setShowReflection}
+      />
       <CustomCursor
         targets={[".refsurf-control", "map"]}
         customClass="custom-cursor"

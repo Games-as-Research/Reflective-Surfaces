@@ -8,6 +8,8 @@ import { useContext } from "react";
 import GameManager from "../managers/GameManager";
 
 const MacMenuBar = (props) => {
+  const GameMan = useContext(GameManager);
+ 
   return (
     <div
       className="menubar-container"
@@ -23,7 +25,7 @@ const MacMenuBar = (props) => {
         <p className="menubar-item">View</p>
         <p className="menubar-item">Go</p>
         <p className="menubar-item">Window</p>
-        <p className="menubar-item">Help</p>
+        <p className="menubar-item refsurf-control" onClick={GameMan.SendHelp}>Help</p>
       </div>
 
       <div className="menubar-rightside">
