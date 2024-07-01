@@ -27,15 +27,15 @@ const Credits = (props) => {
       style={{ position: "absolute", top: position + "vh" }}
     >
       <p className="subheading">Credits</p>
-      <p className="lines">Rilla Khaled</p>
-      <p className="lines">Pippin Barr</p>
-      <p className="lines">Matt Bethancourt</p>
-      <p className="lines">Femke Kocken</p>
-      <p className="lines">Chip Limeburner</p>
-      <p className="lines">Enric G. Llagostera</p>
-      <p className="lines">Vadim Nickel</p>
-      <p className="lines">Kalervo A. Sinervo</p>
-      <p className="lines">Muhammad Shahrom Ali</p>
+      <p className="credits-entry">Rilla Khaled</p>
+      <p className="credits-entry">Pippin Barr</p>
+      <p className="credits-entry">Matt Bethancourt</p>
+      <p className="credits-entry">Femke Kocken</p>
+      <p className="credits-entry">Chip Limeburner</p>
+      <p className="credits-entry">Enric G. Llagostera</p>
+      <p className="credits-entry">Vadim Nickel</p>
+      <p className="credits-entry">Kalervo A. Sinervo</p>
+      <p className="credits-entry">Muhammad Shahrom Ali</p>
     </div>
   );
 };
@@ -58,7 +58,7 @@ const GamesAsResearch = (props) => {
     <div className="games-as-research-container" style={{ opacity: opacity }}>
       <p className="presentation">a Games as Research project</p>
       <p className="heading">Reflective Surfaces</p>
-      <p className="lines">
+      <p className="presentation">
         Method for Design Materialization (Khaled and Barr, 2023)
       </p>
       <div
@@ -68,8 +68,8 @@ const GamesAsResearch = (props) => {
           justifyContent: "center",
         }}
       >
-        <p className="lines">Find out more at {"\0"}</p>
-        <p className="lines" style={{ color: "yellow" }}>
+        <p className="presentation">Find out more at {"\0"}</p>
+        <p className="presentation" style={{ color: "yellow" }}>
           gamesasresearch.com
         </p>
       </div>

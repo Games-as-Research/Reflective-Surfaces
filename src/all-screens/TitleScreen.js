@@ -104,7 +104,7 @@ const Page0 = (props) => {
         in how we disseminate our work?
       </p>
       <Button label={"Start"} onClick={StartHandler} />
-      {props.resume > -1 ? (
+      {props.resume > -1 && props.resume <= 8 ? (
         <Button label={"Resume"} onClick={ResumeHandler} />
       ) : null}
     </div>

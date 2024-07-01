@@ -88,7 +88,7 @@ const GameManagementProvider = (props) => {
   // #region Screen Chaning
   async function nextScreen() {
     await transitionIn();
-    if (activeScreen === 8) {
+    if (activeScreen === 10) {
       setActiveScreen(0);
     } else {
       setActiveScreen(activeScreen + 1);
