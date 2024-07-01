@@ -1,31 +1,35 @@
 .menubar-program {
   margin-left: 10px;
   font-size: 15px;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 600;
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
 
 .menubar-item {
   font-size: 15px;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   margin-left: 10px;
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
 
 .menubar-container {
   display: flex;
-  height: 3vh;
-  /* border: black 10px solid; */
+  width: 100%;
+  min-height: 3vh;
   background-color: rgba(206, 206, 206, 0.4);
   backdrop-filter: blur(4.8px);
   -webkit-backdrop-filter: blur(4.8px);
-  padding-left: 20px;
-  padding-right: 20px;
   justify-content: space-between;
   align-items: center;
+  padding: 2px;
 }
 
 .menubar-leftside {
   display: flex;
+  margin-left: 10px;
   align-items: center;
   justify-content: space-between;
 }
@@ -34,7 +38,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
 }
 
 .mac-datetime-container {
@@ -42,11 +45,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
 
 .mac-datetime {
   font-size: 15px;
-  font-family: -apple-system, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin-top: 0%;
+  margin-bottom: 0%;
   margin-right: 10px;
 }
 
