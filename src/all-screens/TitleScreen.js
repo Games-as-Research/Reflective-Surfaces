@@ -90,6 +90,9 @@ const Page0 = (props) => {
     props.setPage(1);
   }
   function ResumeHandler() {
+    for (let index = 0; index <= props.resume; index++) {
+      GameMan.unlockScreen(index);
+    }
     GameMan.jumpToScreen(props.resume);
   }
 
