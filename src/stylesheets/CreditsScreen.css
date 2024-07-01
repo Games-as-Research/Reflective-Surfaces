@@ -1,0 +1,70 @@
+.screen-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.credits-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.games-as-research-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.presentation {
+  font-family: "Inknut Antiqua";
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.heading {
+  font-family: "Inknut Antiqua";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.lines {
+  font-family: "Inknut Antiqua";
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 100;
+  color: #ffffff;
+}
+
+.presentation {
+  font-family: "Inknut Antiqua";
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.subheading {
+  font-family: "Inknut Antiqua";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  color: #ffffff;
+  text-decoration: underline;
+}
