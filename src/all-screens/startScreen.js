@@ -2,6 +2,7 @@ import Screen from "../components/Screen";
 import { useContext, useState, useEffect } from "react";
 import GameManager from "../managers/GameManager";
 import "../stylesheets/startScreen.css";
+import "../stylesheets/fonts.css";
 
 const DEFAULT_STATE = {
   index: 0,
@@ -46,9 +47,11 @@ const StartScreen = (props) => {
     <>
       <Screen state={DEFAULT_STATE} />
       <div className="dark-overlay">
-        <p className="title-text">Reflective Surfaces</p>
+        <p className="title-text inknut-antiqua-semibold">
+          Reflective Surfaces
+        </p>
         <div className="play-button" onClick={PlayHandler}>
-          <p className="play-button-text">Play</p>
+          <p className="play-button-text inknut-antiqua-semibold">Play</p>
         </div>
       </div>
     </>

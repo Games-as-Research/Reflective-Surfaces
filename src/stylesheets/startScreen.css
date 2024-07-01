@@ -20,7 +20,7 @@
 
 .play-button {
   display: flex;
-  border-width: 2px;
+  border-width: 3px;
   border-radius: 10px;
   border-color: white;
   border-style: solid;
@@ -32,6 +32,6 @@
 
 .play-button-text {
   color: white;
-  font-size: 28px;
+  font-size: 26px;
   text-align: center;
 }
