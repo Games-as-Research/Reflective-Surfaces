@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import "../stylesheets/TitleScreen.css";
 import GameManager from "../managers/GameManager";
+import { LOCAL_STORAGE_KEYS } from "../managers/GameManager";
 
 //Utility
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -77,6 +78,7 @@ const TypingP = (props) => {
 
 const Page0 = (props) => {
   const [opacity, setOpacity] = useState(1);
+  const GameMan = useContext(GameManager);
 
   async function StartHandler() {
     const transition_step = 0.1;
@@ -87,7 +89,9 @@ const Page0 = (props) => {
     await delay(500);
     props.setPage(1);
   }
-  function ResumeHandler() {}
+  function ResumeHandler() {
+    GameMan.jumpToScreen(props.resume);
+  }
 
   return (
     <div style={{ opacity: opacity }}>
@@ -97,7 +101,7 @@ const Page0 = (props) => {
         in how we disseminate our work?
       </p>
       <Button label={"Start"} onClick={StartHandler} />
-      {props.resume ? (
+      {props.resume > -1 ? (
         <Button label={"Resume"} onClick={ResumeHandler} />
       ) : null}
     </div>
@@ -315,11 +319,26 @@ const Page2 = (props) => {
 const TitleScreen = (props) => {
   const [page, setPage] = useState(0);
 
+  const [activeScreen, setActiveScreen] = useState(-1);
+
+  useEffect(() => {
+    try {
+      const storage_val = localStorage.getItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX);
+
+      if (storage_val) {
+        setActiveScreen(parseInt(storage_val));
+      } else {
+        localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, -1);
+      }
+    } catch (error) {
+      console.log("DEBUG:: Local storage failed.\n" + error);
+    }
+  }, []);
   return (
     <div className="screen-container">
       <p className="title">Reflective Surfaces</p>
       {page === 0 ? (
-        <Page0 setPage={setPage} resume={props.resume} />
+        <Page0 setPage={setPage} resume={activeScreen} />
       ) : page === 1 ? (
         <Page1 setPage={setPage} />
       ) : (
