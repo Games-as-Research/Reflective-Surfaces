@@ -90,7 +90,7 @@ const Screen5 = (props) => {
   useEffect(() => {
     GameMan.unlockScreen(4);
   }, []);
-  return <Screen state={DEFAULT_STATE} />;
+  return <Screen state={DEFAULT_STATE} backgroundColor={"#88C6FF"}/>;
 };
 
 export default Screen5;

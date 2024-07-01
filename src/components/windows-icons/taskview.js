@@ -8,6 +8,7 @@ const TaskView = (props) => {
       width={16}
       height={15}
       fill="none"
+      className="refsurf-control"
       onClick={GameMan.showSwitcher}
       {...props}
     >

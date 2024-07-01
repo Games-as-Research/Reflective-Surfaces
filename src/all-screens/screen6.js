@@ -148,7 +148,7 @@ const Screen6 = (props) => {
     GameMan.unlockScreen(5);
   }, []);
 
-  return <Screen state={DEFAULT_STATE} />;
+  return <Screen state={DEFAULT_STATE} backgroundColor={"#1A355B"}/>;
 };
 
 export default Screen6;

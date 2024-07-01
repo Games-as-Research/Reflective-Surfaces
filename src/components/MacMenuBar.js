@@ -9,7 +9,12 @@ import GameManager from "../managers/GameManager";
 
 const MacMenuBar = (props) => {
   return (
-    <div className="menubar-container">
+    <div
+      className="menubar-container"
+      style={
+        props.backgroundColor ? { backgroundColor: props.backgroundColor } : {}
+      }
+    >
       <div className="menubar-leftside">
         <AppleIcon />
         <p className="menubar-program">Finder</p>

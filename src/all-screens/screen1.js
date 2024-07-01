@@ -73,7 +73,7 @@ const DEFAULT_STATE = {
 };
 
 const Screen1 = (props) => {
-  return <Screen state={DEFAULT_STATE} />;
+  return <Screen state={DEFAULT_STATE} backgroundColor={"#C3A4A4"} />;
 };
 
 export default Screen1;

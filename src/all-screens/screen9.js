@@ -106,7 +106,7 @@ const Screen9 = (props) => {
 
   return (
     <>
-      <Screen state={DEFAULT_STATE} />
+      <Screen state={DEFAULT_STATE} backgroundColor={"#C4C4C4"}/>
       {/* Add a terminal Window :D  */}
       <DesktopIcon
         default={{ x: 1400, y: 50 }}

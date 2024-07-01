@@ -12,7 +12,12 @@ import GameManager from "../managers/GameManager";
 const Taskbar10 = (props) => {
   const GameMan = useContext(GameManager);
   return (
-    <div className="taskbar-container">
+    <div
+      className="taskbar-container"
+      style={
+        props.backgroundColor ? { backgroundColor: props.backgroundColor } : {}
+      }
+    >
       <div className="taskbar-leftside">
         <Windows10Logo />
         <div className="search-container">

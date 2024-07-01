@@ -133,7 +133,7 @@ const Screen8 = (props) => {
   return (
     <>
       {/* <P5JS /> */}
-      <Screen state={DEFAULT_STATE} />
+      <Screen state={DEFAULT_STATE} backgroundColor={"#7A5C10"}/>
     </>
   );
 };

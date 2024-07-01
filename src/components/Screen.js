@@ -79,7 +79,9 @@ const Screen = (props) => {
   return (
     <div className="screen-container">
       {/* Top */}
-      {screenState.OS ? null : <MacMenuBar />}
+      {screenState.OS ? null : (
+        <MacMenuBar backgroundColor={props.backgroundColor ?? null} />
+      )}
 
       {/* Background */}
       <img
@@ -107,9 +109,9 @@ const Screen = (props) => {
       {/* Bottom */}
       {screenState.OS ? (
         screenState.OS === "10" ? (
-          <Taskbar10 />
+          <Taskbar10 backgroundColor={props.backgroundColor ?? null} />
         ) : (
-          <Taskbar11 />
+          <Taskbar11 backgroundColor={props.backgroundColor ?? null} />
         )
       ) : (
         <MacDock icons={dockIcons} />
