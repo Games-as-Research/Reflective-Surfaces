@@ -1,0 +1,318 @@
+import { useEffect, useState } from "react";
+import "../stylesheets/TitleScreen.css";
+
+//Utility
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+// Components
+const Button = (props) => {
+  return (
+    <div
+      className="button-container"
+      onClick={props.onClick ?? null}
+      style={props.style ?? {}}
+    >
+      <p className="button-label">{props.label}</p>
+    </div>
+  );
+};
+
+const TypingP = (props) => {
+  // props: {text, base}
+  const [text, setText] = useState("");
+  async function typing() {
+    const typingSpeed = 70;
+
+    //type out the base text
+    for (let index = 0; index <= props.base.length; index++) {
+      setText(props.base.slice(0, index));
+      await delay(typingSpeed);
+    }
+
+    //type the rest of stuff
+    for (let line = 0; line < props.text.length; line++) {
+      const element = props.text[line];
+      const fullLine = props.base + element;
+
+      // write
+      for (let index = 0; index <= element.length; index++) {
+        setText(props.base + element.slice(0, index));
+        await delay(typingSpeed);
+      }
+
+      // delay between each line
+      await delay(typingSpeed * 15);
+
+      if (line != props.text.length - 1) {
+        // erase if not the last one
+        for (let i = fullLine.length; i >= props.base.length; --i) {
+          setText(fullLine.slice(0, i));
+          await delay(typingSpeed / 10);
+        }
+      }
+    }
+    await delay(typingSpeed * 4);
+    props.onComplete();
+  }
+
+  useEffect(() => {
+    typing();
+  }, []);
+
+  return <p className="intro-line">{text}</p>;
+};
+
+const Page0 = (props) => {
+  const [opacity, setOpacity] = useState(1);
+
+  async function StartHandler() {
+    const transition_step = 0.1;
+    for (let index = 10; index >= 0; index--) {
+      setOpacity(transition_step * index);
+      await delay(30);
+    }
+    await delay(500);
+    props.setPage(1);
+  }
+  function ResumeHandler() {}
+
+  return (
+    <div style={{ opacity: opacity }}>
+      <p className="tagline">
+        If the function of the works we research and design is to provide
+        playful experiences then what might it mean to communicate playful form
+        in how we disseminate our work?
+      </p>
+      <Button label={"Start"} onClick={StartHandler} />
+      {props.resume ? (
+        <Button label={"Resume"} onClick={ResumeHandler} />
+      ) : null}
+    </div>
+  );
+};
+
+const Page1 = (props) => {
+  const [line, setLine] = useState(0);
+  const [opacity, setOpacity] = useState(1);
+  const [buttonOpacity, setButtonOpacity] = useState(0);
+
+  const line1 = "This is a reflection on ";
+  const line2 = "This is also an ode to media ";
+  const line3 = "And so we ";
+  const line4 = "Modify your ";
+
+  const lastLine = 4;
+  const lines = [
+    [
+      "reflective practice in design.",
+      "reflective practice in research through design.",
+      "how our material conditions support reflective practice in research through design.",
+    ],
+    [
+      "we adopt to articulate design.",
+      "we adopt to articulate how we reflect on design.",
+      "postures we adopt to articulate how we reflect on design.",
+    ],
+    [
+      "revisited the dialogues we engaged with during the process of design.",
+      "reflected on material conditions afforded by our design tools.",
+      "realised they do not all invite reflection in equal measure",
+    ],
+    [
+      "material conditions of design practice to invite reflection.",
+      "material conditions of articulation of design practice to invite reflection.",
+      " articulation of material conditions of design practice to invite reflection.",
+    ],
+  ];
+
+  async function nextHandler() {
+    const transition_step = 0.1;
+    for (let index = 10; index >= 0; index--) {
+      setOpacity(transition_step * index);
+      await delay(30);
+    }
+    await delay(500);
+    props.setPage(2);
+  }
+
+  useEffect(() => {
+    async function transitionIn() {
+      const transition_step = 0.1;
+      for (let index = 0; index <= 10; index++) {
+        setButtonOpacity(transition_step * index);
+        await delay(30);
+      }
+    }
+    if (line == lastLine) {
+      transitionIn();
+    }
+  }, [line]);
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        width: "100%",
+        flexDirection: "column",
+        opacity: opacity,
+      }}
+      onClick={() => {
+        setLine(line + 1);
+      }}
+    >
+      <TypingP
+        text={lines[0]}
+        base={line1}
+        onComplete={() => {
+          setLine(line + 1);
+        }}
+      />
+
+      {line > 0 && (
+        <TypingP
+          text={lines[1]}
+          base={line2}
+          onComplete={() => {
+            setLine(line + 1);
+          }}
+        />
+      )}
+      {line > 1 && (
+        <TypingP
+          text={lines[2]}
+          base={line3}
+          onComplete={() => {
+            setLine(line + 1);
+          }}
+        />
+      )}
+      {line > 2 && (
+        <TypingP
+          text={lines[3]}
+          base={line4}
+          onComplete={() => {
+            setLine(lastLine);
+          }}
+        />
+      )}
+      <Button
+        style={{ opacity: buttonOpacity }}
+        label={"Next"}
+        onClick={nextHandler}
+      />
+    </div>
+  );
+};
+
+const Page2 = (props) => {
+  const [line, setLine] = useState(0);
+  const [buttonOpacity, setButtonOpacity] = useState(0);
+  const lastLine = 5;
+
+  function StartHandler() {
+    // set opacity to 0
+    // set screen to 1
+  }
+
+  useEffect(() => {
+    async function transitionIn() {
+      const transition_step = 0.1;
+      for (let index = 0; index <= 10; index++) {
+        setButtonOpacity(transition_step * index);
+        await delay(30);
+      }
+    }
+    if (line == lastLine) {
+      transitionIn();
+    }
+  }, [line]);
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        width: "100%",
+        flexDirection: "column",
+      }}
+      onClick={() => {
+        setLine(line + 1);
+      }}
+    >
+      <TypingP
+        text={[]}
+        base={"Designers are at work... "}
+        onComplete={() => {
+          setLine(line + 1);
+        }}
+      />
+
+      {line > 0 && (
+        <TypingP
+          text={[]}
+          base={
+            "You have found yourself able to peek into their process unintrusively"
+          }
+          onComplete={() => {
+            setLine(line + 1);
+          }}
+        />
+      )}
+      {line > 1 && (
+        <TypingP
+          text={[]}
+          base={
+            "This is them at their most vulnerable so be warned: if they feel your presence, they might shut down"
+          }
+          onComplete={() => {
+            setLine(line + 1);
+          }}
+        />
+      )}
+      {line > 2 && (
+        <TypingP
+          text={[]}
+          base={"Use your cursor to find portals"}
+          onComplete={() => {
+            setLine(line + 1);
+          }}
+        />
+      )}
+      {line > 3 && (
+        <TypingP
+          text={[]}
+          base={
+            "Portals to artefacts, Portals to repositories, Portals forward, and Portals backwards"
+          }
+          onComplete={() => {
+            setLine(line + 1);
+          }}
+        />
+      )}
+
+      <Button
+        style={{ opacity: buttonOpacity }}
+        label={"Start"}
+        onClick={StartHandler}
+      />
+    </div>
+  );
+};
+
+const TitleScreen = (props) => {
+  const [page, setPage] = useState(0);
+
+  return (
+    <div className="screen-container">
+      <p className="title">Reflective Surfaces</p>
+      {page === 0 ? (
+        <Page0 setPage={setPage} resume={props.resume} />
+      ) : page === 1 ? (
+        <Page1 setPage={setPage} />
+      ) : (
+        <Page2 setPage={setPage} />
+      )}
+    </div>
+  );
+};
+
+export default TitleScreen;
