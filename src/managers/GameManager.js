@@ -59,6 +59,10 @@ const GameManagementProvider = (props) => {
   const [transitioningAlpha, settransitioningAlpha] = useState(0);
   const [showReflection, setShowReflection] = useState(false);
   const [reflectionMessage, setReflectionMessage] = useState();
+  // This is for looping the help and tips of the system. the value loops over
+  // see the SendHelp function
+  const [tipIndex, setTipIndex] = useState(0);
+
   useEffect(() => {
     try {
       if (activeScreen !== null && activeScreen > -1) {
