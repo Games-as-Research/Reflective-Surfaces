@@ -9,7 +9,7 @@ import GameManager from "../managers/GameManager";
 
 const MacMenuBar = (props) => {
   const GameMan = useContext(GameManager);
- 
+
   return (
     <div
       className="menubar-container"
@@ -25,13 +25,12 @@ const MacMenuBar = (props) => {
         <p className="menubar-item">View</p>
         <p className="menubar-item">Go</p>
         <p className="menubar-item">Window</p>
-        <p className="menubar-item refsurf-control" onClick={GameMan.SendHelp}>Help</p>
+        <p className="menubar-item refsurf-control" onClick={GameMan.SendHelp}>
+          Help
+        </p>
       </div>
 
       <div className="menubar-rightside">
-        {/* <ScreenControls /> */}
-        {/* <div style={{ width: 20 }} /> */}
-
         <DesktopViewer />
         <div style={{ width: 20 }} />
         <ControlCenter />
@@ -46,26 +45,11 @@ const MacMenuBar = (props) => {
 const MacDateTime = (props) => {
   return (
     <div className="mac-datetime-container">
-      <p className="mac-datetime">Thu Mar 7</p>
+      <p className="mac-datetime">Thu Dec 1</p>
       <p className="mac-datetime">10:09</p>
     </div>
   );
 };
 
-const ScreenControls = (props) => {
-  const GameMan = useContext(GameManager);
-
-  return (
-    <>
-      <p className="menubar-item" onClick={GameMan.previousScreen}>
-        {"<"}
-      </p>
-      <div style={{ width: 20 }} />
-      <p className="menubar-item" onClick={GameMan.nextScreen}>
-        {">"}
-      </p>{" "}
-    </>
-  );
-};
 
 export default MacMenuBar;

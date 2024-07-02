@@ -4,7 +4,7 @@ import GameManager from "../managers/GameManager";
 
 const DEFAULT_STATE = {
   background: "./S6_Enric/Background.jpg",
-  OS: "11",
+  OS: "10",
   windows: [
     {
       layer: 6,

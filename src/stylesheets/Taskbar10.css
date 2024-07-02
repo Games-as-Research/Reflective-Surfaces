@@ -3,7 +3,6 @@
   position: relative;
   height: 5vh;
   width: 100vw;
-  /* border: black 10px solid; */
   background-color: #05293b;
   padding-left: 20px;
   padding-right: 20px;
@@ -25,13 +24,6 @@
   justify-content: space-between;
   align-items: center;
   width: 20%;
-}
-
-.screen-controls {
-  color: white;
-  margin-right: 10px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
 }
 
 .date-time {

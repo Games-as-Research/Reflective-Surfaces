@@ -1,6 +1,5 @@
 import MacMenuBar from "./MacMenuBar";
 import Taskbar10 from "./Taskbar10";
-import Taskbar11 from "./Taskbar11";
 import Window from "./Window";
 import { useEffect, useState } from "react";
 import "../stylesheets/Screen.css";
@@ -107,12 +106,8 @@ const Screen = (props) => {
       ))}
 
       {/* Bottom */}
-      {screenState.OS ? (
-        screenState.OS === "10" ? (
-          <Taskbar10 backgroundColor={props.backgroundColor ?? null} />
-        ) : (
-          <Taskbar11 backgroundColor={props.backgroundColor ?? null} />
-        )
+      {screenState.OS === "10" ? (
+        <Taskbar10 backgroundColor={props.backgroundColor ?? null} />
       ) : (
         <MacDock icons={dockIcons} />
       )}

@@ -5,7 +5,7 @@ import GameManager from "../managers/GameManager";
 
 const DEFAULT_STATE = {
   background: "./S8_Vadim/Background.jpeg",
-  OS: "11",
+  OS: "10",
   windows: [
     {
       layer: 6,
