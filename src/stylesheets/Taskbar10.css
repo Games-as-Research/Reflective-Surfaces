@@ -27,24 +27,6 @@
   width: 20%;
 }
 
-.search-text {
-  font-size: 15px;
-  font-weight: 100;
-  font-family: sans-serif;
-  margin-left: 10px;
-}
-
-.search-container {
-  background-color: white;
-  width: 400px;
-  display: flex;
-  margin-left: 20px;
-  margin-right: 20px;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 20px;
-}
-
 .screen-controls {
   color: white;
   margin-right: 10px;
@@ -57,4 +39,25 @@
   font-size: 12px;
   font-family: sans-serif;
   text-align: center;
+}
+
+.search-bar-container {
+  display: flex;
+  flex-direction: row;
+  width: 20vw;
+  height: 5vh;
+  /* height to be the same as the taskbar */
+  background-color: white;
+  margin: 0px 20px 0px 20px;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.search-bar-text { 
+  font: 15px;
+  font-family: sans-serif;
+  font-weight: 200;
+  margin: 0px 0px 0px 10px;
 }

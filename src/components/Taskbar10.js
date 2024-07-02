@@ -10,7 +10,6 @@ import Windows10Notifications from "./windows-icons/windows10Notification";
 import { useContext } from "react";
 import GameManager from "../managers/GameManager";
 const Taskbar10 = (props) => {
-  const GameMan = useContext(GameManager);
   return (
     <div
       className="taskbar-container"
@@ -20,10 +19,7 @@ const Taskbar10 = (props) => {
     >
       <div className="taskbar-leftside">
         <Windows10Logo />
-        <div className="search-container">
-          <WindowsSearch />
-          <p className="search-text">Type here to search</p>
-        </div>
+        <SearchBar />
         <TaskView />
       </div>
       <div className="taskbar-rightside">
@@ -43,6 +39,20 @@ const Taskbar10 = (props) => {
         <p className="date-time">01/12/2022</p>
         <Windows10Notifications />
       </div>
+    </div>
+  );
+};
+
+const SearchBar = (props) => {
+  const GameMan = useContext(GameManager);
+
+  return (
+    <div
+      className="refsurf-control search-bar-container"
+      onClick={GameMan.SendHelp}
+    >
+      <WindowsSearch />
+      <p className="search-bar-text">Click here for help</p>
     </div>
   );
 };
