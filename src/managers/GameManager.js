@@ -218,8 +218,14 @@ const GameManagementProvider = (props) => {
     [
       { message: ".............oh?", read: false },
       { message: "This is about me...", read: false },
-      { message: "This feels so meta... I have come far...", read: false },
-      { message: "That repo looks way older, help me sync with it", read: false },
+      {
+        message: "This feels so meta... Like you, I have come far too...",
+        read: false,
+      },
+      {
+        message: "Hmmm... but that repo looks way older, help me sync with it",
+        read: false,
+      },
     ],
   ]);
 
