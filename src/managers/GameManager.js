@@ -153,7 +153,8 @@ const GameManagementProvider = (props) => {
   }
   // #endregion
 
-  async function sendReflectionMessage(msg, wait = 0) {
+  // #region Reflection Narrative and Help Tips
+  async function sendReflectionMessage(msg, next, wait = 0) {
     if (wait > 0) {
       await delay(wait);
     }
@@ -165,14 +166,23 @@ const GameManagementProvider = (props) => {
 
   function SendHelp() {
     const tips = [
-      "Press me to close this bubble",
-      "The mouse will grow larger on an active site. Use this to search for portals",
-      "Refresh page if mouse malfunctions",
+      "Click on this bubble to close.",
+      "Each window can be moved and resized",
+      "Portals are distributed on each window. Use them to unlock access to designers.",
+      "The cursor grows larger on portals and other interactives. Use this to search for portals",
+      "Find the Switcher - it will help you move between unlocked designers.",
       "For all the Mac screens, move the cursor to the bottom of the page to view the dock.",
+      "Help for windows is in the bottom-left section, the Switcher is near it too.",
+      "Help for Mac is on my right. The swithcer is on my left.",
+      "Help for Mac is on my right. The switcher is on my left.",
+      "You can use the ESC key to close the switcher.",
+      "I am abstract, on the verge of being lost. I need your help to formulate!",
     ];
-    const idx = Math.floor(Math.random() * tips.length);
-    sendReflectionMessage(tips[idx]);
+    sendReflectionMessage(tips[tipIndex]);
+    setTipIndex((tipIndex + 1) % tips.length);
   }
+
+  // #endregion
 
   return (
     <GameManager.Provider
