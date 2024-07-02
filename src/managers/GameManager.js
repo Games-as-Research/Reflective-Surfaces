@@ -63,6 +63,9 @@ const GameManagementProvider = (props) => {
     try {
       if (activeScreen !== null && activeScreen > -1) {
         localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, activeScreen);
+        if (activeScreen > 8) {
+          resetScreenLocks();
+        }
       }
     } catch (error) {
       console.log("DEBUG:: Local storage failed.\n" + error);
@@ -137,6 +140,16 @@ const GameManagementProvider = (props) => {
       updated_screens_state[index].locked = false;
       updateScreens(updated_screens_state);
     }
+  }
+
+  function resetScreenLocks() {
+    // lock all screens when game ends
+    const updated_screens_state = screens;
+    //leave the 0th unlocked.
+    for (let index = 1; index < screens.length; index++) {
+      updated_screens_state[index].locked = true;
+    }
+    updateScreens(updated_screens_state);
   }
   // #endregion
 
