@@ -59,6 +59,170 @@ const GameManagementProvider = (props) => {
   const [transitioningAlpha, settransitioningAlpha] = useState(0);
   const [showReflection, setShowReflection] = useState(false);
   const [reflectionMessage, setReflectionMessage] = useState();
+
+  const [narrative, updateNarrative] = useState([
+    //Pippin
+    [
+      {
+        message: "You finally came through! Good, I need your help",
+        read: false,
+      },
+      {
+        message:
+          "We must find our way through these designer's thoughts or I'll be lost",
+        read: false,
+      },
+      {
+        message:
+          "You can move the windows and resize them. I have lain portals across the screen on some windows. They connect two designers",
+        read: false,
+      },
+      {
+        message:
+          "Each portal is significant to the designer's process. So try to guess their next logical step",
+        read: false,
+      },
+      {
+        message:
+          "This one seems to be on the verge of committing his thoughts to git; interesting read...",
+        read: false,
+      },
+    ],
+
+    //Matt
+    [
+      { message: "Okay, you're getting the hang of it.", read: false },
+      { message: "Try to figure out this one, its very similar", read: false },
+    ],
+
+    //Rilla
+    [
+      {
+        message:
+          "We're making good progress, but this will be a tough one... There's a lot on the screen",
+        read: false,
+      },
+      {
+        message:
+          "The next designer has been talking to this one, maybe there's a clue in the chats...",
+        read: false,
+      },
+      {
+        message:
+          "Some of the windows are minimized. Move to the bottom of the screen and use the dock to maximize or minimize them.",
+        read: false,
+      },
+    ],
+
+    //Chip
+    [
+      {
+        message:
+          "I'm sorry to make you do this, going through people's screens and chat history - but it's not unlike design processes...",
+        read: false,
+      },
+      {
+        message:
+          "So much is missed when we only look at the end product... But its history, the development PROCESS... ",
+        read: false,
+      },
+      {
+        message:
+          "Capturing it allows for analysis, allows for reflection, allows for Materialization - much like what we are doing here",
+        read: false,
+      },
+      {
+        message:
+          "Capturing design in the moment, and creating material conditions that invite reflection. Have a look at what ALL of the team members think",
+        read: false,
+      },
+      {
+        message: "Have a look at what ALL of the TEAM members think",
+        read: false,
+      },
+    ],
+
+    //Kalervo
+    [
+      {
+        message:
+          "The way I am communicating is not very characteristic of Designs but... ",
+        read: false,
+      },
+      {
+        message: "The way you are responding is very productive.",
+        read: false,
+      },
+      {
+        message:
+          "This is the kind of engagement you need ALL THE TIME with your process journalling",
+        read: false,
+      },
+    ],
+
+    //Enric
+    [
+      {
+        message:
+          "I know it's getting harder but you've been at this long and we're so close!",
+        read: false,
+      },
+      {
+        message:
+          "But this one literally looks like a portal... you just need to find it",
+        read: false,
+      },
+    ],
+
+    //Femke
+    [
+      {
+        message:
+          "Unlike Git, DOCX (and other WYSIWYG systems) is very opaque - it doesnt leave many traces...",
+        read: false,
+      },
+      {
+        message:
+          "Central to Reflection and Materialization in MDM is the git commit - a quanta of design work",
+        read: false,
+      },
+      {
+        message:
+          "The affordability to choose what goes in a commit, its explicitness, and temporal permanence is key!",
+        read: false,
+      },
+      {
+        message:
+          "But here, for instance, the AUTOSAVE feature is pretty much the anti-thesis of a git commit",
+        read: false,
+      },
+    ],
+
+    //Vadim
+    [
+      { message: "That's better...", read: false },
+      {
+        message:
+          "This is a designer and programmer who broke his existing methods to incorporate MDM, ",
+        read: false,
+      },
+
+      {
+        message:
+          "Lots of interesting stuff happening here. No hints for this one, you're doing too well.",
+        read: false,
+      },
+    ],
+
+    //Shahrom
+    [
+      { message: ".............oh?", read: false },
+      { message: "This is about me...", read: false },
+      { message: "This feels so meta... I have come far...", read: false },
+      { message: "That repo looks way older, help me sync with it", read: false },
+    ],
+  ]);
+
   // This is for looping the help and tips of the system. the value loops over
   // see the SendHelp function
   const [tipIndex, setTipIndex] = useState(0);
@@ -177,7 +341,6 @@ const GameManagementProvider = (props) => {
       "Find the Switcher - it will help you move between unlocked designers.",
       "For all the Mac screens, move the cursor to the bottom of the page to view the dock.",
       "Help for windows is in the bottom-left section, the Switcher is near it too.",
-      "Help for Mac is on my right. The swithcer is on my left.",
       "Help for Mac is on my right. The switcher is on my left.",
       "You can use the ESC key to close the switcher.",
       "I am abstract, on the verge of being lost. I need your help to formulate!",
