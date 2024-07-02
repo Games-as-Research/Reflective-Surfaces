@@ -17,7 +17,7 @@
   background: rgba(206, 206, 206, 0.4);
   backdrop-filter: blur(4.8px);
   -webkit-backdrop-filter: blur(4.8px);
-  z-index: 10000;
+  z-index: 100;
 }
 
 .icon-container {

@@ -1,9 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import ScreenSwitcher from "../components/ScreenSwitcher";
 import ScreenTransition from "../components/ScreenTransition";
-import CustomCursor from "custom-cursor-react";
-import "custom-cursor-react/dist/index.css";
 import Reflection from "../components/Reflection";
+import ReflectiveCursor from "../components/ReflectiveCursor";
 
 const DEV = process.env.NODE_ENV == "development";
 const LOCAL_STORAGE_KEYS = {
@@ -183,20 +182,6 @@ const GameManagementProvider = (props) => {
         show={showReflection}
         setShow={setShowReflection}
       />
-      <CustomCursor
-        targets={[".refsurf-control", "map"]}
-        customClass="custom-cursor"
-        dimensions={35}
-        strokeColor={"#000"}
-        strokeWidth={2}
-        fill={"red"}
-        smoothness={{
-          movement: 1,
-          scale: 0.2,
-          opacity: 0.5,
-        }}
-        targetOpacity={0.5}
-      />
       <ScreenTransition alpha={transitioningAlpha} />
 
       <ScreenSwitcher
@@ -206,6 +191,7 @@ const GameManagementProvider = (props) => {
         close={hideSwitcher}
       />
       {props.children}
+      <ReflectiveCursor />
     </GameManager.Provider>
   );
 };
