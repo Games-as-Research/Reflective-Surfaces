@@ -76,7 +76,6 @@ const TypingP = (props) => {
   return <p className="intro-line">{text}</p>;
 };
 
-//Pages
 const Page0 = (props) => {
   const [opacity, setOpacity] = useState(1);
   const GameMan = useContext(GameManager);
@@ -195,7 +194,7 @@ const Page1 = (props) => {
           base={line2}
           onComplete={() => {
             setLine(line + 1);
-          }}
+          }}  
         />
       )}
       {line > 1 && (
@@ -234,11 +233,7 @@ const Page2 = (props) => {
 
   function StartHandler() {
     GameMan.jumpToScreen(0);
-    GameMan.sendReflectionMessage(
-      "Good, you're here! I need your help",
-      null,
-      1000
-    );
+    GameMan.Narrate(0);
   }
 
   useEffect(() => {

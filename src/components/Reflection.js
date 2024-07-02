@@ -47,7 +47,12 @@ const Reflection = (props) => {
   return (
     <div
       className="reflection-container"
-      style={{ top: vertPos + "vh" }}
+      style={{
+        top: vertPos + "vh",
+        borderWidth: props.show ? 1 : 0,
+        borderStyle: "solid",
+        borderColor: "white",
+      }}
       onClick={closeSlider}
     >
       <p className="body-text">{props.message}</p>

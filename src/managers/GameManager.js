@@ -4,7 +4,7 @@ import ScreenTransition from "../components/ScreenTransition";
 import Reflection from "../components/Reflection";
 import ReflectiveCursor from "../components/ReflectiveCursor";
 
-const DEV = process.env.NODE_ENV == "development";
+const DEV = process.env.NODE_ENV !== "development";
 const LOCAL_STORAGE_KEYS = {
   SCREEN_INDEX: "active_screen",
   SAVESTATE: "RS_PLAYABLE_SAVEFILE",
@@ -133,7 +133,7 @@ const GameManagementProvider = (props) => {
       },
       {
         message:
-          "Capturing design in the moment, and creating material conditions that invite reflection. Have a look at what ALL of the team members think",
+          "Capturing design in the moment, and creating material conditions that invite reflection.",
         read: false,
       },
       {
@@ -229,6 +229,14 @@ const GameManagementProvider = (props) => {
     ],
   ]);
 
+  /**
+   * When a screen is first accessed,
+   * The narration starts with the first message and sets this to true
+   * This allows for the GameManager to continue with the narration until the last narration message.
+   * Once the last message is sent this is set to false
+   */
+  const [narrating, setNarrating] = useState(false);
+
   // This is for looping the help and tips of the system. the value loops over
   // see the SendHelp function
   const [tipIndex, setTipIndex] = useState(0);
@@ -245,6 +253,13 @@ const GameManagementProvider = (props) => {
       console.log("DEBUG:: Local storage failed.\n" + error);
     }
   }, [activeScreen]);
+
+  useEffect(() => {
+    if (narrating && !showReflection) {
+      // if narrating and reflection has been hidden
+      Narrate(activeScreen);
+    }
+  }, [narrating, showReflection]);
 
   async function transitionIn() {
     const transition_step = 0.1;
@@ -313,6 +328,9 @@ const GameManagementProvider = (props) => {
       const updated_screens_state = screens;
       updated_screens_state[index].locked = false;
       updateScreens(updated_screens_state);
+
+      //Start narrating for this screen
+      Narrate(activeScreen);
     }
   }
 
@@ -328,7 +346,7 @@ const GameManagementProvider = (props) => {
   // #endregion
 
   // #region Reflection Narrative and Help Tips
-  async function sendReflectionMessage(msg, next, wait = 0) {
+  async function sendReflectionMessage(msg, wait = 0) {
     if (wait > 0) {
       await delay(wait);
     }
@@ -351,8 +369,37 @@ const GameManagementProvider = (props) => {
       "You can use the ESC key to close the switcher.",
       "I am abstract, on the verge of being lost. I need your help to formulate!",
     ];
-    sendReflectionMessage(tips[tipIndex]);
-    setTipIndex((tipIndex + 1) % tips.length);
+
+    if (!narrating) {
+      // dont show help tips while it is narrating
+      sendReflectionMessage(tips[tipIndex]);
+      setTipIndex((tipIndex + 1) % tips.length);
+    }
+  }
+
+  /**
+   * narration starts with the start button on the title screen
+   * It continues whenever the screen is unlocked. so in the unlockScreen function.
+   */
+  async function Narrate(screen_idx) {
+    // takes screen index is and narrates unread messages
+    for (let msg = 0; msg < narrative[screen_idx]?.length; msg++) {
+      if (!narrative[screen_idx][msg].read) {
+        setNarrating(true);
+
+        // delay to account for the message scrolling up when the user clicks on it
+        // sliding out takes 200ms when step size is 0.1vh and distance is 10vh.
+        await sendReflectionMessage(narrative[screen_idx][msg].message, 600);
+
+        const new_narr = narrative;
+        new_narr[screen_idx][msg].read = true;
+        updateNarrative(new_narr);
+
+        return;
+      }
+    }
+    // if all messages of said screen have already been read, it is the end of the narration.
+    setNarrating(false);
   }
 
   // #endregion
@@ -371,6 +418,7 @@ const GameManagementProvider = (props) => {
         showSwitcher,
         sendReflectionMessage,
         SendHelp,
+        Narrate,
       }}
     >
       <Reflection
