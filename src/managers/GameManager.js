@@ -230,7 +230,7 @@ const GameManagementProvider = (props) => {
 
       {
         message:
-          "Lots of interesting stuff happening here. No hints for this one, you're doing too well.",
+          "Lots of interesting stuff happening here. No hints for this one, you dont need any ADDed POWER-UPS, you're doing too well.",
         read: false,
       },
     ],
