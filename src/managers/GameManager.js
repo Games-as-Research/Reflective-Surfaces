@@ -98,6 +98,11 @@ const GameManagementProvider = (props) => {
     //Matt
     [
       { message: "Okay, you're getting the hang of it.", read: false },
+      {
+        message:
+          "You can revisit a previous screen from the Fastport on my left - try it out.",
+        read: false,
+      },
       { message: "Try to figure out this one, its very similar", read: false },
     ],
 
@@ -263,6 +268,7 @@ const GameManagementProvider = (props) => {
         localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, activeScreen);
         if (activeScreen > 8) {
           resetScreenLocks();
+          resetNarrative();
         }
       }
     } catch (error) {
@@ -298,7 +304,9 @@ const GameManagementProvider = (props) => {
   }
 
   async function nextScreen() {
+    setNarrating(false);
     setShowReflection(false);
+
     await transitionIn();
     if (activeScreen === 10) {
       setActiveScreen(0);
@@ -309,6 +317,9 @@ const GameManagementProvider = (props) => {
   }
 
   async function previousScreen() {
+    setNarrating(false);
+    setShowReflection(false);
+
     await transitionIn();
 
     if (activeScreen === 0) {
@@ -336,10 +347,13 @@ const GameManagementProvider = (props) => {
   // #region Switcher Methods
   function showSwitcher() {
     setSwitching(true);
+    setNarrating(false);
+    setShowReflection(false);
   }
 
   function hideSwitcher() {
     setSwitching(false);
+    if (activeScreen <= 8) Narrate(activeScreen);
   }
 
   function unlockScreen(index) {
@@ -379,11 +393,11 @@ const GameManagementProvider = (props) => {
       "Each window can be moved and resized",
       "Portals are distributed on each window. Use them to unlock access to designers.",
       "The cursor grows larger on portals and other interactives. Use this to search for portals",
-      "Find the Switcher - it will help you move between unlocked designers.",
+      "Find the FastPort - it will help you move between unlocked designers.",
       "For all the Mac screens, move the cursor to the bottom of the page to view the dock.",
-      "Help for windows is in the bottom-left section, the Switcher is near it too.",
-      "Help for Mac is on my right. The switcher is on my left.",
-      "You can use the ESC key to close the switcher.",
+      "Help for windows is in the bottom-left section, the FastPort is near it too.",
+      "Help for Mac is on my right. The FastPort is on my left.",
+      "You can use the ESC key to close the FastPort.",
       "I am abstract, on the verge of being lost. I need your help to formulate!",
     ];
 
@@ -427,6 +441,16 @@ const GameManagementProvider = (props) => {
     setNarrating(false); // MSA: this might be unreachable code... not risking removing it last minute lol .
   }
 
+  // Called on game over
+  function resetNarrative() {
+    const reset_narr = narrative;
+    for (let index = 0; index < reset_narr.length; index++) {
+      for (let msg = 0; msg < reset_narr[index].length; msg++) {
+        reset_narr[index][msg].read = false;
+      }
+    }
+    updateNarrative(reset_narr);
+  }
   // #endregion
 
   return (
