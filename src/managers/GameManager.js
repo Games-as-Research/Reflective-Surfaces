@@ -66,7 +66,7 @@ const GameManagementProvider = (props) => {
     //Pippin
     [
       {
-        message: "Hey OVER HERE! Click me",
+        message: "Hey OVER HERE! Click this!",
         read: false,
       },
       {
@@ -90,6 +90,11 @@ const GameManagementProvider = (props) => {
       },
       {
         message:
+          "There are also other portals, for you to find out more about the work or the designer",
+        read: false,
+      },
+      {
+        message:
           "This one seems to be on the verge of committing his thoughts to git; interesting read...",
         read: false,
       },
@@ -100,7 +105,7 @@ const GameManagementProvider = (props) => {
       { message: "Okay, you're getting the hang of it.", read: false },
       {
         message:
-          "You can revisit a previous screen from the Fastport on my left - try it out.",
+          "You can revisit a previous one from the Fastport (first icon on the top right there) - try it out.",
         read: false,
       },
       { message: "Try to figure out this one, its very similar", read: false },

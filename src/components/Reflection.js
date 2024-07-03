@@ -6,7 +6,7 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const Reflection = (props) => {
   // position oscilates between -8vh to 2vh
-  const [vertPos, setVertPost] = useState(-8); //vh
+  const [vertPos, setVertPost] = useState(-11); //vh
 
   async function slideIn() {
     const maxHeight = 2; //vh
@@ -21,7 +21,7 @@ const Reflection = (props) => {
   }
 
   async function slideOut() {
-    const minHeight = -8; //vh
+    const minHeight = -11; //vh
     const step = 0.1;
     let newVal = vertPos;
 
