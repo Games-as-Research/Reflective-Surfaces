@@ -53,6 +53,8 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const GameManager = createContext(null);
 const GameManagementProvider = (props) => {
+  // #region State and Effect
+
   const [screens, updateScreens] = useState(DEFAULT_STATE.screens);
   const [activeScreen, setActiveScreen] = useState(-1);
   const [switching, setSwitching] = useState(false);
@@ -63,6 +65,10 @@ const GameManagementProvider = (props) => {
   const [narrative, updateNarrative] = useState([
     //Pippin
     [
+      {
+        message: "Hey OVER HERE! Click me",
+        read: false,
+      },
       {
         message: "You finally came through! Good, I need your help",
         read: false,
@@ -104,12 +110,12 @@ const GameManagementProvider = (props) => {
       },
       {
         message:
-          "The next designer has been talking to this one, maybe there's a clue in the chats...",
+          "Some of the windows are minimized. Move to the bottom of the screen and use the dock to maximize or minimize them.",
         read: false,
       },
       {
         message:
-          "Some of the windows are minimized. Move to the bottom of the screen and use the dock to maximize or minimize them.",
+          "The next designer has been talking to this one, maybe there's a clue in the chats...",
         read: false,
       },
     ],
@@ -118,22 +124,32 @@ const GameManagementProvider = (props) => {
     [
       {
         message:
-          "I'm sorry to make you do this, going through people's screens and chat history - but it's not unlike design processes...",
+          "I'm sorry to make you do this... going through people's screens and chat history...",
         read: false,
       },
       {
         message:
-          "So much is missed when we only look at the end product... But its history, the development PROCESS... ",
+          "But come to think of it, its much like MDM (Method for Design Materialization).",
         read: false,
       },
       {
         message:
-          "Capturing it allows for analysis, allows for reflection, allows for Materialization - much like what we are doing here",
+          "MDM is like a chat with whoever is looking at the project in the future and analyzing it for insights or theory",
         read: false,
       },
       {
         message:
-          "Capturing design in the moment, and creating material conditions that invite reflection.",
+          "Thats because so much is missed when we only look at the end product... But its history, the development PROCESS... ",
+        read: false,
+      },
+      {
+        message:
+          "Capturing it allows for analysis, for reflection. It allows for Materialization - much like what you are helping me here with",
+        read: false,
+      },
+      {
+        message:
+          "Catching design in the moment, and creating material conditions that invite reflection.",
         read: false,
       },
       {
@@ -146,7 +162,7 @@ const GameManagementProvider = (props) => {
     [
       {
         message:
-          "The way I am communicating is not very characteristic of Designs but... ",
+          "The way I am communicating is not very characteristic of Designs, this is not how Backtalk is supposed to work, but... ",
         read: false,
       },
       {
@@ -261,6 +277,10 @@ const GameManagementProvider = (props) => {
     }
   }, [narrating, showReflection]);
 
+  // #endregion
+
+  // #region Screen Changing
+
   async function transitionIn() {
     const transition_step = 0.1;
     for (let index = 0; index <= 10; index++) {
@@ -277,8 +297,8 @@ const GameManagementProvider = (props) => {
     }
   }
 
-  // #region Screen Changing
   async function nextScreen() {
+    setShowReflection(false);
     await transitionIn();
     if (activeScreen === 10) {
       setActiveScreen(0);
@@ -328,9 +348,6 @@ const GameManagementProvider = (props) => {
       const updated_screens_state = screens;
       updated_screens_state[index].locked = false;
       updateScreens(updated_screens_state);
-
-      //Start narrating for this screen
-      Narrate(activeScreen);
     }
   }
 
@@ -395,15 +412,19 @@ const GameManagementProvider = (props) => {
         // sliding out takes 200ms when step size is 0.1vh and distance is 10vh.
         await sendReflectionMessage(narrative[screen_idx][msg].message, 600);
 
-        const new_narr = narrative;
-        new_narr[screen_idx][msg].read = true;
-        updateNarrative(new_narr);
-
+        if (msg !== narrative[screen_idx].length - 1) {
+          // Mark all messages read except the last one, since it is a hint.
+          const new_narr = narrative;
+          new_narr[screen_idx][msg].read = true;
+          updateNarrative(new_narr);
+        } else {
+          setNarrating(false);
+        }
         return;
       }
     }
     // if all messages of said screen have already been read, it is the end of the narration.
-    setNarrating(false);
+    setNarrating(false); // MSA: this might be unreachable code... not risking removing it last minute lol .
   }
 
   // #endregion

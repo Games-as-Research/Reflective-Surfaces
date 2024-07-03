@@ -34,9 +34,9 @@ const CreditsScreen = (props) => {
   const GameMan = useContext(GameManager);
 
   const lines = [
+    "Finally...",
     "Thanks to your persistence,",
     "I am no longer tacit.",
-    "Finally,",
     "I have Materialized.",
   ];
 
