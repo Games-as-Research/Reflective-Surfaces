@@ -109,26 +109,6 @@ const Screen9 = (props) => {
     <>
       <Screen state={DEFAULT_STATE} backgroundColor={"#C4C4C4"}/>
       {/* Add a terminal Window :D  */}
-      <DesktopIcon
-        default={{ x: 1400, y: 50 }}
-        label={"Macintosh HD"}
-        sprite={"./Icons/macintosh_hd.png"}
-      />
-      <DesktopIcon
-        default={{ x: 1400, y: 200 }}
-        label={"Photos"}
-        sprite={"./Icons/images_folder.png"}
-      />
-      <DesktopIcon
-        default={{ x: 1400, y: 300 }}
-        label={"Unity 2022.3.15f1"}
-        sprite={"./Icons/unity.png"}
-      />
-      <DesktopIcon
-        default={{ x: 1400, y: 500 }}
-        label={"Spotify"}
-        sprite={"./Icons/spotify.png"}
-      />
     </>
   );
 };
