@@ -70,7 +70,7 @@ const GamesAsResearch = (props) => {
       >
         <p className="presentation">Find out more at {"\0"}</p>
         <p
-          className="presentation"
+          className="presentation refsurf-control"
           style={{ color: "yellow" }}
           onClick={() => {
             window.open("https://gamesasresearch.com");
