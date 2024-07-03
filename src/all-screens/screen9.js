@@ -102,6 +102,7 @@ const Screen9 = (props) => {
   const GameMan = useContext(GameManager);
   useEffect(() => {
     GameMan.unlockScreen(8);
+    GameMan.Narrate(8);
   }, []);
 
   return (

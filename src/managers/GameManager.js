@@ -379,10 +379,14 @@ const GameManagementProvider = (props) => {
 
   /**
    * narration starts with the start button on the title screen
-   * It continues whenever the screen is unlocked. so in the unlockScreen function.
+   * It continues whenever a new screen is unlocked. Each screen calls its own.
+   * Resuming loads a screen and so that screen also takes care of itself.
+   *
+   *
+   * MSA: maybe the screen_idx parameter can be done away with and we can just use activeScreen state...
    */
   async function Narrate(screen_idx) {
-    // takes screen index is and narrates unread messages
+    // takes screen index and narrates unread messages
     for (let msg = 0; msg < narrative[screen_idx]?.length; msg++) {
       if (!narrative[screen_idx][msg].read) {
         setNarrating(true);

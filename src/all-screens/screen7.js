@@ -105,6 +105,7 @@ const Screen7 = (props) => {
 
   useEffect(() => {
     GameMan.unlockScreen(6);
+    GameMan.Narrate(6);
   }, []);
 
   return <Screen state={DEFAULT_STATE} backgroundColor={"#000"} />;
