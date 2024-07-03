@@ -66,7 +66,8 @@ const DEFAULT_STATE = {
         areas: [
           {
             id: "824v520v-d82n-81fv-0c82-bd24f3fb79f4",
-            title: "portal--dead",
+            title: "portal--hyperlink",
+            url: "https://enric.llagostera.com.br/2023/11/06/dreaming-gargoyle/",
             shape: "poly",
             name: "1",
             fillColor: "#84BDE388",
