@@ -51,7 +51,7 @@ const DEFAULT_STATE = {
       },
     },
     {
-      layer: 4,
+      layer: 5,
       minimized: false,
       type: "CHROME",
       src: "./S9_Shahrom/jira.PNG",
@@ -83,6 +83,18 @@ const DEFAULT_STATE = {
       },
     },
     {
+      layer: 4,
+      minimized: false,
+      type: "CHROME",
+      src: "./S9_Shahrom/closing.PNG",
+      dimensions: {
+        top: 218,
+        left: 284,
+        width: 901,
+        height: 563,
+      },
+    },
+    {
       layer: 1,
       minimized: false,
       type: "FINDER",
@@ -107,7 +119,7 @@ const Screen9 = (props) => {
 
   return (
     <>
-      <Screen state={DEFAULT_STATE} backgroundColor={"#C4C4C4"}/>
+      <Screen state={DEFAULT_STATE} backgroundColor={"#C4C4C4"} />
       {/* Add a terminal Window :D  */}
     </>
   );
