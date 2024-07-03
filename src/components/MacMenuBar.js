@@ -18,7 +18,12 @@ const MacMenuBar = (props) => {
       }
     >
       <div className="menubar-leftside">
-        <AppleIcon />
+        <AppleIcon
+          onClick={() => {
+            window.location.reload();
+          }}
+          className={"refsurf-control"}
+        />
         <p className="menubar-program">Finder</p>
         <p className="menubar-item">File</p>
         <p className="menubar-item">Edit</p>
@@ -50,6 +55,5 @@ const MacDateTime = (props) => {
     </div>
   );
 };
-
 
 export default MacMenuBar;
