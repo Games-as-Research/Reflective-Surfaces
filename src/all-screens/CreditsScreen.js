@@ -69,7 +69,13 @@ const GamesAsResearch = (props) => {
         }}
       >
         <p className="presentation">Find out more at {"\0"}</p>
-        <p className="presentation" style={{ color: "yellow" }}>
+        <p
+          className="presentation"
+          style={{ color: "yellow" }}
+          onClick={() => {
+            window.open("https://gamesasresearch.com");
+          }}
+        >
           gamesasresearch.com
         </p>
       </div>
