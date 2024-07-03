@@ -7,7 +7,7 @@ const DEFAULT_STATE = {
   OS: "10",
   windows: [
     {
-      layer: 4,
+      layer: 5,
       minimized: false,
       type: "CHROME",
       src: "./S7_Femke/gif.png",
@@ -20,7 +20,7 @@ const DEFAULT_STATE = {
       },
     },
     {
-      layer: 3,
+      layer: 4,
       minimized: false,
       type: "CHROME",
       src: "./S7_Femke/blackboard.png",
@@ -52,7 +52,7 @@ const DEFAULT_STATE = {
       },
     },
     {
-      layer: 2,
+      layer: 3,
       minimized: false,
       type: "CHROME",
       src: "./S7_Femke/miro.png",
@@ -65,13 +65,13 @@ const DEFAULT_STATE = {
       },
     },
     {
-      layer: 1,
+      layer: 2,
       minimized: false,
       type: "WORD",
       src: "./S7_Femke/word.png",
       dimensions: {
         top: 63,
-        left: 819,
+        left: 620,
         width: 746,
         height: 810,
       },
@@ -94,6 +94,18 @@ const DEFAULT_STATE = {
             ],
           },
         ],
+      },
+    },
+    {
+      layer: 1,
+      minimized: false,
+      type: "PREVIEW",
+      src: "./S7_Femke/haircut.jpeg",
+      dimensions: {
+        top: 600,
+        left: 1154,
+        width: 435,
+        height: 245,
       },
     },
   ],
