@@ -27,6 +27,7 @@ const Credits = (props) => {
       style={{ position: "absolute", top: position + "vh" }}
     >
       <p className="subheading">Credits</p>
+      <p className="credits-entry">Muhammad Shahrom Ali</p>
       <p className="credits-entry">Rilla Khaled</p>
       <p className="credits-entry">Pippin Barr</p>
       <p className="credits-entry">Matt Bethancourt</p>
@@ -35,7 +36,6 @@ const Credits = (props) => {
       <p className="credits-entry">Enric G. Llagostera</p>
       <p className="credits-entry">Vadim Nickel</p>
       <p className="credits-entry">Kalervo A. Sinervo</p>
-      <p className="credits-entry">Muhammad Shahrom Ali</p>
     </div>
   );
 };
