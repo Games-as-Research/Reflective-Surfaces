@@ -4,7 +4,7 @@ import ScreenTransition from "../components/ScreenTransition";
 import Reflection from "../components/Reflection";
 import ReflectiveCursor from "../components/ReflectiveCursor";
 
-const DEV = process.env.NODE_ENV !== "development";
+const DEV = process.env.NODE_ENV == "development";
 const LOCAL_STORAGE_KEYS = {
   SCREEN_INDEX: "active_screen",
   SAVESTATE: "RS_PLAYABLE_SAVEFILE",
