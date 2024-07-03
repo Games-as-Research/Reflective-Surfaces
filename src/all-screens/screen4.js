@@ -74,26 +74,26 @@ const DEFAULT_STATE = {
         width: 888,
         height: 399,
       },
-      map: {
-        name: "Screen4Window1",
-        areas: [
-          {
-            id: "72046284-d82n-483f-0c82-bd24f3fb79f4",
-            title: "audiorecording--play",
-            shape: "poly",
-            name: "1",
-            fillColor: "#84BDE388",
-            strokeColor: "black",
-            coords: [1000, 70, 1080, 70, 1080, 170, 1000, 170],
-            polygon: [
-              [1000, 70],
-              [1080, 70],
-              [1080, 170],
-              [1000, 170],
-            ],
-          },
-        ],
-      },
+      // map: {
+      //   name: "Screen4Window1",
+      //   areas: [
+      //     {
+      //       id: "72046284-d82n-483f-0c82-bd24f3fb79f4",
+      //       title: "audiorecording--play",
+      //       shape: "poly",
+      //       name: "1",
+      //       fillColor: "#84BDE388",
+      //       strokeColor: "black",
+      //       coords: [1000, 70, 1080, 70, 1080, 170, 1000, 170],
+      //       polygon: [
+      //         [1000, 70],
+      //         [1080, 70],
+      //         [1080, 170],
+      //         [1000, 170],
+      //       ],
+      //     },
+      //   ],
+      // },
     },
     {
       layer: 1,
