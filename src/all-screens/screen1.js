@@ -1,4 +1,6 @@
+import { useContext, useEffect } from "react";
 import Screen from "../components/Screen";
+import GameManager from "../managers/GameManager";
 
 const DEFAULT_STATE = {
   background: "./S1_Pippin/Background.png",
@@ -73,6 +75,10 @@ const DEFAULT_STATE = {
 };
 
 const Screen1 = (props) => {
+  const GameMan = useContext(GameManager);
+  useEffect(() => {
+    GameMan.Narrate(0);
+  }, []);
   return <Screen state={DEFAULT_STATE} backgroundColor={"#C3A4A4"} />;
 };
 

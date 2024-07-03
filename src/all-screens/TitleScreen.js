@@ -194,7 +194,7 @@ const Page1 = (props) => {
           base={line2}
           onComplete={() => {
             setLine(line + 1);
-          }}  
+          }}
         />
       )}
       {line > 1 && (
@@ -233,7 +233,6 @@ const Page2 = (props) => {
 
   function StartHandler() {
     GameMan.jumpToScreen(0);
-    GameMan.Narrate(0);
   }
 
   useEffect(() => {
