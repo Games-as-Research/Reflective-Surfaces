@@ -54,6 +54,8 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 const GameManager = createContext(null);
 const GameManagementProvider = (props) => {
   // #region State and Effect
+  var chips_voicenote = new Audio("./S4_Chip/voicenote.mp3");
+
 
   const [screens, updateScreens] = useState(DEFAULT_STATE.screens);
   const [activeScreen, setActiveScreen] = useState(-1);
@@ -61,6 +63,7 @@ const GameManagementProvider = (props) => {
   const [transitioningAlpha, settransitioningAlpha] = useState(0);
   const [showReflection, setShowReflection] = useState(false);
   const [reflectionMessage, setReflectionMessage] = useState();
+  
 
   const [narrative, updateNarrative] = useState([
     //Pippin
@@ -311,6 +314,8 @@ const GameManagementProvider = (props) => {
   async function nextScreen() {
     setNarrating(false);
     setShowReflection(false);
+    chips_voicenote.pause();
+
 
     await transitionIn();
     if (activeScreen === 10) {
@@ -324,6 +329,8 @@ const GameManagementProvider = (props) => {
   async function previousScreen() {
     setNarrating(false);
     setShowReflection(false);
+    chips_voicenote.pause();
+
 
     await transitionIn();
 
@@ -463,6 +470,8 @@ const GameManagementProvider = (props) => {
       value={{
         // State
         activeScreen,
+        //vars
+        chips_voicenote,
 
         //Methods
         previousScreen,

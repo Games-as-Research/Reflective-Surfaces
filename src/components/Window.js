@@ -31,6 +31,10 @@ const Window = (props) => {
         GameMan.previousScreen();
       } else if (title.includes("--hyperlink")) {
         window.open(area.url ?? "");
+      } else if (title.includes("--play")) {
+        if (GameMan.chips_voicenote.paused == false) GameMan.chips_voicenote.pause();
+        else GameMan.chips_voicenote.play();
+
       }
     }
   }
