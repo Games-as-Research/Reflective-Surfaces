@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import "../stylesheets/CreditsScreen.css";
-
-//Utility
-const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+import delay from "../components/delay";
 
 const Credits = (props) => {
   const [position, setPosition] = useState(100);

@@ -1,0 +1,12 @@
+.intro-line {
+  font-family: "Inknut Antiqua";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  display: flex;
+  text-align: center;
+  align-self: center;
+
+  color: #ffffff;
+}

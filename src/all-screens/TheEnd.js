@@ -1,9 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import "../stylesheets/TheEnd.css";
 import GameManager from "../managers/GameManager";
-
-//Utility
-const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+import delay from "../components/delay";
 
 const GamesAsResearch = (props) => {
   const [opacity, setOpacity] = useState(0);

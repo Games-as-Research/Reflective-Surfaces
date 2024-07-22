@@ -2,9 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import "../stylesheets/TitleScreen.css";
 import GameManager from "../managers/GameManager";
 import { LOCAL_STORAGE_KEYS } from "../managers/GameManager";
-
-//Utility
-const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+import delay from "../components/delay";
+import TypingP from "../components/TypingAnimation";
 
 // Components
 const Button = (props) => {
@@ -29,51 +28,6 @@ const Button = (props) => {
       <p className={pClass}>{props.label}</p>
     </div>
   );
-};
-
-const TypingP = (props) => {
-  // props: {text, base}
-  const [text, setText] = useState("");
-  async function typing() {
-    const typingSpeed = 70;
-
-    //type out the base text
-    for (let index = 0; index <= props.base.length; index++) {
-      setText(props.base.slice(0, index));
-      await delay(typingSpeed);
-    }
-
-    //type the rest of stuff
-    for (let line = 0; line < props.text.length; line++) {
-      const element = props.text[line];
-      const fullLine = props.base + element;
-
-      // write
-      for (let index = 0; index <= element.length; index++) {
-        setText(props.base + element.slice(0, index));
-        await delay(typingSpeed);
-      }
-
-      // delay between each line
-      await delay(typingSpeed * 15);
-
-      if (line != props.text.length - 1) {
-        // erase if not the last one
-        for (let i = fullLine.length; i >= props.base.length; --i) {
-          setText(fullLine.slice(0, i));
-          await delay(typingSpeed / 10);
-        }
-      }
-    }
-    await delay(typingSpeed * 4);
-    props.onComplete();
-  }
-
-  useEffect(() => {
-    typing();
-  }, []);
-
-  return <p className="intro-line">{text}</p>;
 };
 
 const Page0 = (props) => {
@@ -334,7 +288,7 @@ const TitleScreen = (props) => {
         localStorage.setItem(LOCAL_STORAGE_KEYS.SCREEN_INDEX, -1);
       }
     } catch (error) {
-      console.log("DEBUG:: Local storage failed.\n" + error);
+      console.error("DEBUG:: Local storage failed.\n" + error);
     }
   }, []);
   return (

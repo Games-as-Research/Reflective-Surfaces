@@ -3,7 +3,10 @@ import ScreenSwitcher from "../components/ScreenSwitcher";
 import ScreenTransition from "../components/ScreenTransition";
 import Reflection from "../components/Reflection";
 import ReflectiveCursor from "../components/ReflectiveCursor";
+import delay from "../components/delay";
 
+
+// All screens are unlocked if in development mode. 
 const DEV = process.env.NODE_ENV == "development";
 const LOCAL_STORAGE_KEYS = {
   SCREEN_INDEX: "active_screen",
@@ -49,7 +52,6 @@ const DEFAULT_STATE = {
     },
   ],
 };
-const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const GameManager = createContext(null);
 const GameManagementProvider = (props) => {
