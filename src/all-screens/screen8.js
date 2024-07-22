@@ -1,4 +1,3 @@
-import { P5JS } from "../components/P5JS";
 import Screen from "../components/Screen";
 import { useContext, useEffect, useState } from "react";
 import GameManager from "../managers/GameManager";
@@ -224,7 +223,6 @@ const Screen8 = (props) => {
 
   return (
     <>
-      {/* <P5JS /> */}
       <Screen state={DEFAULT_STATE} backgroundColor={"#7A5C10"} />
     </>
   );
