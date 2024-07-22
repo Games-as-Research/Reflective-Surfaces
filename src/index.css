@@ -1,4 +1,5 @@
 * { 
+  /* defined to be none so we can use the custom cursor */
   cursor: none;
 }
 

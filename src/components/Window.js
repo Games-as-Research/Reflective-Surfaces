@@ -10,8 +10,10 @@ const Window = (props) => {
   const [dimensions, setDimensions] = useState(props.config.dimensions);
 
   useEffect(() => {
+    // this is to prevent the dragging of the img element inside the window component. 
     const element = imgRef?.current?.firstElementChild;
-    element?.setAttribute("draggable", false);
+    element?.setAttribute("draggable", false); 
+
   }, [props.config.minimized]);
 
   function DragHandler() {
@@ -32,9 +34,9 @@ const Window = (props) => {
       } else if (title.includes("--hyperlink")) {
         window.open(area.url ?? "");
       } else if (title.includes("--play")) {
-        if (GameMan.chips_voicenote.paused == false) GameMan.chips_voicenote.pause();
+        if (GameMan.chips_voicenote.paused == false)
+          GameMan.chips_voicenote.pause();
         else GameMan.chips_voicenote.play();
-
       }
     }
   }
@@ -87,16 +89,6 @@ const Window = (props) => {
               }
             }
           />
-          {/* <img
-            src={props.config.src}
-            draggable={false}
-            style={{
-              width: dimensions.width,
-              height: dimensions.height,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "contain",
-            }}
-          /> */}
         </Rnd>
       )}
     </>
