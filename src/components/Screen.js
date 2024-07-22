@@ -7,9 +7,16 @@ import MacDock from "./MacDock";
 
 const MIN_WINDOWS_PER_SCREEN = 3;
 
-// props = {state}
+/**
+ * 
+ * @param {*} props = {state, backgroundColor} 
+ * state: An object, defined in each screen the describes what the screen will look like 
+ * including the Operating System (Windows 10 or MacOS), what dock icons to show, background image, portals,
+ * 
+ * The `backgroundColor` is a hexCode string that defines the accent color of the action bar (apple) and taskbar (windows). 
+ */
 const Screen = (props) => {
-  const [screenState, setScreenState] = useState(props.state);
+  const [screenState, setScreenState] = useState(props.state); // uses the DEFAULT_STATE object passed to it, to initialize state. 
   const [dockIcons, setDockIcons] = useState([]);
   const [top, setTop] = useState(
     props.state.windows?.length ?? MIN_WINDOWS_PER_SCREEN
@@ -20,7 +27,7 @@ const Screen = (props) => {
     for (let index = 0; index < screenState.windows.length; index++) {
       _dockicons.push({
         name: screenState.windows[index].type ?? "",
-        active: true, // this is to dislay the activity indicator on the dock/taskbar.
+        active: true, // this is to display the activity indicator on the dock/taskbar.
         onClick: () => macDockIconClickHandler(index),
       });
     }
@@ -32,7 +39,6 @@ const Screen = (props) => {
         onClick: null,
       });
     }
-    // can also add custom icons here.
 
     setDockIcons(_dockicons);
   }, []);
