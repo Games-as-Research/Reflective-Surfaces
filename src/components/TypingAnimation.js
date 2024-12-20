@@ -23,7 +23,7 @@ import "../stylesheets/TypingAnimation.css";
 const TypingP = (props) => {
   const [text, setText] = useState("");
   async function typing() {
-    const typingSpeed = 70; // lower is faster.
+    const typingSpeed = 30; // lower is faster.
 
     //type out the base text
     for (let index = 0; index <= props.base.length; index++) {
@@ -43,7 +43,7 @@ const TypingP = (props) => {
       }
 
       // delay between each line
-      await delay(typingSpeed * 15);
+      await delay(typingSpeed * 32);
 
       if (line != props.text.length - 1) {
         // erase if not the last one
@@ -53,7 +53,7 @@ const TypingP = (props) => {
         }
       }
     }
-    await delay(typingSpeed * 4);
+    await delay(typingSpeed * 12);
     props.onComplete();
   }
 
